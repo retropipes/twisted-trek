@@ -1,2 +1,2 @@
 # Twisted Trek
-Puzzle + RPG combination
+Dual-world RPG.
