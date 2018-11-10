@@ -1,5 +1,6 @@
 # Project-specific
 twisted-trek/bin
+twisted-trek/kotlin-bin
 
 # Compiled class file
 *.class

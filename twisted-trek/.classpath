@@ -6,5 +6,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.jetbrains.kotlin.core.KOTLIN_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericahnell/Applications/eclipse-dsl-2018-09/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/661/0/.cp/lib/kotlinx-coroutines-core.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ericahnell/Applications/eclipse-dsl-2018-09/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/661/0/.cp/lib/kotlinx-coroutines-jdk8.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
