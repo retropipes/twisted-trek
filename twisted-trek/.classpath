@@ -2,22 +2,12 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
 		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
-		<attributes>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.jetbrains.kotlin.core.KOTLIN_CONTAINER"/>
 	<classpathentry exported="true" kind="lib" path="/Users/ericahnell/Applications/eclipse-dsl-2018-09/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/661/0/.cp/lib/kotlinx-coroutines-core.jar"/>
 	<classpathentry exported="true" kind="lib" path="/Users/ericahnell/Applications/eclipse-dsl-2018-09/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/661/0/.cp/lib/kotlinx-coroutines-jdk8.jar"/>
-	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="output" path="target/classes"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>
