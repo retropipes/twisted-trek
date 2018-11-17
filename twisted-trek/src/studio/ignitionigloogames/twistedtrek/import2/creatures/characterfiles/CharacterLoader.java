@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2011-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 
 import studio.ignitionigloogames.commondialogs.CommonDialogs;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.VersionException;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyMember;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Extension;
@@ -27,7 +27,7 @@ public class CharacterLoader {
 	    CharacterRegistration.autoremoveCharacter(name);
 	    return null;
 	} catch (final IOException e) {
-	    TallerTower.getErrorLogger().logError(e);
+	    Import2.getErrorLogger().logError(e);
 	    return null;
 	}
     }
@@ -59,7 +59,7 @@ public class CharacterLoader {
 	try (XDataWriter saver = new XDataWriter(characterFile, "character")) {
 	    character.write(saver);
 	} catch (final IOException e) {
-	    TallerTower.getErrorLogger().logError(e);
+	    Import2.getErrorLogger().logError(e);
 	}
     }
 

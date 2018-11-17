@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ Any questions should be directed to the author via email at: fantastle@worldwiza
  */
 package studio.ignitionigloogames.twistedtrek.import1.objects;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
 import studio.ignitionigloogames.twistedtrek.import1.generic.GenericUsableObject;
@@ -58,7 +58,7 @@ public class WarpBomb extends GenericUsableObject {
     public boolean arrowHitAction(final int locX, final int locY, final int locZ, final int locW, final int dirX,
 	    final int dirY, final int arrowType, final ObjectInventory inv) {
 	// Destroy bomb
-	Fantastle5.getApplication().getGameManager().morph(new Empty(), locX, locY, locZ, locW);
+	Import1.getApplication().getGameManager().morph(new Empty(), locX, locY, locZ, locW);
 	// Act as if bomb was used
 	this.useAction(null, locX, locY, locZ, locW);
 	// Stop arrow
@@ -68,13 +68,13 @@ public class WarpBomb extends GenericUsableObject {
     @Override
     public void useAction(final MazeObject mo, final int x, final int y, final int z, final int w) {
 	// Warp objects
-	if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
+	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
 	    this.playUseSound();
 	}
-	Fantastle5.getApplication().getMazeManager().getMaze().radialScanWarpObjects(x, y, z, w, Maze.LAYER_OBJECT,
+	Import1.getApplication().getMazeManager().getMaze().radialScanWarpObjects(x, y, z, w, Maze.LAYER_OBJECT,
 		WarpBomb.EFFECT_RADIUS);
 	// Player might have moved
-	Fantastle5.getApplication().getGameManager().findPlayerAndAdjust();
+	Import1.getApplication().getGameManager().findPlayerAndAdjust();
     }
 
     @Override

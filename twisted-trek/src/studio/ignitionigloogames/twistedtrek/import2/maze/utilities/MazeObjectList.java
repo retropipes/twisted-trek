@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -10,7 +10,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 import studio.ignitionigloogames.images.BufferedImageIcon;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.FormatConstants;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractMazeObject;
 import studio.ignitionigloogames.twistedtrek.import2.maze.objects.Amulet;
@@ -186,7 +186,7 @@ public class MazeObjectList {
 		}
 	    } catch (InstantiationException | IllegalAccessException | IllegalArgumentException
 		    | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
-		TallerTower.getErrorLogger().logError(ex);
+		Import2.getErrorLogger().logError(ex);
 	    }
 	}
 	return null;
@@ -208,7 +208,7 @@ public class MazeObjectList {
 		}
 	    } catch (InstantiationException | IllegalAccessException | IllegalArgumentException
 		    | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
-		TallerTower.getErrorLogger().logError(ex);
+		Import2.getErrorLogger().logError(ex);
 	    }
 	}
 	return null;

@@ -3,7 +3,7 @@ package studio.ignitionigloogames.twistedtrek.import1.objects;
 import java.io.IOException;
 
 import studio.ignitionigloogames.randomrange.RandomRange;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.generic.GenericDungeonObject;
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObject;
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObjectList;
@@ -47,7 +47,7 @@ public class MovingBlock extends GenericDungeonObject {
 	// Move the block
 	final RandomRange r = new RandomRange(0, 7);
 	final int move = r.generate();
-	Fantastle5.getApplication().getMazeManager().getMaze().updateMovingBlockPosition(move, dirX, dirY, this);
+	Import1.getApplication().getMazeManager().getMaze().updateMovingBlockPosition(move, dirX, dirY, this);
 	final RandomRange t = new RandomRange(1, 2);
 	this.activateTimer(t.generate());
     }
@@ -84,7 +84,7 @@ public class MovingBlock extends GenericDungeonObject {
 
     @Override
     protected MazeObject readMazeObjectHook(final XDataReader reader, final int formatVersion) throws IOException {
-	final MazeObjectList objectList = Fantastle5.getApplication().getObjects();
+	final MazeObjectList objectList = Import1.getApplication().getObjects();
 	this.savedObject = objectList.readMazeObject(reader, formatVersion);
 	return this;
     }

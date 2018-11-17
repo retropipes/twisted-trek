@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2011-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -6,7 +6,7 @@ Any questions should be directed to the author via email at: products@puttysoftw
 package studio.ignitionigloogames.twistedtrek.import2.spells;
 
 import studio.ignitionigloogames.commondialogs.CommonDialogs;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.battle.BattleTarget;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.AbstractCreature;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyManager;
@@ -108,11 +108,11 @@ public class SpellCaster {
 	    if (teamID == AbstractCreature.TEAM_PARTY) {
 		return PartyManager.getParty().getLeader();
 	    } else {
-		return TallerTower.getApplication().getBattle().getEnemy();
+		return Import2.getApplication().getBattle().getEnemy();
 	    }
 	case ENEMY:
 	    if (teamID == AbstractCreature.TEAM_PARTY) {
-		return TallerTower.getApplication().getBattle().getEnemy();
+		return Import2.getApplication().getBattle().getEnemy();
 	    } else {
 		return PartyManager.getParty().getLeader();
 	    }

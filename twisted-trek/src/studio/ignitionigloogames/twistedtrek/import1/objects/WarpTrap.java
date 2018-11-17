@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@ package studio.ignitionigloogames.twistedtrek.import1.objects;
 
 import studio.ignitionigloogames.randomrange.RandomRange;
 import studio.ignitionigloogames.twistedtrek.import1.Application;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
 import studio.ignitionigloogames.twistedtrek.import1.generic.GenericTrap;
@@ -51,7 +51,7 @@ public class WarpTrap extends GenericTrap {
 
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY, final ObjectInventory inv) {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	int pw, maxRow, maxCol, maxFloor, rRow, rCol, rFloor;
 	pw = app.getGameManager().getPlayerManager().getPlayerLocationW();
 	maxRow = app.getMazeManager().getMaze().getRows(pw) - 1;
@@ -66,7 +66,7 @@ public class WarpTrap extends GenericTrap {
 	    rFloor = this.rf.generate();
 	} while (!app.getGameManager().tryUpdatePositionAbsolute(rRow, rCol, rFloor));
 	app.getGameManager().updatePositionAbsolute(rRow, rCol, rFloor, pw);
-	if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
+	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
 	    this.playMoveSuccessSound();
 	}
     }

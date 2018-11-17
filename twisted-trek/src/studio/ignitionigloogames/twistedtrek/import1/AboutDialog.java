@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -56,7 +56,7 @@ public class AboutDialog {
 
     private void setUpGUI(final String ver) {
 	this.handler = new EventHandler();
-	this.aboutFrame = new JFrame("About Fantastle");
+	this.aboutFrame = new JFrame("About Import1");
 	this.aboutPane = new Container();
 	this.textPane = new Container();
 	this.buttonPane = new Container();
@@ -69,7 +69,7 @@ public class AboutDialog {
 	this.logoPane.setLayout(new FlowLayout());
 	this.logoPane.add(new JLabel("", GraphicsManager.getMiniatureLogo(), SwingConstants.LEFT));
 	this.textPane.setLayout(new GridLayout(4, 1));
-	this.textPane.add(new JLabel("Fantastle Version: " + ver));
+	this.textPane.add(new JLabel("Import1 Version: " + ver));
 	this.textPane.add(new JLabel("Author: Eric Ahnell"));
 	this.textPane.add(new JLabel("Web Site: http://fantastle.worldwizard.net/"));
 	this.textPane.add(new JLabel("E-mail bug reports to: fantastle@worldwizard.net  "));
@@ -99,7 +99,7 @@ public class AboutDialog {
 		    ad.hideAboutDialog();
 		}
 	    } catch (final Exception ex) {
-		Fantastle5.debug(ex);
+		Import1.debug(ex);
 	    }
 	}
     }

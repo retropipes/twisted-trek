@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -29,29 +29,29 @@ class CacheTask extends Thread {
 
     @Override
     public void run() {
-	Fantastle5.getApplication().getPrefsManager().updateWaitProgress(0);
+	Import1.getApplication().getPrefsManager().updateWaitProgress(0);
 	// Enter Wait Mode
-	Fantastle5.getApplication().getPrefsManager().enterWaitMode();
+	Import1.getApplication().getPrefsManager().enterWaitMode();
 	// Update Micro Logo
-	Fantastle5.getApplication().updateMicroLogo();
-	Fantastle5.getApplication().getPrefsManager().updateWaitProgress(20);
+	Import1.getApplication().updateMicroLogo();
+	Import1.getApplication().getPrefsManager().updateWaitProgress(20);
 	// Update GUI Logo
-	Fantastle5.getApplication().getGUIManager().updateLogo();
-	Fantastle5.getApplication().getPrefsManager().updateWaitProgress(40);
+	Import1.getApplication().getGUIManager().updateLogo();
+	Import1.getApplication().getPrefsManager().updateWaitProgress(40);
 	// Recreate image cache
 	ImageCache.recreateCache();
-	Fantastle5.getApplication().getPrefsManager().updateWaitProgress(60);
+	Import1.getApplication().getPrefsManager().updateWaitProgress(60);
 	// Recreate monster image cache
 	MonsterImageCache.recreateMonsterCache();
-	Fantastle5.getApplication().getPrefsManager().updateWaitProgress(80);
+	Import1.getApplication().getPrefsManager().updateWaitProgress(80);
 	// Update stat image cache
-	Fantastle5.getApplication().getGameManager().getStatGUI().updateGUI();
-	Fantastle5.getApplication().getPrefsManager().updateWaitProgress(100);
+	Import1.getApplication().getGameManager().getStatGUI().updateGUI();
+	Import1.getApplication().getPrefsManager().updateWaitProgress(100);
 	// Update Help
-	Fantastle5.getApplication().getObjectHelpManager().updateHelpSize();
-	Fantastle5.getApplication().getGeneralHelpManager().updateHelpSize();
+	Import1.getApplication().getObjectHelpManager().updateHelpSize();
+	Import1.getApplication().getGeneralHelpManager().updateHelpSize();
 	// Exit Wait Mode
-	Fantastle5.getApplication().getPrefsManager().exitWaitMode();
-	Fantastle5.getApplication().getPrefsManager().hidePrefs();
+	Import1.getApplication().getPrefsManager().exitWaitMode();
+	Import1.getApplication().getPrefsManager().hidePrefs();
     }
 }

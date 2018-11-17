@@ -1,6 +1,6 @@
 package studio.ignitionigloogames.twistedtrek.import1.battle;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.Boss;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.Creature;
@@ -21,8 +21,8 @@ public class BossBattle extends Battle {
     @Override
     public void doBattle() {
 	Battle.IN_BATTLE = true;
-	Fantastle5.getApplication().getGameManager().hideOutput();
-	if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
+	Import1.getApplication().getGameManager().hideOutput();
+	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
 	    SoundManager.play("battle");
 	}
 	this.enemy = new Boss();

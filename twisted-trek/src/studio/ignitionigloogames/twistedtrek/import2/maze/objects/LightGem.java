@@ -1,12 +1,12 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2010 Eric Ahnell
 
-Any questions should be directed to the author via email at: TallerTower@worldwizard.net
+Any questions should be directed to the author via email at: Import2@worldwizard.net
  */
 package studio.ignitionigloogames.twistedtrek.import2.maze.objects;
 
 import studio.ignitionigloogames.randomrange.RandomRange;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.game.GameLogicManager;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Maze;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractMPModifier;
@@ -43,8 +43,8 @@ public class LightGem extends AbstractMPModifier {
 
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY) {
-	TallerTower.getApplication().showMessage("Your power gathers!");
-	TallerTower.getApplication().getGameManager().activateEffect(MazeEffectConstants.EFFECT_POWER_GATHER);
+	Import2.getApplication().showMessage("Your power gathers!");
+	Import2.getApplication().getGameManager().activateEffect(MazeEffectConstants.EFFECT_POWER_GATHER);
 	SoundManager.playSound(SoundConstants.SOUND_FOCUS);
 	GameLogicManager.decay();
     }

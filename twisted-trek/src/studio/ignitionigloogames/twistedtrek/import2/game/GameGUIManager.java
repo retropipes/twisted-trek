@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -23,7 +23,7 @@ import javax.swing.WindowConstants;
 import studio.ignitionigloogames.images.BufferedImageIcon;
 import studio.ignitionigloogames.twistedtrek.import2.Application;
 import studio.ignitionigloogames.twistedtrek.import2.DrawGrid;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Maze;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeConstants;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeManager;
@@ -81,7 +81,7 @@ class GameGUIManager {
 
     void initViewManager() {
 	if (this.vwMgr == null) {
-	    this.vwMgr = TallerTower.getApplication().getGameManager().getViewManager();
+	    this.vwMgr = Import2.getApplication().getGameManager().getViewManager();
 	    this.setUpGUI();
 	}
     }
@@ -97,7 +97,7 @@ class GameGUIManager {
     }
 
     public void showOutput() {
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	this.lastExploringMusicID = this.currExploringMusicID;
 	this.currExploringMusicID = MusicConstants.getMusicID(MusicConstants.MUSIC_EXPLORING);
 	if (PreferencesManager.getMusicEnabled(PreferencesManager.MUSIC_EXPLORING)) {
@@ -148,7 +148,7 @@ class GameGUIManager {
     public void redrawMaze() {
 	// Draw the maze, if it is visible
 	if (this.outputFrame.isVisible()) {
-	    final Application app = TallerTower.getApplication();
+	    final Application app = Import2.getApplication();
 	    final Maze m = app.getMazeManager().getMaze();
 	    int x, y, u, v;
 	    int xFix, yFix;
@@ -237,7 +237,7 @@ class GameGUIManager {
 	this.borderPane.setLayout(new BorderLayout());
 	this.messageLabel = new JLabel(" ");
 	this.messageLabel.setOpaque(true);
-	this.outputFrame = new JFrame("TallerTower");
+	this.outputFrame = new JFrame("Import2");
 	final Image iconlogo = Application.getIconLogo();
 	this.outputFrame.setIconImage(iconlogo);
 	this.drawGrid = new DrawGrid(PreferencesManager.getViewingWindowSize());
@@ -280,7 +280,7 @@ class GameGUIManager {
 
 	public void handleMovement(final KeyEvent e) {
 	    try {
-		final GameLogicManager glm = TallerTower.getApplication().getGameManager();
+		final GameLogicManager glm = Import2.getApplication().getGameManager();
 		final int keyCode = e.getKeyCode();
 		switch (keyCode) {
 		case KeyEvent.VK_LEFT:
@@ -356,7 +356,7 @@ class GameGUIManager {
 		    break;
 		}
 	    } catch (final Exception ex) {
-		TallerTower.getErrorLogger().logError(ex);
+		Import2.getErrorLogger().logError(ex);
 	    }
 	}
 
@@ -374,7 +374,7 @@ class GameGUIManager {
 	@Override
 	public void windowClosing(final WindowEvent we) {
 	    try {
-		final Application app = TallerTower.getApplication();
+		final Application app = Import2.getApplication();
 		boolean success = false;
 		int status = 0;
 		if (app.getMazeManager().getDirty()) {
@@ -393,7 +393,7 @@ class GameGUIManager {
 		    app.getGameManager().exitGame();
 		}
 	    } catch (final Exception ex) {
-		TallerTower.getErrorLogger().logError(ex);
+		Import2.getErrorLogger().logError(ex);
 	    }
 	}
 
@@ -431,14 +431,14 @@ class GameGUIManager {
 	@Override
 	public void mouseClicked(final MouseEvent e) {
 	    try {
-		final GameLogicManager gm = TallerTower.getApplication().getGameManager();
+		final GameLogicManager gm = Import2.getApplication().getGameManager();
 		if (e.isShiftDown()) {
 		    final int x = e.getX();
 		    final int y = e.getY();
 		    gm.identifyObject(x, y);
 		}
 	    } catch (final Exception ex) {
-		TallerTower.getErrorLogger().logError(ex);
+		Import2.getErrorLogger().logError(ex);
 	    }
 	}
 

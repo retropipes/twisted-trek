@@ -1,12 +1,12 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2010 Eric Ahnell
 
-Any questions should be directed to the author via email at: TallerTower@worldwizard.net
+Any questions should be directed to the author via email at: Import2@worldwizard.net
  */
 package studio.ignitionigloogames.twistedtrek.import2.maze.objects;
 
 import studio.ignitionigloogames.randomrange.RandomRange;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyManager;
 import studio.ignitionigloogames.twistedtrek.import2.game.GameLogicManager;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractTrap;
@@ -42,7 +42,7 @@ public class VariableHurtTrap extends AbstractTrap {
 	final RandomRange damageDealt = new RandomRange(VariableHurtTrap.MIN_DAMAGE, maxDamage);
 	PartyManager.getParty().getLeader().doDamage(damageDealt.generate());
 	SoundManager.playSound(SoundConstants.SOUND_BARRIER);
-	TallerTower.getApplication().getGameManager();
+	Import2.getApplication().getGameManager();
 	GameLogicManager.decay();
     }
 

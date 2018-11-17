@@ -2,7 +2,7 @@ package studio.ignitionigloogames.twistedtrek.import2.maze.objects;
 
 import studio.ignitionigloogames.randomrange.RandomRange;
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractMovingObject;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.ObjectImageConstants;
 
@@ -16,9 +16,9 @@ public class Monster extends AbstractMovingObject {
 
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY) {
-	if (TallerTower.getApplication().getMode() != Application.STATUS_BATTLE) {
-	    TallerTower.getApplication().getBattle().doBattle();
-	    TallerTower.getApplication().getMazeManager().getMaze().postBattle(this, dirX, dirY, true);
+	if (Import2.getApplication().getMode() != Application.STATUS_BATTLE) {
+	    Import2.getApplication().getBattle().doBattle();
+	    Import2.getApplication().getMazeManager().getMaze().postBattle(this, dirX, dirY, true);
 	}
     }
 
@@ -27,7 +27,7 @@ public class Monster extends AbstractMovingObject {
 	// Move the monster
 	final RandomRange r = new RandomRange(0, 7);
 	final int move = r.generate();
-	TallerTower.getApplication().getMazeManager().getMaze().updateMonsterPosition(move, dirX, dirY, this);
+	Import2.getApplication().getMazeManager().getMaze().updateMonsterPosition(move, dirX, dirY, this);
 	this.activateTimer(1);
     }
 

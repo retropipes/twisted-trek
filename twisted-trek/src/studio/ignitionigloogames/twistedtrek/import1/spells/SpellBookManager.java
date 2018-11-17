@@ -1,6 +1,6 @@
 package studio.ignitionigloogames.twistedtrek.import1.spells;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.Creature;
@@ -39,7 +39,7 @@ public class SpellBookManager {
 	    final String[] displayNames = book.getAllSpellNamesWithCosts();
 	    if (names != null && displayNames != null) {
 		// Play casting spell sound
-		if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
+		if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
 		    SoundManager.play("spell");
 		}
 		String dialogResult = null;
@@ -80,7 +80,7 @@ public class SpellBookManager {
 		// Play spell's associated sound effect, if it has one
 		final String snd = cast.getSound();
 		if (snd != null) {
-		    if (Fantastle5.getApplication().getPrefsManager()
+		    if (Import1.getApplication().getPrefsManager()
 			    .getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
 			SoundManager.play(snd);
 		    }
@@ -109,7 +109,7 @@ public class SpellBookManager {
 	case 'P':
 	    return PCManager.getPlayer();
 	case 'E':
-	    return Fantastle5.getApplication().getBattle().getEnemy();
+	    return Import1.getApplication().getBattle().getEnemy();
 	default:
 	    return null;
 	}

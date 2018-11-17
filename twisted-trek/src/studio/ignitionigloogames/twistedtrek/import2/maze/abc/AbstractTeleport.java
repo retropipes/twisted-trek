@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -6,7 +6,7 @@ Any questions should be directed to the author via email at: products@puttysoftw
 package studio.ignitionigloogames.twistedtrek.import2.maze.abc;
 
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeConstants;
 import studio.ignitionigloogames.twistedtrek.import2.maze.utilities.TypeConstants;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.SoundConstants;
@@ -80,7 +80,7 @@ public abstract class AbstractTeleport extends AbstractMazeObject {
     // Scriptability
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY) {
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	app.getGameManager().updatePositionAbsolute(this.getDestinationRow(), this.getDestinationColumn(),
 		this.getDestinationFloor());
 	SoundManager.playSound(SoundConstants.SOUND_TELEPORT);

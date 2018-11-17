@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@ Any questions should be directed to the author via email at: fantastle@worldwiza
 package studio.ignitionigloogames.twistedtrek.import1.generic;
 
 import studio.ignitionigloogames.twistedtrek.import1.Application;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
 import studio.ignitionigloogames.twistedtrek.import1.maze.Maze;
@@ -87,10 +87,10 @@ public abstract class GenericLock extends MazeObject {
 	if (!this.key.isInfinite()) {
 	    inv.removeItem(this.key);
 	}
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	app.getGameManager().decay();
 	// Play unlock sound, if it's enabled
-	if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
+	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
 	    this.playMoveSuccessSound();
 	}
     }

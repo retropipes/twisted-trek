@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@ Any questions should be directed to the author via email at: fantastle@worldwiza
 package studio.ignitionigloogames.twistedtrek.import1.objects;
 
 import studio.ignitionigloogames.twistedtrek.import1.Application;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.editor.MazeEditor;
@@ -39,7 +39,7 @@ public class RandomInvisibleOneShotTeleport extends RandomInvisibleTeleport {
     // Scriptability
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY, final ObjectInventory inv) {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	app.getGameManager().decay();
 	int dr, dc;
 	do {
@@ -70,7 +70,7 @@ public class RandomInvisibleOneShotTeleport extends RandomInvisibleTeleport {
 
     @Override
     public MazeObject editorPropertiesHook() {
-	final MazeEditor me = Fantastle5.getApplication().getEditor();
+	final MazeEditor me = Import1.getApplication().getEditor();
 	final MazeObject mo = me.editTeleportDestination(MazeEditor.TELEPORT_TYPE_RANDOM_INVISIBLE_ONESHOT);
 	return mo;
     }

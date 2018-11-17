@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@ package studio.ignitionigloogames.twistedtrek.import1.maze;
 
 import java.io.IOException;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObject;
 import studio.ignitionigloogames.xio.XDataReader;
 import studio.ignitionigloogames.xio.XDataWriter;
@@ -89,7 +89,7 @@ class SavedTowerState {
 	    for (y = 0; y < sts.r; y++) {
 		for (z = 0; z < sts.f; z++) {
 		    for (e = 0; e < Maze.LAYER_COUNT; e++) {
-			sts.saveData[x][y][z][e] = Fantastle5.getApplication().getObjects().readMazeObject(reader,
+			sts.saveData[x][y][z][e] = Import1.getApplication().getObjects().readMazeObject(reader,
 				formatVersion);
 		    }
 		}

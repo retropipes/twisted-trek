@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -7,7 +7,7 @@ package studio.ignitionigloogames.twistedtrek.import2.game;
 
 import studio.ignitionigloogames.commondialogs.CommonDialogs;
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyManager;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Maze;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeConstants;
@@ -54,7 +54,7 @@ final class MovementTask extends Thread {
 		}
 	    }
 	} catch (final Throwable t) {
-	    TallerTower.getErrorLogger().logError(t);
+	    Import2.getErrorLogger().logError(t);
 	}
     }
 
@@ -84,7 +84,7 @@ final class MovementTask extends Thread {
 
     public boolean tryAbsolute(final int x, final int y, final int z) {
 	try {
-	    final Application app = TallerTower.getApplication();
+	    final Application app = Import2.getApplication();
 	    final Maze m = app.getMazeManager().getMaze();
 	    final AbstractMazeObject below = m.getCell(m.getPlayerLocationX(), m.getPlayerLocationY(),
 		    m.getPlayerLocationZ(), MazeConstants.LAYER_GROUND);
@@ -101,7 +101,7 @@ final class MovementTask extends Thread {
     }
 
     void fireStepActions() {
-	final Maze m = TallerTower.getApplication().getMazeManager().getMaze();
+	final Maze m = Import2.getApplication().getMazeManager().getMaze();
 	final int px = m.getPlayerLocationX();
 	final int py = m.getPlayerLocationY();
 	final int pz = m.getPlayerLocationZ();
@@ -134,7 +134,7 @@ final class MovementTask extends Thread {
     }
 
     private void updatePositionRelative(final int dirX, final int dirY, final int dirZ) {
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	final Maze m = app.getMazeManager().getMaze();
 	int px = m.getPlayerLocationX();
 	int py = m.getPlayerLocationY();
@@ -278,7 +278,7 @@ final class MovementTask extends Thread {
     }
 
     private void updatePositionAbsolute(final int x, final int y, final int z) {
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	final Maze m = app.getMazeManager().getMaze();
 	try {
 	    m.getCell(x, y, z, MazeConstants.LAYER_OBJECT).preMoveAction(true, x, y);

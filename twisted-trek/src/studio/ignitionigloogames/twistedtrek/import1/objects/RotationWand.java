@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@ Any questions should be directed to the author via email at: fantastle@worldwiza
 package studio.ignitionigloogames.twistedtrek.import1.objects;
 
 import studio.ignitionigloogames.twistedtrek.import1.Application;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.generic.GenericWand;
@@ -57,11 +57,11 @@ public class RotationWand extends GenericWand {
 
     @Override
     public void useAction(final MazeObject mo, final int x, final int y, final int z, final int w) {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	app.getGameManager().setRemoteAction(x, y, z, w);
 	int r = 1;
 	final String[] rChoices = new String[] { "1", "2", "3" };
-	final String rres = Messager.showInputDialog("Rotation Radius:", "Fantastle", rChoices, rChoices[r - 1]);
+	final String rres = Messager.showInputDialog("Rotation Radius:", "Import1", rChoices, rChoices[r - 1]);
 	try {
 	    r = Integer.parseInt(rres);
 	} catch (final NumberFormatException nf) {
@@ -75,18 +75,18 @@ public class RotationWand extends GenericWand {
 	    di = 1;
 	}
 	final String[] dChoices = new String[] { "Clockwise", "Counterclockwise" };
-	final String dres = Messager.showInputDialog("Rotation Direction:", "Fantastle", dChoices, dChoices[di]);
+	final String dres = Messager.showInputDialog("Rotation Direction:", "Import1", dChoices, dChoices[di]);
 	if (dres.equals(dChoices[0])) {
 	    d = RotationWand.CLOCKWISE;
 	} else {
 	    d = RotationWand.COUNTERCLOCKWISE;
 	}
 	if (d) {
-	    Fantastle5.getApplication().getGameManager().doClockwiseRotate(r);
+	    Import1.getApplication().getGameManager().doClockwiseRotate(r);
 	} else {
-	    Fantastle5.getApplication().getGameManager().doCounterclockwiseRotate(r);
+	    Import1.getApplication().getGameManager().doCounterclockwiseRotate(r);
 	}
-	if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
+	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
 	    MazeObject.playRotatedSound();
 	}
     }

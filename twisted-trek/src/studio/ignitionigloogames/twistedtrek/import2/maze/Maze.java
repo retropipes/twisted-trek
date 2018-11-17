@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -10,7 +10,7 @@ import java.io.IOException;
 
 import studio.ignitionigloogames.commondialogs.CommonDialogs;
 import studio.ignitionigloogames.randomrange.RandomLongRange;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.VersionException;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractMazeObject;
 import studio.ignitionigloogames.twistedtrek.import2.maze.objects.Empty;
@@ -45,18 +45,18 @@ public class Maze {
 	this.savedStart = new int[4];
 	final long random = new RandomLongRange(0, Long.MAX_VALUE).generate();
 	final String randomID = Long.toHexString(random);
-	this.basePath = System.getProperty("java.io.tmpdir") + File.separator + "TallerTower" + File.separator
+	this.basePath = System.getProperty("java.io.tmpdir") + File.separator + "Import2" + File.separator
 		+ randomID + ".maze";
 	final File base = new File(this.basePath);
 	final boolean success = base.mkdirs();
 	if (!success) {
-	    CommonDialogs.showErrorDialog("Maze temporary folder creation failed!", "TallerTower");
+	    CommonDialogs.showErrorDialog("Maze temporary folder creation failed!", "Import2");
 	}
     }
 
     // Static methods
     public static String getMazeTempFolder() {
-	return System.getProperty("java.io.tmpdir") + File.separator + "TallerTower";
+	return System.getProperty("java.io.tmpdir") + File.separator + "Import2";
     }
 
     public static int getMinLevels() {
@@ -82,7 +82,7 @@ public class Maze {
     // Methods
     public static Maze getTemporaryBattleCopy() {
 	final Maze temp = new Maze();
-	temp.addLevel(TallerTower.getBattleMazeSize(), TallerTower.getBattleMazeSize(), 1);
+	temp.addLevel(Import2.getBattleMazeSize(), Import2.getBattleMazeSize(), 1);
 	temp.fill(new Tile(), new Empty());
 	return temp;
     }

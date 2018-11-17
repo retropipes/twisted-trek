@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@ package studio.ignitionigloogames.twistedtrek.import1.resourcemanagers;
 
 import java.nio.BufferUnderflowException;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.sound.Sound;
 
 public class SoundManager {
@@ -38,7 +38,7 @@ public class SoundManager {
 	} catch (final NullPointerException np) {
 	    // Ignore
 	} catch (final Throwable t) {
-	    Fantastle5.debug(t);
+	    Import1.debug(t);
 	}
     }
 }

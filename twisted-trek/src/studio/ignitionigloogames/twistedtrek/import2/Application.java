@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -45,7 +45,7 @@ public final class Application {
     private int formerMode;
     private static final String UPDATE_SITE = "http://update.puttysoftware.com/tallertower/";
     private static final String NEW_VERSION_SITE = "http://www.puttysoftware.com/tallertower/";
-    private static final String PRODUCT_NAME = "TallerTower";
+    private static final String PRODUCT_NAME = "Import2";
     private static final String COMPANY_NAME = "Putty Software";
     private static final String RDNS_COMPANY_NAME = "com.puttysoftware.tallertower";
     private static final ProductData pd = new ProductData(Application.UPDATE_SITE, Application.UPDATE_SITE,

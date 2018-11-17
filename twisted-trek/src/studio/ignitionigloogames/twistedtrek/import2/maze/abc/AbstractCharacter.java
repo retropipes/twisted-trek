@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -7,7 +7,7 @@ package studio.ignitionigloogames.twistedtrek.import2.maze.abc;
 
 import java.io.IOException;
 
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeConstants;
 import studio.ignitionigloogames.twistedtrek.import2.maze.objects.Empty;
 import studio.ignitionigloogames.twistedtrek.import2.maze.utilities.TypeConstants;
@@ -66,7 +66,7 @@ public abstract class AbstractCharacter extends AbstractMazeObject {
     @Override
     protected AbstractMazeObject readMazeObjectHook(final XDataReader reader, final int formatVersion)
 	    throws IOException {
-	this.savedObject = TallerTower.getApplication().getObjects().readMazeObject(reader, formatVersion);
+	this.savedObject = Import2.getApplication().getObjects().readMazeObject(reader, formatVersion);
 	return this;
     }
 }

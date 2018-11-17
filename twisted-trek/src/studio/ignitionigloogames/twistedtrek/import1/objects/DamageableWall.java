@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ Any questions should be directed to the author via email at: fantastle@worldwiza
  */
 package studio.ignitionigloogames.twistedtrek.import1.objects;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
 import studio.ignitionigloogames.twistedtrek.import1.generic.GenericWall;
@@ -39,11 +39,11 @@ public class DamageableWall extends GenericWall {
     @Override
     public void moveFailedAction(final boolean ie, final int dirX, final int dirY, final ObjectInventory inv) {
 	// Crack the wall
-	final int pz = Fantastle5.getApplication().getGameManager().getPlayerManager().getPlayerLocationZ();
-	final int pw = Fantastle5.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
-	Fantastle5.getApplication().getGameManager().morph(new CrackedWall(), dirX, dirY, pz, pw);
+	final int pz = Import1.getApplication().getGameManager().getPlayerManager().getPlayerLocationZ();
+	final int pw = Import1.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
+	Import1.getApplication().getGameManager().morph(new CrackedWall(), dirX, dirY, pz, pw);
 	// Play move failed sound, if it's enabled
-	if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
+	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
 	    this.playMoveFailedSound();
 	}
     }

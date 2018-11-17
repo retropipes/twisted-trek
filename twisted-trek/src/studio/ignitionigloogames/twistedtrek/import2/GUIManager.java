@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -34,7 +34,7 @@ public final class GUIManager {
     // Constructors
     public GUIManager() {
 	final CloseHandler cHandler = new CloseHandler();
-	this.guiFrame = new JFrame("TallerTower");
+	this.guiFrame = new JFrame("Import2");
 	final Image iconlogo = LogoManager.getIconLogo();
 	this.guiFrame.setIconImage(iconlogo);
 	final Container guiPane = this.guiFrame.getContentPane();
@@ -57,7 +57,7 @@ public final class GUIManager {
     }
 
     public void showGUI() {
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	app.setMode(Application.STATUS_GUI);
 	this.guiFrame.setJMenuBar(app.getMenuManager().getMainMenuBar());
 	this.guiFrame.setVisible(true);
@@ -84,7 +84,7 @@ public final class GUIManager {
     // Used by reflection, so cannot be static!
     @SuppressWarnings("static-method")
     public boolean quitHandler() {
-	final MazeManager mm = TallerTower.getApplication().getMazeManager();
+	final MazeManager mm = Import2.getApplication().getMazeManager();
 	boolean saved = true;
 	int status = JOptionPane.DEFAULT_OPTION;
 	if (mm.getDirty()) {

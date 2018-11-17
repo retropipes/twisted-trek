@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -12,7 +12,7 @@ import java.util.BitSet;
 import studio.ignitionigloogames.images.BufferedImageIcon;
 import studio.ignitionigloogames.llds.CloneableObject;
 import studio.ignitionigloogames.randomrange.RandomRange;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.FormatConstants;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Maze;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeConstants;
@@ -89,7 +89,7 @@ public abstract class AbstractMazeObject extends CloneableObject implements Rand
 	    return copy;
 	} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
 		| NoSuchMethodException | SecurityException e) {
-	    TallerTower.getErrorLogger().logError(e);
+	    Import2.getErrorLogger().logError(e);
 	    return null;
 	}
     }
@@ -215,7 +215,7 @@ public abstract class AbstractMazeObject extends CloneableObject implements Rand
      */
     public void moveFailedAction(final boolean ie, final int dirX, final int dirY) {
 	SoundManager.playSound(SoundConstants.SOUND_WALK_FAILED);
-	TallerTower.getApplication().showMessage("Can't go that way");
+	Import2.getApplication().showMessage("Can't go that way");
     }
 
     /**
@@ -409,7 +409,7 @@ public abstract class AbstractMazeObject extends CloneableObject implements Rand
 	if (ident.equals(this.getIdentifier())) {
 	    final String savedIdent = reader.readString();
 	    if (!savedIdent.equals("NULL")) {
-		this.saved = TallerTower.getApplication().getObjects().readSavedMazeObject(reader, savedIdent,
+		this.saved = Import2.getApplication().getObjects().readSavedMazeObject(reader, savedIdent,
 			FormatConstants.MAZE_FORMAT_LATEST);
 	    }
 	    final int cc = this.getCustomFormat();

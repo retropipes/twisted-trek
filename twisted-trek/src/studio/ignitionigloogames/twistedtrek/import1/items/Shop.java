@@ -2,7 +2,7 @@ package studio.ignitionigloogames.twistedtrek.import1.items;
 
 import javax.swing.JOptionPane;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.PCManager;
@@ -32,7 +32,7 @@ public class Shop implements ShopTypes {
     // Constructors
     public Shop(final int shopType) {
 	this.type = shopType;
-	this.itemList = Fantastle5.getApplication().getCombatItems();
+	this.itemList = Import1.getApplication().getCombatItems();
 	this.index = 0;
     }
 
@@ -132,7 +132,7 @@ public class Shop implements ShopTypes {
     private boolean shopStage1() {
 	// Stage 1
 	// Play enter shop sound
-	if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_SHOP)) {
+	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_SHOP)) {
 	    SoundManager.play("shop");
 	}
 	if (this.type == ShopTypes.SHOP_TYPE_WEAPONS) {
@@ -344,7 +344,7 @@ public class Shop implements ShopTypes {
 	// Stage 6
 	final PlayerCharacter playerCharacter = PCManager.getPlayer();
 	// Play transact sound
-	if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_SHOP)) {
+	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_SHOP)) {
 	    SoundManager.play("transact");
 	}
 	if (this.type == ShopTypes.SHOP_TYPE_WEAPONS) {

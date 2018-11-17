@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 import studio.ignitionigloogames.commondialogs.CommonDialogs;
 import studio.ignitionigloogames.ioutils.FilenameChecker;
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractMazeObject;
 import studio.ignitionigloogames.twistedtrek.import2.maze.games.GameFinder;
 import studio.ignitionigloogames.twistedtrek.import2.maze.games.GameLoadTask;
@@ -27,8 +27,8 @@ public final class MazeManager {
     private static final String MAC_PREFIX = "HOME";
     private static final String WIN_PREFIX = "APPDATA";
     private static final String UNIX_PREFIX = "HOME";
-    private static final String MAC_DIR = "/Library/Application Support/Putty Software/TallerTower/Games/";
-    private static final String WIN_DIR = "\\Putty Software\\TallerTower\\Games\\";
+    private static final String MAC_DIR = "/Library/Application Support/Putty Software/Import2/Games/";
+    private static final String WIN_DIR = "\\Putty Software\\Import2\\Games\\";
     private static final String UNIX_DIR = "/.puttysoftware/tallertower/games/";
 
     // Constructors
@@ -55,8 +55,8 @@ public final class MazeManager {
 	    triedToLoad.delete();
 	}
 	this.setDirty(false);
-	TallerTower.getApplication().getGameManager().stateChanged();
-	TallerTower.getApplication().getMenuManager().checkFlags();
+	Import2.getApplication().getGameManager().stateChanged();
+	Import2.getApplication().getMenuManager().checkFlags();
     }
 
     public AbstractMazeObject getMazeObject(final int x, final int y, final int z, final int e) {
@@ -69,11 +69,11 @@ public final class MazeManager {
 
     public static int showSaveDialog() {
 	String type, source;
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	final int mode = app.getMode();
 	if (mode == Application.STATUS_GAME) {
 	    type = "game";
-	    source = "TallerTower";
+	    source = "Import2";
 	} else {
 	    // Not in the game or editor, so abort
 	    return JOptionPane.NO_OPTION;
@@ -86,7 +86,7 @@ public final class MazeManager {
     }
 
     public void setLoaded(final boolean status) {
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	this.loaded = status;
 	app.getMenuManager().checkFlags();
     }
@@ -96,7 +96,7 @@ public final class MazeManager {
     }
 
     public void setDirty(final boolean newDirty) {
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	this.isDirty = newDirty;
 	final JFrame frame = app.getOutputFrame();
 	if (frame != null) {
@@ -197,7 +197,7 @@ public final class MazeManager {
 		    if (!file.getParentFile().exists()) {
 			final boolean okay = file.getParentFile().mkdirs();
 			if (!okay) {
-			    TallerTower.getErrorLogger().logError(new IOException("Cannot create game folder!"));
+			    Import2.getErrorLogger().logError(new IOException("Cannot create game folder!"));
 			}
 		    }
 		    MazeManager.saveFile(filename);
@@ -211,7 +211,7 @@ public final class MazeManager {
 
     private static void saveFile(final String filename) {
 	final String sg = "Saved Game";
-	TallerTower.getApplication().showMessage("Saving " + sg + " file...");
+	Import2.getApplication().showMessage("Saving " + sg + " file...");
 	final GameSaveTask lst = new GameSaveTask(filename);
 	lst.start();
     }

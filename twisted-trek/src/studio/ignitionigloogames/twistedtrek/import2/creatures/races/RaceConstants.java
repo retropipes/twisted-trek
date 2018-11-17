@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2011-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import studio.ignitionigloogames.ioutils.ResourceStreamReader;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.datamanagers.RaceDataManager;
 
 public class RaceConstants {
@@ -57,7 +57,7 @@ public class RaceConstants {
 		RaceConstants.RACES_COUNT = RaceConstants.RACE_NAMES.length;
 		RaceConstants.INITED = true;
 	    } catch (final IOException ioe) {
-		TallerTower.getErrorLogger().logError(ioe);
+		Import2.getErrorLogger().logError(ioe);
 	    }
 	}
     }

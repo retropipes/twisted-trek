@@ -1,6 +1,6 @@
 package studio.ignitionigloogames.twistedtrek.import1.objects;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.generic.GenericDungeonObject;
 
 public class WeaponsShop extends GenericDungeonObject {
@@ -11,7 +11,7 @@ public class WeaponsShop extends GenericDungeonObject {
 
     @Override
     public void postMoveActionHook() {
-	Fantastle5.getApplication().getWeapons().showShop();
+	Import1.getApplication().getWeapons().showShop();
     }
 
     @Override

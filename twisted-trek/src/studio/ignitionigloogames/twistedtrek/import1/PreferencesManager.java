@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -224,8 +224,8 @@ public class PreferencesManager {
     }
 
     public void showPrefs() {
-	if (Fantastle5.inFantastle5()) {
-	    final Application app = Fantastle5.getApplication();
+	if (Import1.inImport1()) {
+	    final Application app = Import1.getApplication();
 	    app.setInPrefs(true);
 	    this.prefFrame.setJMenuBar(app.getMenuManager().getMainMenuBar());
 	    app.getMenuManager().setPrefMenus();
@@ -246,8 +246,8 @@ public class PreferencesManager {
     }
 
     public void hidePrefs() {
-	if (Fantastle5.inFantastle5()) {
-	    final Application app = Fantastle5.getApplication();
+	if (Import1.inImport1()) {
+	    final Application app = Import1.getApplication();
 	    app.setInPrefs(false);
 	    this.prefFrame.setVisible(false);
 	    this.fileMgr.writePreferencesFile();
@@ -406,7 +406,7 @@ public class PreferencesManager {
 	}
 	this.miscPane.setLayout(new GridLayout(PreferencesManager.GRID_LENGTH, 1));
 	this.miscPane.add(this.checkUpdatesStartup);
-	if (Fantastle5.getApplication().isBetaModeEnabled()) {
+	if (Import1.getApplication().isBetaModeEnabled()) {
 	    this.miscPane.add(this.checkBetaUpdatesStartup);
 	}
 	this.miscPane.add(this.moveOneAtATime);
@@ -452,11 +452,11 @@ public class PreferencesManager {
 	private static final String WIN_PREFIX = "APPDATA";
 	private static final String UNIX_PREFIX = "HOME";
 	private static final String MAC_DIR = "/Library/Preferences/";
-	private static final String WIN_DIR = "\\Fantastle\\";
+	private static final String WIN_DIR = "\\Import1\\";
 	private static final String UNIX_DIR = "/.fantastle/";
 	private static final String MAC_FILE = "net.worldwizard.fantastle.preferences";
-	private static final String WIN_FILE = "FantastlePreferences";
-	private static final String UNIX_FILE = "FantastlePreferences";
+	private static final String WIN_FILE = "Import1Preferences";
+	private static final String UNIX_FILE = "Import1Preferences";
 
 	// Constructors
 	public PreferencesFileManager() {
@@ -699,7 +699,7 @@ public class PreferencesManager {
 		    pm.handleImport();
 		}
 	    } catch (final Exception ex) {
-		Fantastle5.debug(ex);
+		Import1.debug(ex);
 	    }
 	}
 
@@ -736,7 +736,7 @@ public class PreferencesManager {
 		    }
 		}
 	    } catch (final Exception ex) {
-		Fantastle5.debug(ex);
+		Import1.debug(ex);
 	    }
 	}
 

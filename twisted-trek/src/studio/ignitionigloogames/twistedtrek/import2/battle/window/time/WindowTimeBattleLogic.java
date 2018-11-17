@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 
 import studio.ignitionigloogames.randomrange.RandomRange;
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.ai.window.AbstractWindowAIRoutine;
 import studio.ignitionigloogames.twistedtrek.import2.battle.AbstractBattle;
 import studio.ignitionigloogames.twistedtrek.import2.battle.BattleResults;
@@ -293,7 +293,7 @@ public class WindowTimeBattleLogic extends AbstractBattle {
     @Override
     public void doBattle() {
 	try {
-	    final Application app = TallerTower.getApplication();
+	    final Application app = Import2.getApplication();
 	    final GameLogicManager gm = app.getGameManager();
 	    if (app.getMode() != Application.STATUS_BATTLE) {
 		SoundManager.playSound(SoundConstants.SOUND_BATTLE);
@@ -314,7 +314,7 @@ public class WindowTimeBattleLogic extends AbstractBattle {
 	    this.battleGUI.initBattle(this.enemy.getImage());
 	    this.firstUpdateMessageArea();
 	} catch (final Throwable t) {
-	    TallerTower.getErrorLogger().logError(t);
+	    Import2.getErrorLogger().logError(t);
 	}
     }
 
@@ -329,8 +329,8 @@ public class WindowTimeBattleLogic extends AbstractBattle {
 	// Level Up Check
 	if (playerCharacter.checkLevelUp()) {
 	    playerCharacter.levelUp();
-	    TallerTower.getApplication().getGameManager().keepNextMessage();
-	    TallerTower.getApplication().showMessage("You reached level " + playerCharacter.getLevel() + ".");
+	    Import2.getApplication().getGameManager().keepNextMessage();
+	    Import2.getApplication().showMessage("You reached level " + playerCharacter.getLevel() + ".");
 	}
     }
 
@@ -618,7 +618,7 @@ public class WindowTimeBattleLogic extends AbstractBattle {
     @Override
     public final void battleDone() {
 	this.battleGUI.getOutputFrame().setVisible(false);
-	final GameLogicManager gm = TallerTower.getApplication().getGameManager();
+	final GameLogicManager gm = Import2.getApplication().getGameManager();
 	gm.showOutput();
 	gm.redrawMaze();
     }
@@ -683,7 +683,7 @@ public class WindowTimeBattleLogic extends AbstractBattle {
 	@Override
 	public void run() {
 	    try {
-		final Application app = TallerTower.getApplication();
+		final Application app = Import2.getApplication();
 		final AbstractBattle b = app.getBattle();
 		if (app.getMode() == Application.STATUS_BATTLE && b instanceof WindowTimeBattleLogic) {
 		    final WindowTimeBattleLogic logic = WindowTimeBattleLogic.this;
@@ -700,7 +700,7 @@ public class WindowTimeBattleLogic extends AbstractBattle {
 		    }
 		}
 	    } catch (final Throwable t) {
-		TallerTower.getErrorLogger().logError(t);
+		Import2.getErrorLogger().logError(t);
 	    }
 	}
     }
@@ -713,7 +713,7 @@ public class WindowTimeBattleLogic extends AbstractBattle {
 	@Override
 	public void run() {
 	    try {
-		final Application app = TallerTower.getApplication();
+		final Application app = Import2.getApplication();
 		final AbstractBattle b = app.getBattle();
 		if (app.getMode() == Application.STATUS_BATTLE && b instanceof WindowTimeBattleLogic) {
 		    final WindowTimeBattleLogic logic = WindowTimeBattleLogic.this;
@@ -726,7 +726,7 @@ public class WindowTimeBattleLogic extends AbstractBattle {
 		    }
 		}
 	    } catch (final Throwable t) {
-		TallerTower.getErrorLogger().logError(t);
+		Import2.getErrorLogger().logError(t);
 	    }
 	}
 

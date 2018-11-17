@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2011-2012 Eric Ahnell
 
 
@@ -12,15 +12,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import studio.ignitionigloogames.ioutils.ResourceStreamReader;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.names.NamesConstants;
 
 public class NamesDataManager {
     private static final String MAC_PREFIX = "HOME";
     private static final String WIN_PREFIX = "APPDATA";
     private static final String UNIX_PREFIX = "HOME";
-    private static final String MAC_DIR = "/Library/Application Support/Putty Software/TallerTower/";
-    private static final String WIN_DIR = "\\Putty Software\\TallerTower\\";
+    private static final String MAC_DIR = "/Library/Application Support/Putty Software/Import2/";
+    private static final String WIN_DIR = "\\Putty Software\\Import2\\";
     private static final String UNIX_DIR = "/.puttysoftware/tallertower/";
 
     public static String[] getNamesData() {
@@ -62,7 +62,7 @@ public class NamesDataManager {
 	    }
 	    return res;
 	} catch (final IOException e) {
-	    TallerTower.getErrorLogger().logError(e);
+	    Import2.getErrorLogger().logError(e);
 	    return null;
 	}
     }
@@ -106,7 +106,7 @@ public class NamesDataManager {
 		return res;
 	    }
 	} catch (final IOException e) {
-	    TallerTower.getErrorLogger().logError(e);
+	    Import2.getErrorLogger().logError(e);
 	    return null;
 	}
     }

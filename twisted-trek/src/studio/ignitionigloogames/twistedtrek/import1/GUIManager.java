@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -38,7 +38,7 @@ public class GUIManager {
 
     // Constructors
     public GUIManager() {
-	this.guiFrame = new JFrame("Fantastle");
+	this.guiFrame = new JFrame("Import1");
 	this.guiPane = this.guiFrame.getContentPane();
 	this.guiFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	this.guiFrame.setLayout(new GridLayout(1, 1));
@@ -59,7 +59,7 @@ public class GUIManager {
     }
 
     public void showGUI() {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	app.setInGUI(true);
 	this.guiFrame.setJMenuBar(app.getMenuManager().getMainMenuBar());
 	this.guiFrame.setVisible(true);
@@ -68,7 +68,7 @@ public class GUIManager {
     }
 
     public void hideGUI() {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	app.setInGUI(false);
 	this.guiFrame.setVisible(false);
     }

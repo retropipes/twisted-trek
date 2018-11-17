@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@ Any questions should be directed to the author via email at: fantastle@worldwiza
 package studio.ignitionigloogames.twistedtrek.import1.objects;
 
 import studio.ignitionigloogames.twistedtrek.import1.Application;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
 import studio.ignitionigloogames.twistedtrek.import1.generic.GenericMovableObject;
@@ -45,7 +45,7 @@ public class PushableBlockTwice extends GenericMovableObject {
     @Override
     public void pushAction(final ObjectInventory inv, final MazeObject mo, final int x, final int y, final int pushX,
 	    final int pushY) {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	app.getGameManager().updatePushedPosition(x, y, pushX, pushY, this);
 	if (app.getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
 	    MazeObject.playPushSuccessSound();

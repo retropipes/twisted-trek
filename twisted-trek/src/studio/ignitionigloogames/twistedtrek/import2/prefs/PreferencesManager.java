@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -33,11 +33,11 @@ public class PreferencesManager {
     private static final String WIN_PREFIX = "APPDATA";
     private static final String UNIX_PREFIX = "HOME";
     private static final String MAC_DIR = "/Library/Preferences/";
-    private static final String WIN_DIR = "\\Putty Software\\TallerTower\\";
+    private static final String WIN_DIR = "\\Putty Software\\Import2\\";
     private static final String UNIX_DIR = "/.puttysoftware/tallertower/";
     private static final String MAC_FILE = "com.puttysoftware.tallertower";
-    private static final String WIN_FILE = "TallerTowerPreferences";
-    private static final String UNIX_FILE = "TallerTowerPreferences";
+    private static final String WIN_FILE = "Import2Preferences";
+    private static final String UNIX_FILE = "Import2Preferences";
     private static final String SOUNDS_SETTING = "SoundsEnabled";
     private static final String WINDOW_SETTING = "ViewingWindowSize";
     private static final String UPDATE_SETTING = "UpdatesStartup";

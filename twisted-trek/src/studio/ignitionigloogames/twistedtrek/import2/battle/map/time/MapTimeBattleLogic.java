@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2011-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 import studio.ignitionigloogames.commondialogs.CommonDialogs;
 import studio.ignitionigloogames.randomrange.RandomRange;
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.ai.map.AbstractMapAIRoutine;
 import studio.ignitionigloogames.twistedtrek.import2.ai.map.AutoMapAI;
 import studio.ignitionigloogames.twistedtrek.import2.ai.map.MapAIContext;
@@ -92,15 +92,15 @@ public class MapTimeBattleLogic extends AbstractBattle {
 	// Level Up Check
 	if (playerCharacter.checkLevelUp()) {
 	    playerCharacter.levelUp();
-	    TallerTower.getApplication().getGameManager().keepNextMessage();
-	    TallerTower.getApplication().showMessage("You reached level " + playerCharacter.getLevel() + ".");
+	    Import2.getApplication().getGameManager().keepNextMessage();
+	    Import2.getApplication().showMessage("You reached level " + playerCharacter.getLevel() + ".");
 	}
     }
 
     private void doBattleInternal(final Maze bMaze, final MapBattle b) {
 	// Initialize Battle
-	TallerTower.getApplication().getGameManager().hideOutput();
-	TallerTower.getApplication().setMode(Application.STATUS_BATTLE);
+	Import2.getApplication().getGameManager().hideOutput();
+	Import2.getApplication().setMode(Application.STATUS_BATTLE);
 	this.battleMaze = bMaze;
 	this.pde = AbstractDamageEngine.getPlayerInstance();
 	this.ede = AbstractDamageEngine.getEnemyInstance();
@@ -138,10 +138,10 @@ public class MapTimeBattleLogic extends AbstractBattle {
     public void battleDone() {
 	// Leave Battle
 	this.hideBattle();
-	TallerTower.getApplication().setMode(Application.STATUS_GAME);
+	Import2.getApplication().setMode(Application.STATUS_GAME);
 	// Return to whence we came
-	TallerTower.getApplication().getGameManager().showOutput();
-	TallerTower.getApplication().getGameManager().redrawMaze();
+	Import2.getApplication().getGameManager().showOutput();
+	Import2.getApplication().getGameManager().redrawMaze();
     }
 
     private void clearStatusMessage() {
@@ -1307,7 +1307,7 @@ public class MapTimeBattleLogic extends AbstractBattle {
 	@Override
 	public void run() {
 	    try {
-		final Application app = TallerTower.getApplication();
+		final Application app = Import2.getApplication();
 		final AbstractBattle b = app.getBattle();
 		if (app.getMode() == Application.STATUS_BATTLE && b instanceof MapTimeBattleLogic) {
 		    final MapTimeBattleLogic logic = MapTimeBattleLogic.this;
@@ -1324,7 +1324,7 @@ public class MapTimeBattleLogic extends AbstractBattle {
 		    }
 		}
 	    } catch (final Throwable t) {
-		TallerTower.getErrorLogger().logError(t);
+		Import2.getErrorLogger().logError(t);
 	    }
 	}
     }
@@ -1337,7 +1337,7 @@ public class MapTimeBattleLogic extends AbstractBattle {
 	@Override
 	public void run() {
 	    try {
-		final Application app = TallerTower.getApplication();
+		final Application app = Import2.getApplication();
 		final AbstractBattle b = app.getBattle();
 		if (app.getMode() == Application.STATUS_BATTLE && b instanceof MapTimeBattleLogic) {
 		    final MapTimeBattleLogic logic = MapTimeBattleLogic.this;
@@ -1352,7 +1352,7 @@ public class MapTimeBattleLogic extends AbstractBattle {
 		    }
 		}
 	    } catch (final Throwable t) {
-		TallerTower.getErrorLogger().logError(t);
+		Import2.getErrorLogger().logError(t);
 	    }
 	}
 

@@ -2,7 +2,7 @@ package studio.ignitionigloogames.twistedtrek.import1.objects;
 
 import java.io.IOException;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
 import studio.ignitionigloogames.twistedtrek.import1.generic.ArrowTypeConstants;
 import studio.ignitionigloogames.twistedtrek.import1.generic.GenericDungeonObject;
@@ -58,9 +58,9 @@ public class IcedMonster extends GenericDungeonObject {
     @Override
     public void timerExpiredAction(final int dirX, final int dirY) {
 	// Transform into a normal monster
-	final int pz = Fantastle5.getApplication().getGameManager().getPlayerManager().getPlayerLocationZ();
-	final int pw = Fantastle5.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
-	Fantastle5.getApplication().getGameManager().morph(new Monster(this.savedObject), dirX, dirY, pz, pw);
+	final int pz = Import1.getApplication().getGameManager().getPlayerManager().getPlayerLocationZ();
+	final int pw = Import1.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
+	Import1.getApplication().getGameManager().morph(new Monster(this.savedObject), dirX, dirY, pz, pw);
     }
 
     @Override
@@ -95,7 +95,7 @@ public class IcedMonster extends GenericDungeonObject {
 
     @Override
     protected MazeObject readMazeObjectHook(final XDataReader reader, final int formatVersion) throws IOException {
-	final MazeObjectList objectList = Fantastle5.getApplication().getObjects();
+	final MazeObjectList objectList = Import1.getApplication().getObjects();
 	this.savedObject = objectList.readMazeObject(reader, formatVersion);
 	return this;
     }

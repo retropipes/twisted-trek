@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -11,7 +11,7 @@ import java.util.Arrays;
 import studio.ignitionigloogames.llds.LowLevelFlagDataStore;
 import studio.ignitionigloogames.randomrange.RandomRange;
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractMazeObject;
 import studio.ignitionigloogames.twistedtrek.import2.maze.objects.Empty;
 import studio.ignitionigloogames.twistedtrek.import2.maze.objects.Monster;
@@ -96,7 +96,7 @@ final class LayeredTower implements Cloneable {
     }
 
     public void updateMonsterPosition(final int move, final int xLoc, final int yLoc, final Monster monster) {
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	final int[] dirMove = DirectionResolver.unresolveRelativeDirection(move);
 	final int pLocX = this.getPlayerRow();
 	final int pLocY = this.getPlayerColumn();
@@ -475,7 +475,7 @@ final class LayeredTower implements Cloneable {
 
     public void fillFloorRandomly(final Maze maze, final int z, final int w) {
 	// Pre-Pass
-	final MazeObjectList objects = TallerTower.getApplication().getObjects();
+	final MazeObjectList objects = Import2.getApplication().getObjects();
 	final AbstractMazeObject pass1FillBottom = new Tile();
 	final AbstractMazeObject pass1FillTop = new Empty();
 	RandomRange r = null;
@@ -690,7 +690,7 @@ final class LayeredTower implements Cloneable {
 	    for (y = 0; y < lt.getRows(); y++) {
 		for (z = 0; z < lt.getFloors(); z++) {
 		    for (e = 0; e < MazeConstants.LAYER_COUNT; e++) {
-			lt.setCell(TallerTower.getApplication().getObjects().readMazeObject(reader,
+			lt.setCell(Import2.getApplication().getObjects().readMazeObject(reader,
 				FormatConstants.MAZE_FORMAT_LATEST), y, x, z, e);
 			if (lt.getCell(y, x, z, e) == null) {
 			    return null;
@@ -750,7 +750,7 @@ final class LayeredTower implements Cloneable {
 		for (z = 0; z < sizeZ; z++) {
 		    for (e = 0; e < MazeConstants.LAYER_COUNT; e++) {
 			this.savedTowerState.setCell(
-				TallerTower.getApplication().getObjects().readMazeObject(reader, formatVersion), y, x,
+				Import2.getApplication().getObjects().readMazeObject(reader, formatVersion), y, x,
 				z, e);
 		    }
 		}

@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -21,7 +21,7 @@ package studio.ignitionigloogames.twistedtrek.import1.generic;
 import java.io.IOException;
 
 import studio.ignitionigloogames.twistedtrek.import1.Application;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
@@ -93,7 +93,7 @@ public abstract class GenericContainer extends GenericLock {
 
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY, final ObjectInventory inv) {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	if (!this.getKey().isInfinite()) {
 	    inv.removeItem(this.getKey());
 	}
@@ -131,7 +131,7 @@ public abstract class GenericContainer extends GenericLock {
 
     @Override
     protected MazeObject readMazeObjectHook(final XDataReader reader, final int formatVersion) throws IOException {
-	final MazeObjectList objectList = Fantastle5.getApplication().getObjects();
+	final MazeObjectList objectList = Import1.getApplication().getObjects();
 	this.inside = objectList.readMazeObject(reader, formatVersion);
 	return this;
     }

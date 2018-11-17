@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.BitSet;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
@@ -636,7 +636,7 @@ public abstract class MazeObject implements DirectionConstants, TypeConstants, A
      */
     public void postMoveAction(final boolean ie, final int dirX, final int dirY, final ObjectInventory inv) {
 	// Play move success sound, if it's enabled
-	if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
+	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
 	    this.playMoveSuccessSound();
 	}
     }
@@ -650,7 +650,7 @@ public abstract class MazeObject implements DirectionConstants, TypeConstants, A
      */
     public void moveFailedAction(final boolean ie, final int dirX, final int dirY, final ObjectInventory inv) {
 	// Play move failed sound, if it's enabled
-	if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
+	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
 	    this.playMoveFailedSound();
 	}
 	Messager.showMessage("Can't go that way");
@@ -823,10 +823,10 @@ public abstract class MazeObject implements DirectionConstants, TypeConstants, A
     public void pushFailedAction(final ObjectInventory inv, final int x, final int y, final int pushX,
 	    final int pushY) {
 	// Play push failed sound, if it's enabled
-	if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
+	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
 	    MazeObject.playPushFailedSound();
 	}
-	Fantastle5.getApplication().getGameManager().keepNextMessage();
+	Import1.getApplication().getGameManager().keepNextMessage();
 	Messager.showMessage("Can't push that");
     }
 
@@ -883,10 +883,10 @@ public abstract class MazeObject implements DirectionConstants, TypeConstants, A
     public void pullFailedAction(final ObjectInventory inv, final int x, final int y, final int pullX,
 	    final int pullY) {
 	// Play pull failed sound, if it's enabled
-	if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
+	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
 	    MazeObject.playPullFailedSound();
 	}
-	Fantastle5.getApplication().getGameManager().keepNextMessage();
+	Import1.getApplication().getGameManager().keepNextMessage();
 	Messager.showMessage("Can't pull that");
     }
 

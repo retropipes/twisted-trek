@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -34,8 +34,8 @@ public class ScoreTracker {
     private static final String MAC_PREFIX = "HOME";
     private static final String WIN_PREFIX = "APPDATA";
     private static final String UNIX_PREFIX = "HOME";
-    private static final String MAC_DIR = "/Library/Fantastle/Scores/";
-    private static final String WIN_DIR = "\\Fantastle\\Scores\\";
+    private static final String MAC_DIR = "/Library/Import1/Scores/";
+    private static final String WIN_DIR = "\\Import1\\Scores\\";
     private static final String UNIX_DIR = "/.fantastle/scores/";
 
     // Constructors
@@ -91,7 +91,7 @@ public class ScoreTracker {
 		parent.mkdirs();
 	    }
 	    this.scoresFile = sf.getAbsolutePath();
-	    this.ssMgr = new SavedScoreManager(1, 10, ScoreManager.SORT_ORDER_ASCENDING, 0L, "Fantastle Scores",
+	    this.ssMgr = new SavedScoreManager(1, 10, ScoreManager.SORT_ORDER_ASCENDING, 0L, "Import1 Scores",
 		    new String[] { "points" }, this.scoresFile);
 	}
     }

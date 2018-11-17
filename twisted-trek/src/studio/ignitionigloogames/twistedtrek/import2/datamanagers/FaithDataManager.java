@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2011-2012 Eric Ahnell
 
 
@@ -9,7 +9,7 @@ package studio.ignitionigloogames.twistedtrek.import2.datamanagers;
 import java.io.IOException;
 
 import studio.ignitionigloogames.ioutils.ResourceStreamReader;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.faiths.FaithConstants;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Extension;
 
@@ -31,7 +31,7 @@ public class FaithDataManager {
 	    }
 	    return finalData;
 	} catch (final IOException e) {
-	    TallerTower.getErrorLogger().logError(e);
+	    Import2.getErrorLogger().logError(e);
 	    return null;
 	}
     }

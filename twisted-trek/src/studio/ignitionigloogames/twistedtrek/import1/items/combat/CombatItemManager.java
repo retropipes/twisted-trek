@@ -1,6 +1,6 @@
 package studio.ignitionigloogames.twistedtrek.import1.items.combat;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.Creature;
@@ -34,7 +34,7 @@ public class CombatItemManager {
 	    final String[] displayNames = ii.generateCombatUsableDisplayStringArray();
 	    if (names != null && displayNames != null) {
 		// Play using item sound
-		if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
+		if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
 		    SoundManager.play("spell");
 		}
 		String dialogResult = null;
@@ -73,7 +73,7 @@ public class CombatItemManager {
 	    // Play item's associated sound effect, if it has one
 	    final String snd = used.getSound();
 	    if (snd != null) {
-		if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
+		if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
 		    SoundManager.play(snd);
 		}
 	    }
@@ -98,7 +98,7 @@ public class CombatItemManager {
 	case 'P':
 	    return PCManager.getPlayer();
 	case 'E':
-	    return Fantastle5.getApplication().getBattle().getEnemy();
+	    return Import1.getApplication().getBattle().getEnemy();
 	default:
 	    return null;
 	}

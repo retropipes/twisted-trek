@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -100,7 +100,7 @@ public class MenuManager {
     }
 
     public void checkFlags() {
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	if (app.getMazeManager().getDirty()) {
 	    this.setMenusDirtyOn();
 	} else {
@@ -122,7 +122,7 @@ public class MenuManager {
     }
 
     private void setMenusLoadedOn() {
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	if (app.getMode() == Application.STATUS_GUI) {
 	    this.fileClose.setEnabled(false);
 	} else {
@@ -171,8 +171,8 @@ public class MenuManager {
 	this.gameInventory = new JMenuItem("Show Inventory...");
 	this.gameEditNote = new JMenuItem("Edit Note...");
 	this.gameViewStats = new JMenuItem("View Statistics...");
-	this.helpAbout = new JMenuItem("About TallerTower...");
-	this.helpObjectHelp = new JMenuItem("TallerTower Object Help");
+	this.helpAbout = new JMenuItem("About Import2...");
+	this.helpObjectHelp = new JMenuItem("Import2 Object Help");
 	this.fileOpenGame.addActionListener(this.handler);
 	this.fileClose.addActionListener(this.handler);
 	this.fileSaveGame.addActionListener(this.handler);
@@ -237,7 +237,7 @@ public class MenuManager {
 	public void actionPerformed(final ActionEvent e) {
 	    try {
 		final String cmd = e.getActionCommand();
-		final Application app = TallerTower.getApplication();
+		final Application app = Import2.getApplication();
 		boolean loaded = false;
 		if (cmd.equals("Open Game...")) {
 		    loaded = app.getMazeManager().loadGame();
@@ -309,14 +309,14 @@ public class MenuManager {
 		} else if (cmd.equals("View Statistics...")) {
 		    // View Statistics
 		    StatisticsViewer.viewStatistics();
-		} else if (cmd.equals("About TallerTower...")) {
+		} else if (cmd.equals("About Import2...")) {
 		    app.getAboutDialog().showAboutDialog();
-		} else if (cmd.equals("TallerTower Object Help")) {
+		} else if (cmd.equals("Import2 Object Help")) {
 		    app.getObjectHelpManager().showHelp();
 		}
 		MenuManager.this.checkFlags();
 	    } catch (final Throwable t) {
-		TallerTower.getErrorLogger().logError(t);
+		Import2.getErrorLogger().logError(t);
 	    }
 	}
     }

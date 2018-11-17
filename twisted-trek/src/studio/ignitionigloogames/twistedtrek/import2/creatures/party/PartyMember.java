@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2011-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import studio.ignitionigloogames.images.BufferedImageIcon;
 import studio.ignitionigloogames.page.Page;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.VersionException;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.AbstractCreature;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.StatConstants;
@@ -223,7 +223,7 @@ public class PartyMember extends AbstractCreature {
 	this.setGold(PartyMember.START_GOLD);
 	this.setExperience(0L);
 	this.getItems().resetInventory();
-	TallerTower.getApplication().getGameManager().deactivateAllEffects();
+	Import2.getApplication().getGameManager().deactivateAllEffects();
 	final Page nextLevelEquation = new Page(3, 1, 0, true);
 	final double value = PartyMember.BASE_COEFF
 		* this.personality.getAttribute(PersonalityConstants.PERSONALITY_ATTRIBUTE_LEVEL_UP_SPEED);

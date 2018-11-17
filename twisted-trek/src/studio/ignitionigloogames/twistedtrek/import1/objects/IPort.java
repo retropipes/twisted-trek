@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008  Iric Ahnell
 
 This program is free software: you can redistribute it and/or modify

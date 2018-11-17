@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2011-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -27,7 +27,7 @@ import javax.swing.WindowConstants;
 import studio.ignitionigloogames.commondialogs.CommonDialogs;
 import studio.ignitionigloogames.images.BufferedImageIcon;
 import studio.ignitionigloogames.twistedtrek.import2.DrawGrid;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.ai.map.AbstractMapAIRoutine;
 import studio.ignitionigloogames.twistedtrek.import2.battle.AbstractBattle;
 import studio.ignitionigloogames.twistedtrek.import2.battle.map.MapBattleDraw;
@@ -130,7 +130,7 @@ class MapTimeBattleGUI {
 	    MusicManager.playMusic(MusicConstants.MUSIC_BATTLE);
 	}
 	this.battleFrame.setVisible(true);
-	this.battleFrame.setJMenuBar(TallerTower.getApplication().getMenuManager().getMainMenuBar());
+	this.battleFrame.setJMenuBar(Import2.getApplication().getMenuManager().getMainMenuBar());
     }
 
     void hideBattle() {
@@ -313,7 +313,7 @@ class MapTimeBattleGUI {
 	public void actionPerformed(final ActionEvent e) {
 	    try {
 		final String cmd = e.getActionCommand();
-		final AbstractBattle b = TallerTower.getApplication().getBattle();
+		final AbstractBattle b = Import2.getApplication().getBattle();
 		// Do Player Actions
 		if (cmd.equals("Cast Spell") || cmd.equals("c")) {
 		    // Cast Spell
@@ -329,7 +329,7 @@ class MapTimeBattleGUI {
 		    b.doPlayerActions(AbstractMapAIRoutine.ACTION_USE_ITEM);
 		}
 	    } catch (final Throwable t) {
-		TallerTower.getErrorLogger().logError(t);
+		Import2.getErrorLogger().logError(t);
 	    }
 	}
 
@@ -371,7 +371,7 @@ class MapTimeBattleGUI {
 			return;
 		    }
 		}
-		final AbstractBattle bl = TallerTower.getApplication().getBattle();
+		final AbstractBattle bl = Import2.getApplication().getBattle();
 		final MapTimeBattleGUI bg = MapTimeBattleGUI.this;
 		if (bg.eventHandlersOn) {
 		    final int keyCode = e.getKeyCode();
@@ -427,7 +427,7 @@ class MapTimeBattleGUI {
 		    bg.resetPlayerActionBar();
 		}
 	    } catch (final Exception ex) {
-		TallerTower.getErrorLogger().logError(ex);
+		Import2.getErrorLogger().logError(ex);
 	    }
 	}
 
@@ -442,7 +442,7 @@ class MapTimeBattleGUI {
 			return;
 		    }
 		}
-		final AbstractBattle bl = TallerTower.getApplication().getBattle();
+		final AbstractBattle bl = Import2.getApplication().getBattle();
 		final MapTimeBattleGUI bg = MapTimeBattleGUI.this;
 		if (bg.eventHandlersOn) {
 		    final int keyCode = e.getKeyCode();
@@ -498,7 +498,7 @@ class MapTimeBattleGUI {
 		    bg.resetPlayerActionBar();
 		}
 	    } catch (final Exception ex) {
-		TallerTower.getErrorLogger().logError(ex);
+		Import2.getErrorLogger().logError(ex);
 	    }
 	}
     }

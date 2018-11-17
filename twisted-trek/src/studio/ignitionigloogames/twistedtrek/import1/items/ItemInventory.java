@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@ package studio.ignitionigloogames.twistedtrek.import1.items;
 
 import java.io.IOException;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.StatConstants;
 import studio.ignitionigloogames.twistedtrek.import1.items.combat.CombatItemList;
 import studio.ignitionigloogames.xio.XDataReader;
@@ -38,7 +38,7 @@ public class ItemInventory {
 
     // Constructors
     public ItemInventory() {
-	this.cil = Fantastle5.getApplication().getCombatItems();
+	this.cil = Import1.getApplication().getCombatItems();
 	this.inventory = this.cil.getAllItems();
 	this.uses = new int[ItemInventory.MAX_ITEMS];
 	this.quantity = new int[ItemInventory.MAX_ITEMS];

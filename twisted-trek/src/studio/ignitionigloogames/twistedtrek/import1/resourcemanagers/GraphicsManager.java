@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -27,7 +27,7 @@ import javax.imageio.ImageIO;
 import javax.swing.UIManager;
 
 import studio.ignitionigloogames.images.BufferedImageIcon;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.Element;
 
 public class GraphicsManager {
@@ -45,7 +45,7 @@ public class GraphicsManager {
     static BufferedImageIcon getUncachedImage(final String name) {
 	try {
 	    String dm;
-	    if (Fantastle5.getApplication().getPrefsManager().isMobileModeEnabled()) {
+	    if (Import1.getApplication().getPrefsManager().isMobileModeEnabled()) {
 		dm = "mobile";
 	    } else {
 		dm = "desktop";
@@ -68,7 +68,7 @@ public class GraphicsManager {
     public static BufferedImageIcon getStatImage(final String name) {
 	try {
 	    String dm;
-	    if (Fantastle5.getApplication().getPrefsManager().isMobileModeEnabled()) {
+	    if (Import1.getApplication().getPrefsManager().isMobileModeEnabled()) {
 		dm = "mobile";
 	    } else {
 		dm = "desktop";
@@ -182,7 +182,7 @@ public class GraphicsManager {
     public static BufferedImageIcon getLogo() {
 	try {
 	    String dm;
-	    if (Fantastle5.getApplication().getPrefsManager().isMobileModeEnabled()) {
+	    if (Import1.getApplication().getPrefsManager().isMobileModeEnabled()) {
 		dm = "mobile";
 	    } else {
 		dm = "desktop";
@@ -216,7 +216,7 @@ public class GraphicsManager {
     public static BufferedImageIcon getMiniatureLogo() {
 	try {
 	    String dm;
-	    if (Fantastle5.getApplication().getPrefsManager().isMobileModeEnabled()) {
+	    if (Import1.getApplication().getPrefsManager().isMobileModeEnabled()) {
 		dm = "mobile";
 	    } else {
 		dm = "desktop";
@@ -236,7 +236,7 @@ public class GraphicsManager {
     public static BufferedImageIcon getMicroLogo() {
 	try {
 	    String dm;
-	    if (Fantastle5.getApplication().getPrefsManager().isMobileModeEnabled()) {
+	    if (Import1.getApplication().getPrefsManager().isMobileModeEnabled()) {
 		dm = "mobile";
 	    } else {
 		dm = "desktop";
@@ -284,7 +284,7 @@ public class GraphicsManager {
     private static BufferedImageIcon getBossTemplate() {
 	try {
 	    String dm;
-	    if (Fantastle5.getApplication().getPrefsManager().isMobileModeEnabled()) {
+	    if (Import1.getApplication().getPrefsManager().isMobileModeEnabled()) {
 		dm = "mobile";
 	    } else {
 		dm = "desktop";
@@ -337,7 +337,7 @@ public class GraphicsManager {
     private static BufferedImage getMonsterTemplate(final String name) {
 	try {
 	    String dm;
-	    if (Fantastle5.getApplication().getPrefsManager().isMobileModeEnabled()) {
+	    if (Import1.getApplication().getPrefsManager().isMobileModeEnabled()) {
 		dm = "mobile";
 	    } else {
 		dm = "desktop";
@@ -379,7 +379,7 @@ public class GraphicsManager {
     }
 
     public static int getGraphicSize() {
-	if (Fantastle5.getApplication().getPrefsManager().isMobileModeEnabled()) {
+	if (Import1.getApplication().getPrefsManager().isMobileModeEnabled()) {
 	    return 24;
 	} else {
 	    return 48;

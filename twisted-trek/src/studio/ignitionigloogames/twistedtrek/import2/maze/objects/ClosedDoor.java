@@ -1,11 +1,11 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2011-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
  */
 package studio.ignitionigloogames.twistedtrek.import2.maze.objects;
 
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.game.GameLogicManager;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractTrigger;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.ObjectImageConstants;
@@ -42,7 +42,7 @@ public class ClosedDoor extends AbstractTrigger {
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY) {
 	SoundManager.playSound(SoundConstants.SOUND_PICK_LOCK);
-	final GameLogicManager glm = TallerTower.getApplication().getGameManager();
+	final GameLogicManager glm = Import2.getApplication().getGameManager();
 	GameLogicManager.morph(new OpenDoor());
 	glm.redrawMaze();
     }

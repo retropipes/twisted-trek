@@ -1,11 +1,11 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2011-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
  */
 package studio.ignitionigloogames.twistedtrek.import2.maze.abc;
 
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeConstants;
 import studio.ignitionigloogames.twistedtrek.import2.maze.utilities.TypeConstants;
 import studio.ignitionigloogames.twistedtrek.import2.shops.Shop;
@@ -28,7 +28,7 @@ public abstract class AbstractShop extends AbstractMazeObject {
 
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY) {
-	final Shop shop = TallerTower.getApplication().getGenericShop(this.shopType);
+	final Shop shop = Import2.getApplication().getGenericShop(this.shopType);
 	if (shop != null) {
 	    shop.showShop();
 	}

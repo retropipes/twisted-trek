@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileFilter;
 
 import studio.ignitionigloogames.twistedtrek.import1.Application;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObject;
@@ -78,7 +78,7 @@ public class MazeManager {
 	}
 	this.maze3CompatibleModeEnabled = false;
 	this.maze4CompatibleModeEnabled = false;
-	Fantastle5.getApplication().getMenuManager().checkFlags();
+	Import1.getApplication().getMenuManager().checkFlags();
     }
 
     public MazeObject getMazeObject(final int x, final int y, final int z, final int w, final int e) {
@@ -103,21 +103,21 @@ public class MazeManager {
 	    }
 	}
 	if (saved) {
-	    Fantastle5.getApplication().getPrefsManager().writePrefs();
+	    Import1.getApplication().getPrefsManager().writePrefs();
 	}
 	return saved;
     }
 
     public int showSaveDialog() {
 	String type, source;
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	final int mode = app.getMode();
 	if (mode == Application.STATUS_EDITOR) {
 	    type = "maze";
 	    source = "Editor";
 	} else {
 	    type = "game";
-	    source = "Fantastle";
+	    source = "Import1";
 	}
 	int status = JOptionPane.DEFAULT_OPTION;
 	status = Messager.showYNCConfirmDialog("Do you want to save your " + type + "?", source);
@@ -129,7 +129,7 @@ public class MazeManager {
     }
 
     public void setLoaded(final boolean status) {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	this.loaded = status;
 	app.getMenuManager().checkFlags();
     }
@@ -139,7 +139,7 @@ public class MazeManager {
     }
 
     public void setDirty(final boolean newDirty) {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	this.isDirty = newDirty;
 	app.getMenuManager().checkFlags();
     }
@@ -174,7 +174,7 @@ public class MazeManager {
     }
 
     public boolean loadMaze() {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	int status = 0;
 	boolean saved = true;
 	String filename, extension;
@@ -268,7 +268,7 @@ public class MazeManager {
     }
 
     public void loadFromOSHandler(final String infilename) {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	if (!this.loaded) {
 	    String extension;
 	    final File file = new File(infilename);
@@ -321,7 +321,7 @@ public class MazeManager {
     }
 
     public boolean saveMaze() {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	if (app.getMode() == Application.STATUS_GAME) {
 	    if (this.lastUsedGameFile != null && !this.lastUsedGameFile.equals("")) {
 		final String extension = MazeManager.getExtension(this.lastUsedGameFile);
@@ -357,7 +357,7 @@ public class MazeManager {
     }
 
     public boolean saveMazeAs() {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	String filename, extension;
 	final String lastSave = app.getPrefsManager().getLastDirSave();
 	File lastSaveDir = null;

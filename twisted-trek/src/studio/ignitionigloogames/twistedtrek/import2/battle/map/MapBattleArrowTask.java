@@ -1,4 +1,4 @@
-/*  TallerTower: A Maze-Solving Game
+/*  Import2: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 Any questions should be directed to the author via email at: mazer5d@worldwizard.net
@@ -6,7 +6,7 @@ Any questions should be directed to the author via email at: mazer5d@worldwizard
 package studio.ignitionigloogames.twistedtrek.import2.battle.map;
 
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.battle.AbstractBattle;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.faiths.Faith;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Maze;
@@ -40,7 +40,7 @@ public class MapBattleArrowTask extends Thread {
     public void run() {
 	try {
 	    boolean res = true;
-	    final Application app = TallerTower.getApplication();
+	    final Application app = Import2.getApplication();
 	    final Maze m = this.battleMaze;
 	    final int px = this.active.getX();
 	    final int py = this.active.getY();
@@ -104,7 +104,7 @@ public class MapBattleArrowTask extends Thread {
 	    SoundManager.playSound(SoundConstants.SOUND_ARROW_DIE);
 	    app.getBattle().arrowDone(hit);
 	} catch (final Throwable t) {
-	    TallerTower.getErrorLogger().logError(t);
+	    Import2.getErrorLogger().logError(t);
 	}
     }
 

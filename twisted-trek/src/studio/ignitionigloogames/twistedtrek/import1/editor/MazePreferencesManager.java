@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -35,7 +35,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.WindowConstants;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.maze.Maze;
 
 public class MazePreferencesManager {
@@ -65,20 +65,20 @@ public class MazePreferencesManager {
     }
 
     public void showPrefs() {
-	Fantastle5.getApplication().getEditor().disableOutput();
+	Import1.getApplication().getEditor().disableOutput();
 	this.prefFrame.setVisible(true);
     }
 
     public void hidePrefs() {
 	this.prefFrame.setVisible(false);
-	Fantastle5.getApplication().getEditor().enableOutput();
-	Fantastle5.getApplication().getMazeManager().setDirty(true);
-	Fantastle5.getApplication().getEditor().redrawEditor();
+	Import1.getApplication().getEditor().enableOutput();
+	Import1.getApplication().getMazeManager().setDirty(true);
+	Import1.getApplication().getEditor().redrawEditor();
     }
 
     public void setPrefs() {
-	final int level = Fantastle5.getApplication().getEditor().getLocationManager().getEditorLocationW();
-	final Maze m = Fantastle5.getApplication().getMazeManager().getMaze();
+	final int level = Import1.getApplication().getEditor().getLocationManager().getEditorLocationW();
+	final Maze m = Import1.getApplication().getMazeManager().getMaze();
 	if (this.horizontalWrap.isSelected()) {
 	    m.enableHorizontalWraparound(level);
 	} else {
@@ -98,8 +98,8 @@ public class MazePreferencesManager {
     }
 
     public void loadPrefs() {
-	final int level = Fantastle5.getApplication().getEditor().getLocationManager().getEditorLocationW();
-	final Maze m = Fantastle5.getApplication().getMazeManager().getMaze();
+	final int level = Import1.getApplication().getEditor().getLocationManager().getEditorLocationW();
+	final Maze m = Import1.getApplication().getMazeManager().getMaze();
 	this.startLevelChoiceArray = new String[m.getLevels()];
 	for (int x = 0; x < m.getLevels(); x++) {
 	    this.startLevelChoiceArray[x] = Integer.toString(x + 1);
@@ -166,7 +166,7 @@ public class MazePreferencesManager {
 		    mpm.hidePrefs();
 		}
 	    } catch (final Exception ex) {
-		Fantastle5.debug(ex);
+		Import1.debug(ex);
 	    }
 	}
 

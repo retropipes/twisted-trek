@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -12,7 +12,7 @@ import java.io.IOException;
 import studio.ignitionigloogames.commondialogs.CommonDialogs;
 import studio.ignitionigloogames.ioutils.ZipUtilities;
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Extension;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Maze;
 import studio.ignitionigloogames.twistedtrek.import2.maze.PrefixHandler;
@@ -33,7 +33,7 @@ public class GameSaveTask extends Thread {
 	boolean success = true;
 	final String sg = "Game";
 	try {
-	    final Application app = TallerTower.getApplication();
+	    final Application app = Import2.getApplication();
 	    // filename check
 	    final boolean hasExtension = GameSaveTask.hasExtension(this.filename);
 	    if (!hasExtension) {
@@ -59,9 +59,9 @@ public class GameSaveTask extends Thread {
 		    + " failed, probably due to illegal characters in the file name.");
 	    success = false;
 	} catch (final Exception ex) {
-	    TallerTower.getErrorLogger().logError(ex);
+	    Import2.getErrorLogger().logError(ex);
 	}
-	TallerTower.getApplication().getMazeManager().handleDeferredSuccess(success, false, null);
+	Import2.getApplication().getMazeManager().handleDeferredSuccess(success, false, null);
     }
 
     private static boolean hasExtension(final String s) {

@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ import java.io.IOException;
 
 import studio.ignitionigloogames.twistedtrek.import1.Application;
 import studio.ignitionigloogames.twistedtrek.import1.DataConstants;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.PCManager;
 import studio.ignitionigloogames.xio.XDataWriter;
@@ -42,7 +42,7 @@ public class SaveTask extends Thread {
 
     @Override
     public void run() {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	boolean success = true;
 	final String sg;
 	if (this.isSavedGame) {

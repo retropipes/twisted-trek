@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2011-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 import studio.ignitionigloogames.commondialogs.CommonDialogs;
 import studio.ignitionigloogames.randomrange.RandomRange;
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.ai.map.AbstractMapAIRoutine;
 import studio.ignitionigloogames.twistedtrek.import2.ai.map.AutoMapAI;
 import studio.ignitionigloogames.twistedtrek.import2.ai.map.MapAIContext;
@@ -94,15 +94,15 @@ public class MapTurnBattleLogic extends AbstractBattle {
 	// Level Up Check
 	if (playerCharacter.checkLevelUp()) {
 	    playerCharacter.levelUp();
-	    TallerTower.getApplication().getGameManager().keepNextMessage();
-	    TallerTower.getApplication().showMessage("You reached level " + playerCharacter.getLevel() + ".");
+	    Import2.getApplication().getGameManager().keepNextMessage();
+	    Import2.getApplication().showMessage("You reached level " + playerCharacter.getLevel() + ".");
 	}
     }
 
     private void doBattleInternal(final Maze bMaze, final MapBattle b) {
 	// Initialize Battle
-	TallerTower.getApplication().getGameManager().hideOutput();
-	TallerTower.getApplication().setMode(Application.STATUS_BATTLE);
+	Import2.getApplication().getGameManager().hideOutput();
+	Import2.getApplication().setMode(Application.STATUS_BATTLE);
 	this.bd = new MapTurnBattleDefinitions();
 	this.bd.setBattleMaze(bMaze);
 	this.pde = AbstractDamageEngine.getPlayerInstance();
@@ -150,10 +150,10 @@ public class MapTurnBattleLogic extends AbstractBattle {
     public void battleDone() {
 	// Leave Battle
 	this.hideBattle();
-	TallerTower.getApplication().setMode(Application.STATUS_GAME);
+	Import2.getApplication().setMode(Application.STATUS_GAME);
 	// Return to whence we came
-	TallerTower.getApplication().getGameManager().showOutput();
-	TallerTower.getApplication().getGameManager().redrawMaze();
+	Import2.getApplication().getGameManager().showOutput();
+	Import2.getApplication().getGameManager().redrawMaze();
     }
 
     private void clearStatusMessage() {

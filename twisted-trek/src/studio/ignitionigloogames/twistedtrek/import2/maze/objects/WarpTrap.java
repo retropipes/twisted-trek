@@ -1,13 +1,13 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2010 Eric Ahnell
 
-Any questions should be directed to the author via email at: TallerTower@worldwizard.net
+Any questions should be directed to the author via email at: Import2@worldwizard.net
  */
 package studio.ignitionigloogames.twistedtrek.import2.maze.objects;
 
 import studio.ignitionigloogames.randomrange.RandomRange;
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractTrap;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.ObjectImageConstants;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.SoundConstants;
@@ -32,7 +32,7 @@ public class WarpTrap extends AbstractTrap {
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY) {
 	RandomRange rr, rc, rf;
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	int maxRow, maxCol, maxFloor, rRow, rCol, rFloor;
 	maxRow = app.getMazeManager().getMaze().getRows() - 1;
 	rr = new RandomRange(0, maxRow);

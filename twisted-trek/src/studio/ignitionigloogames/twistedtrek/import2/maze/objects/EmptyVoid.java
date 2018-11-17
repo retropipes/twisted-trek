@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -6,7 +6,7 @@ Any questions should be directed to the author via email at: products@puttysoftw
 package studio.ignitionigloogames.twistedtrek.import2.maze.objects;
 
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeConstants;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractMazeObject;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractWall;
@@ -39,7 +39,7 @@ public class EmptyVoid extends AbstractWall {
 
     @Override
     public void determineCurrentAppearance(final int x, final int y, final int z) {
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	String mo1Name, mo2Name, mo3Name, mo4Name, mo6Name, mo7Name, mo8Name, mo9Name, thisName;
 	thisName = this.getName();
 	final AbstractMazeObject mo1 = app.getMazeManager().getMazeObject(x - 1, y - 1, z, MazeConstants.LAYER_OBJECT);

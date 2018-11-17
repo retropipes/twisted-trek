@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@ Any questions should be directed to the author via email at: fantastle@worldwiza
 package studio.ignitionigloogames.twistedtrek.import1.objects;
 
 import studio.ignitionigloogames.twistedtrek.import1.Application;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
@@ -42,7 +42,7 @@ public class ExplodingWall extends GenericWall {
     @Override
     public void chainReactionAction(final int x, final int y, final int z, final int w) {
 	// Explode this wall, and any exploding walls next to this wall as well
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	ExplodingWall curr = null;
 	try {
 	    curr = (ExplodingWall) app.getMazeManager().getMazeObject(x, y, z, w, Maze.LAYER_OBJECT);

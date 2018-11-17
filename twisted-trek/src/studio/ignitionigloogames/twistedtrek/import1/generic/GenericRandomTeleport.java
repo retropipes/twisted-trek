@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -21,7 +21,7 @@ package studio.ignitionigloogames.twistedtrek.import1.generic;
 import java.util.Random;
 
 import studio.ignitionigloogames.twistedtrek.import1.Application;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.editor.MazeEditor;
@@ -104,12 +104,12 @@ public abstract class GenericRandomTeleport extends MazeObject {
     }
 
     public int getDestinationFloor() {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	return app.getGameManager().getPlayerManager().getPlayerLocationZ();
     }
 
     public int getDestinationLevel() {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	return app.getGameManager().getPlayerManager().getPlayerLocationW();
     }
 
@@ -129,7 +129,7 @@ public abstract class GenericRandomTeleport extends MazeObject {
     // Scriptability
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY, final ObjectInventory inv) {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	int dr, dc;
 	do {
 	    dr = this.getDestinationRow();
@@ -149,7 +149,7 @@ public abstract class GenericRandomTeleport extends MazeObject {
 
     @Override
     public MazeObject editorPropertiesHook() {
-	final MazeEditor me = Fantastle5.getApplication().getEditor();
+	final MazeEditor me = Import1.getApplication().getEditor();
 	final MazeObject mo = me.editTeleportDestination(MazeEditor.TELEPORT_TYPE_RANDOM);
 	return mo;
     }

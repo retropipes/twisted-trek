@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@ package studio.ignitionigloogames.twistedtrek.import1.maze;
 
 import java.io.IOException;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObject;
 import studio.ignitionigloogames.twistedtrek.import1.objects.Monster;
 import studio.ignitionigloogames.twistedtrek.import1.objects.MovingBlock;
@@ -73,7 +73,7 @@ public class Maze5 implements Maze {
     public void pasteLevel(final int level) {
 	if (this.clipboard != null) {
 	    this.mazeData[level] = this.clipboard.clone();
-	    Fantastle5.getApplication().getMazeManager().setDirty(true);
+	    Import1.getApplication().getMazeManager().setDirty(true);
 	}
     }
 
@@ -400,25 +400,25 @@ public class Maze5 implements Maze {
 
     @Override
     public void updateMonsterPosition(final int move, final int xLoc, final int yLoc, final Monster monster) {
-	final int wLoc = Fantastle5.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
+	final int wLoc = Import1.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
 	this.mazeData[wLoc].updateMonsterPosition(move, xLoc, yLoc, monster);
     }
 
     @Override
     public void updateMovingBlockPosition(final int move, final int xLoc, final int yLoc, final MovingBlock block) {
-	final int wLoc = Fantastle5.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
+	final int wLoc = Import1.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
 	this.mazeData[wLoc].updateMovingBlockPosition(move, xLoc, yLoc, block);
     }
 
     @Override
     public void postBattle(final Monster monster, final int xLoc, final int yLoc, final boolean player) {
-	final int wLoc = Fantastle5.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
+	final int wLoc = Import1.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
 	this.mazeData[wLoc].postBattle(monster, xLoc, yLoc, player);
     }
 
     @Override
     public void generateOneMonster() {
-	final int wLoc = Fantastle5.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
+	final int wLoc = Import1.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
 	this.mazeData[wLoc].generateOneMonster();
     }
 

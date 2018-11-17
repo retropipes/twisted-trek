@@ -1,11 +1,11 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2010 Eric Ahnell
 
-Any questions should be directed to the author via email at: TallerTower@worldwizard.net
+Any questions should be directed to the author via email at: Import2@worldwizard.net
  */
 package studio.ignitionigloogames.twistedtrek.import2.maze.objects;
 
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.game.GameLogicManager;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractTrap;
 import studio.ignitionigloogames.twistedtrek.import2.maze.effects.MazeEffectConstants;
@@ -31,8 +31,8 @@ public class Amulet extends AbstractTrap {
 
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY) {
-	TallerTower.getApplication().showMessage("You no longer slide on ice!");
-	final GameLogicManager glm = TallerTower.getApplication().getGameManager();
+	Import2.getApplication().showMessage("You no longer slide on ice!");
+	final GameLogicManager glm = Import2.getApplication().getGameManager();
 	glm.activateEffect(MazeEffectConstants.EFFECT_STICKY);
 	SoundManager.playSound(SoundConstants.SOUND_GRAB);
 	GameLogicManager.decay();

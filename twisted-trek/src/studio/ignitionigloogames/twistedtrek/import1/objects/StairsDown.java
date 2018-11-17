@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@ Any questions should be directed to the author via email at: fantastle@worldwiza
 package studio.ignitionigloogames.twistedtrek.import1.objects;
 
 import studio.ignitionigloogames.twistedtrek.import1.Application;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.editor.MazeEditor;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
@@ -49,31 +49,31 @@ public class StairsDown extends GenericTeleport {
 
     @Override
     public int getDestinationRow() {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	return app.getGameManager().getPlayerManager().getPlayerLocationX();
     }
 
     @Override
     public int getDestinationColumn() {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	return app.getGameManager().getPlayerManager().getPlayerLocationY();
     }
 
     @Override
     public int getDestinationFloor() {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	return app.getGameManager().getPlayerManager().getPlayerLocationZ() - 1;
     }
 
     @Override
     public int getDestinationLevel() {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	return app.getGameManager().getPlayerManager().getPlayerLocationW();
     }
 
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY, final ObjectInventory inv) {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	app.getGameManager().updatePositionAbsoluteNoEvents(this.getDestinationRow(), this.getDestinationColumn(),
 		this.getDestinationFloor(), this.getDestinationLevel());
 	if (app.getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
@@ -83,7 +83,7 @@ public class StairsDown extends GenericTeleport {
 
     @Override
     public void editorPlaceHook() {
-	final MazeEditor me = Fantastle5.getApplication().getEditor();
+	final MazeEditor me = Import1.getApplication().getEditor();
 	me.pairStairs(MazeEditor.STAIRS_DOWN);
     }
 
@@ -109,7 +109,7 @@ public class StairsDown extends GenericTeleport {
 
     @Override
     public int getCustomFormat() {
-	if (Fantastle5.getApplication().getMazeManager().maze3Compatible()) {
+	if (Import1.getApplication().getMazeManager().maze3Compatible()) {
 	    // Emulate older format bug
 	    return 4;
 	} else {

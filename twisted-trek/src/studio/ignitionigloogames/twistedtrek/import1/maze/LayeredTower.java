@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -21,7 +21,7 @@ package studio.ignitionigloogames.twistedtrek.import1.maze;
 import java.io.IOException;
 
 import studio.ignitionigloogames.randomrange.RandomRange;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.battle.Battle;
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObject;
 import studio.ignitionigloogames.twistedtrek.import1.generic.TypeConstants;
@@ -436,7 +436,7 @@ class LayeredTower {
 			final Monster m = (Monster) this.getCell(u, v, z, l);
 			this.setCell(m.getSavedObject(), u, v, z, l);
 			// Reward player for monster death
-			Fantastle5.getApplication().getBattle().doBattleByProxy();
+			Import1.getApplication().getBattle().doBattleByProxy();
 			// Respawn it
 			this.generateOneMonster();
 		    }
@@ -634,7 +634,7 @@ class LayeredTower {
     }
 
     private void fillNulls() {
-	final MazeObject bottom = Fantastle5.getApplication().getPrefsManager().getEditorDefaultFill();
+	final MazeObject bottom = Import1.getApplication().getPrefsManager().getEditorDefaultFill();
 	final MazeObject top = new Empty();
 	int x, y, z, e;
 	for (x = 0; x < this.getColumns(); x++) {
@@ -682,14 +682,14 @@ class LayeredTower {
 
     public void updateMonsterPosition(final int move, final int xLoc, final int yLoc, final Monster monster) {
 	final int[] dirMove = MazeObject.unresolveRelativeDirection(move);
-	final int zLoc = Fantastle5.getApplication().getGameManager().getPlayerManager().getPlayerLocationZ();
+	final int zLoc = Import1.getApplication().getGameManager().getPlayerManager().getPlayerLocationZ();
 	try {
 	    final MazeObject there = this.getCell(xLoc + dirMove[0], yLoc + dirMove[1], zLoc, Maze.LAYER_OBJECT);
 	    final MazeObject ground = this.getCell(xLoc + dirMove[0], yLoc + dirMove[1], zLoc, Maze.LAYER_GROUND);
 	    if (!there.isSolid() && !there.getName().equals("Monster")) {
 		if (there.getName().equals("Player")) {
 		    if (!Battle.isInBattle()) {
-			Fantastle5.getApplication().getBattle().doBattle();
+			Import1.getApplication().getBattle().doBattle();
 			this.postBattle(monster, xLoc, yLoc, false);
 		    }
 		} else {
@@ -711,7 +711,7 @@ class LayeredTower {
 
     public void updateMovingBlockPosition(final int move, final int xLoc, final int yLoc, final MovingBlock block) {
 	final int[] dirMove = MazeObject.unresolveRelativeDirection(move);
-	final int zLoc = Fantastle5.getApplication().getGameManager().getPlayerManager().getPlayerLocationZ();
+	final int zLoc = Import1.getApplication().getGameManager().getPlayerManager().getPlayerLocationZ();
 	try {
 	    final MazeObject there = this.getCell(xLoc + dirMove[0], yLoc + dirMove[1], zLoc, Maze.LAYER_OBJECT);
 	    final MazeObject ground = this.getCell(xLoc + dirMove[0], yLoc + dirMove[1], zLoc, Maze.LAYER_GROUND);
@@ -733,9 +733,9 @@ class LayeredTower {
 
     public void postBattle(final Monster m, final int xLoc, final int yLoc, final boolean player) {
 	final MazeObject saved = m.getSavedObject();
-	final int zLoc = Fantastle5.getApplication().getGameManager().getPlayerManager().getPlayerLocationZ();
+	final int zLoc = Import1.getApplication().getGameManager().getPlayerManager().getPlayerLocationZ();
 	if (player) {
-	    Fantastle5.getApplication().getGameManager().setSavedMazeObject(saved);
+	    Import1.getApplication().getGameManager().setSavedMazeObject(saved);
 	} else {
 	    this.setCell(saved, xLoc, yLoc, zLoc, Maze.LAYER_OBJECT);
 	}
@@ -745,7 +745,7 @@ class LayeredTower {
     public void generateOneMonster() {
 	final RandomRange row = new RandomRange(0, this.getRows() - 1);
 	final RandomRange column = new RandomRange(0, this.getColumns() - 1);
-	final int zLoc = Fantastle5.getApplication().getGameManager().getPlayerManager().getPlayerLocationZ();
+	final int zLoc = Import1.getApplication().getGameManager().getPlayerManager().getPlayerLocationZ();
 	int randomRow, randomColumn;
 	randomRow = row.generate();
 	randomColumn = column.generate();
@@ -963,7 +963,7 @@ class LayeredTower {
 	    for (y = 0; y < lt.getRows(); y++) {
 		for (z = 0; z < lt.getFloors(); z++) {
 		    for (e = 0; e < Maze.LAYER_COUNT; e++) {
-			lt.towerData[x][y][z][e] = Fantastle5.getApplication().getObjects().readMazeObject(reader,
+			lt.towerData[x][y][z][e] = Import1.getApplication().getObjects().readMazeObject(reader,
 				formatVersion);
 			if (lt.towerData[x][y][z][e] == null) {
 			    return null;

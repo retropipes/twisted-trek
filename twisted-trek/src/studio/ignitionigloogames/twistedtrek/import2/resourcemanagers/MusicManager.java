@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -8,7 +8,7 @@ package studio.ignitionigloogames.twistedtrek.import2.resourcemanagers;
 import java.nio.BufferUnderflowException;
 
 import studio.ignitionigloogames.audio.ogg.OggFactory;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Extension;
 
 public class MusicManager {
@@ -44,7 +44,7 @@ public class MusicManager {
 	    } catch (final NullPointerException np) {
 		// Ignore
 	    } catch (final Throwable t) {
-		TallerTower.getErrorLogger().logError(t);
+		Import2.getErrorLogger().logError(t);
 	    }
 	}
     }

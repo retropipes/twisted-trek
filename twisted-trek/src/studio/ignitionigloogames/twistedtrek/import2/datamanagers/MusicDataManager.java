@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2011-2012 Eric Ahnell
 
 
@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import studio.ignitionigloogames.ioutils.ResourceStreamReader;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 
 public class MusicDataManager {
     public static String[] getMusicData() {
@@ -27,7 +27,7 @@ public class MusicDataManager {
 	    }
 	    return rawData.toArray(new String[rawData.size()]);
 	} catch (final IOException e) {
-	    TallerTower.getErrorLogger().logError(e);
+	    Import2.getErrorLogger().logError(e);
 	    return null;
 	}
     }

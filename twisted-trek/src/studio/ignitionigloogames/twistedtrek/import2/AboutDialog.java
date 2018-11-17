@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -41,7 +41,7 @@ public class AboutDialog {
 
     private void setUpGUI(final String ver) {
 	final EventHandler handler = new EventHandler();
-	this.aboutFrame = new JFrame("About TallerTower");
+	this.aboutFrame = new JFrame("About Import2");
 	final Image iconlogo = LogoManager.getIconLogo();
 	this.aboutFrame.setIconImage(iconlogo);
 	final Container aboutPane = new Container();
@@ -58,7 +58,7 @@ public class AboutDialog {
 	logoPane.setLayout(new FlowLayout());
 	logoPane.add(miniLabel);
 	textPane.setLayout(new GridLayout(4, 1));
-	textPane.add(new JLabel("TallerTower Version: " + ver));
+	textPane.add(new JLabel("Import2 Version: " + ver));
 	textPane.add(new JLabel("Author: Eric Ahnell"));
 	textPane.add(new JLabel("Web Site: http://www.puttysoftware.com/tallertower/"));
 	textPane.add(new JLabel("E-mail bug reports to: products@puttysoftware.com  "));
@@ -88,7 +88,7 @@ public class AboutDialog {
 		    ad.hideAboutDialog();
 		}
 	    } catch (final Exception ex) {
-		TallerTower.getErrorLogger().logError(ex);
+		Import2.getErrorLogger().logError(ex);
 	    }
 	}
     }

@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@ import javax.swing.WindowConstants;
 
 import studio.ignitionigloogames.help.GraphicalHelpViewer;
 import studio.ignitionigloogames.images.BufferedImageIcon;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObjectList;
 
 public class ImageCache {
@@ -50,7 +50,7 @@ public class ImageCache {
     private static void createCache() {
 	if (!ImageCache.cacheCreated) {
 	    // Create the cache
-	    final MazeObjectList list = Fantastle5.getApplication().getObjects();
+	    final MazeObjectList list = Import1.getApplication().getObjects();
 	    ImageCache.nameCache = list.getAllNamesForCache();
 	    ImageCache.cache = new BufferedImageIcon[ImageCache.nameCache.length];
 	    for (int x = 0; x < ImageCache.nameCache.length; x++) {

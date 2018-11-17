@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@ Any questions should be directed to the author via email at: fantastle@worldwiza
 package studio.ignitionigloogames.twistedtrek.import1.objects;
 
 import studio.ignitionigloogames.twistedtrek.import1.Application;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
 import studio.ignitionigloogames.twistedtrek.import1.generic.ArrowTypeConstants;
@@ -45,7 +45,7 @@ public class BarrierGenerator extends GenericWall {
 	// Remove barriers if present
 	boolean scanResult = false;
 	boolean flag = false;
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	final int pz = app.getGameManager().getPlayerManager().getPlayerLocationZ();
 	final int pw = app.getGameManager().getPlayerManager().getPlayerLocationW();
 	String mo2Name, mo4Name, mo6Name, mo8Name, invalidName, horzName, vertName;
@@ -132,7 +132,7 @@ public class BarrierGenerator extends GenericWall {
 	// Generate barriers again
 	boolean scanResult = false;
 	boolean flag = false;
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	final int pz = app.getGameManager().getPlayerManager().getPlayerLocationZ();
 	final int pw = app.getGameManager().getPlayerManager().getPlayerLocationW();
 	String mo2Name, mo4Name, mo6Name, mo8Name, invalidName, horzName, vertName;
@@ -206,7 +206,7 @@ public class BarrierGenerator extends GenericWall {
 
     private boolean scan(final int dir, final int x, final int y, final int z, final int w, final int limit,
 	    final boolean o) {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	final String invalidName = new EmptyVoid().getName();
 	if (dir == DirectionConstants.DIRECTION_EAST) {
 	    for (int l = 1; l < limit; l++) {
@@ -298,7 +298,7 @@ public class BarrierGenerator extends GenericWall {
 
     private void generate(final int dir, final int x, final int y, final int z, final int w, final int limit,
 	    final boolean o) {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	final String invalidName = new EmptyVoid().getName();
 	if (dir == DirectionConstants.DIRECTION_EAST) {
 	    for (int l = 1; l < limit; l++) {
@@ -461,7 +461,7 @@ public class BarrierGenerator extends GenericWall {
 	// Behave as if the generator was walked into, unless the arrow was an
 	// ice arrow
 	if (arrowType == ArrowTypeConstants.ARROW_TYPE_ICE) {
-	    final Application app = Fantastle5.getApplication();
+	    final Application app = Import1.getApplication();
 	    app.getGameManager().morph(new IcedBarrierGenerator(), locX, locY, locZ, locW);
 	} else {
 	    this.preMoveAction(false, locX, locY, inv);

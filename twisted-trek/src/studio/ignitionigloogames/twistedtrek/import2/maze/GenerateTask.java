@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -11,7 +11,7 @@ import javax.swing.WindowConstants;
 
 import studio.ignitionigloogames.randomrange.RandomRange;
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyManager;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractMazeObject;
 import studio.ignitionigloogames.twistedtrek.import2.maze.utilities.ImageColorConstants;
@@ -41,7 +41,7 @@ public class GenerateTask extends Thread {
     public void run() {
 	try {
 	    this.generateFrame.setVisible(true);
-	    final Application app = TallerTower.getApplication();
+	    final Application app = Import2.getApplication();
 	    Maze gameMaze = app.getMazeManager().getMaze();
 	    if (!this.scratch) {
 		app.getGameManager().disableEvents();
@@ -95,7 +95,7 @@ public class GenerateTask extends Thread {
 		app.getGameManager().redrawMaze();
 	    }
 	} catch (final Throwable t) {
-	    TallerTower.getErrorLogger().logError(t);
+	    Import2.getErrorLogger().logError(t);
 	} finally {
 	    this.generateFrame.setVisible(false);
 	}

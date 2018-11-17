@@ -1,11 +1,11 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
  */
 package studio.ignitionigloogames.twistedtrek.import2.maze.abc;
 
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeConstants;
 import studio.ignitionigloogames.twistedtrek.import2.maze.utilities.TypeConstants;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.SoundConstants;
@@ -24,7 +24,7 @@ public abstract class AbstractWall extends AbstractMazeObject {
 
     @Override
     public void moveFailedAction(final boolean ie, final int dirX, final int dirY) {
-	TallerTower.getApplication().showMessage("Can't go that way");
+	Import2.getApplication().showMessage("Can't go that way");
 	// Play move failed sound, if it's enabled
 	SoundManager.playSound(SoundConstants.SOUND_WALK_FAILED);
     }

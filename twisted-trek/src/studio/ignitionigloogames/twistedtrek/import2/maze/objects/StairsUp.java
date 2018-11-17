@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -7,7 +7,7 @@ package studio.ignitionigloogames.twistedtrek.import2.maze.objects;
 
 import studio.ignitionigloogames.randomrange.RandomRange;
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Maze;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractMazeObject;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractTeleport;
@@ -38,7 +38,7 @@ public class StairsUp extends AbstractTeleport {
 
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY) {
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	app.getGameManager().goToLevelOffset(1);
 	SoundManager.playSound(SoundConstants.SOUND_UP);
     }

@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -22,6 +22,6 @@ import java.net.URL;
 
 public class HelpManager {
     public static URL getHelpURL() {
-	return HelpManager.class.getResource("/net/worldwizard/fantastle5/resources/help/FantastleHelp.html");
+	return HelpManager.class.getResource("/net/worldwizard/fantastle5/resources/help/Import1Help.html");
     }
 }

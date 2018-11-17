@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@ package studio.ignitionigloogames.twistedtrek.import1.objects;
 
 import java.io.IOException;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
@@ -136,11 +136,11 @@ public class RotationTrap extends GenericTrap {
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY, final ObjectInventory inv) {
 	if (this.direction) {
-	    Fantastle5.getApplication().getGameManager().doClockwiseRotate(this.radius);
+	    Import1.getApplication().getGameManager().doClockwiseRotate(this.radius);
 	} else {
-	    Fantastle5.getApplication().getGameManager().doCounterclockwiseRotate(this.radius);
+	    Import1.getApplication().getGameManager().doCounterclockwiseRotate(this.radius);
 	}
-	if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
+	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
 	    MazeObject.playRotatedSound();
 	}
     }

@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -31,7 +31,7 @@ import javax.swing.WindowConstants;
 
 import studio.ignitionigloogames.commondialogs.CommonDialogs;
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.LogoManager;
 
 class PreferencesGUIManager {
@@ -73,7 +73,7 @@ class PreferencesGUIManager {
     }
 
     public void showPrefs() {
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	if (app.getMode() == Application.STATUS_BATTLE) {
 	    // Deny
 	    CommonDialogs.showTitledDialog("Preferences may NOT be changed in the middle of battle!", "Battle");
@@ -95,7 +95,7 @@ class PreferencesGUIManager {
     }
 
     public void hidePrefs() {
-	final Application app = TallerTower.getApplication();
+	final Application app = Import2.getApplication();
 	this.prefFrame.setVisible(false);
 	PreferencesManager.writePrefs();
 	final int formerMode = app.getFormerMode();
@@ -135,8 +135,8 @@ class PreferencesGUIManager {
 	final int newSize = this.viewingWindowGroup.getSelection().getMnemonic();
 	PreferencesManager.setViewingWindowSizeIndex(newSize);
 	if (vwSize != newSize) {
-	    TallerTower.getApplication().getGameManager().viewingWindowSizeChanged();
-	    TallerTower.getApplication().resetBattleGUI();
+	    Import2.getApplication().getGameManager().viewingWindowSizeChanged();
+	    Import2.getApplication().resetBattleGUI();
 	}
 	PreferencesManager.setSoundsEnabled(this.sound.isSelected());
 	PreferencesManager.setMapBattleEngine(this.useMapBattleEngine.isSelected());
@@ -241,7 +241,7 @@ class PreferencesGUIManager {
 		    pm.hidePrefs();
 		}
 	    } catch (final Exception ex) {
-		TallerTower.getErrorLogger().logError(ex);
+		Import2.getErrorLogger().logError(ex);
 	    }
 	}
 
@@ -265,7 +265,7 @@ class PreferencesGUIManager {
 		    }
 		}
 	    } catch (final Exception ex) {
-		TallerTower.getErrorLogger().logError(ex);
+		Import2.getErrorLogger().logError(ex);
 	    }
 	}
 

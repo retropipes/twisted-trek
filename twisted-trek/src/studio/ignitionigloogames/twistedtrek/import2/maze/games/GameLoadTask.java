@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -16,7 +16,7 @@ import javax.swing.WindowConstants;
 import studio.ignitionigloogames.commondialogs.CommonDialogs;
 import studio.ignitionigloogames.ioutils.ZipUtilities;
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.VersionException;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyManager;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Maze;
@@ -52,7 +52,7 @@ public class GameLoadTask extends Thread {
 	final File mazeFile = new File(this.filename);
 	try {
 	    this.loadFrame.setVisible(true);
-	    final Application app = TallerTower.getApplication();
+	    final Application app = Import2.getApplication();
 	    int startW;
 	    app.getGameManager().setSavedGameFlag(false);
 	    final File tempLock = new File(Maze.getMazeTempFolder() + "lock.tmp");
@@ -92,17 +92,17 @@ public class GameLoadTask extends Thread {
 	} catch (final VersionException ve) {
 	    CommonDialogs.showDialog(
 		    "Loading the " + sg.toLowerCase() + " failed, due to the format version being unsupported.");
-	    TallerTower.getApplication().getMazeManager().handleDeferredSuccess(false, true, mazeFile);
+	    Import2.getApplication().getMazeManager().handleDeferredSuccess(false, true, mazeFile);
 	} catch (final FileNotFoundException fnfe) {
 	    CommonDialogs.showDialog("Loading the " + sg.toLowerCase()
 		    + " failed, probably due to illegal characters in the file name.");
-	    TallerTower.getApplication().getMazeManager().handleDeferredSuccess(false, false, null);
+	    Import2.getApplication().getMazeManager().handleDeferredSuccess(false, false, null);
 	} catch (final IOException ie) {
 	    CommonDialogs
 		    .showDialog("Loading the " + sg.toLowerCase() + " failed, due to some other type of I/O error.");
-	    TallerTower.getApplication().getMazeManager().handleDeferredSuccess(false, false, null);
+	    Import2.getApplication().getMazeManager().handleDeferredSuccess(false, false, null);
 	} catch (final Exception ex) {
-	    TallerTower.getErrorLogger().logError(ex);
+	    Import2.getErrorLogger().logError(ex);
 	} finally {
 	    this.loadFrame.setVisible(false);
 	}

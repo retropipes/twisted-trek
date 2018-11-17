@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ Any questions should be directed to the author via email at: fantastle@worldwiza
  */
 package studio.ignitionigloogames.twistedtrek.import1.generic;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
 import studio.ignitionigloogames.twistedtrek.import1.maze.Maze;
@@ -57,19 +57,19 @@ public abstract class GenericWallTrap extends MazeObject {
     // Scriptability
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY, final ObjectInventory inv) {
-	final int currLevel = Fantastle5.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
-	Fantastle5.getApplication().getGameManager().decay();
-	Fantastle5.getApplication().getMazeManager().getMaze().findAllMatchingObjectsAndDecay(currLevel,
+	final int currLevel = Import1.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
+	Import1.getApplication().getGameManager().decay();
+	Import1.getApplication().getMazeManager().getMaze().findAllMatchingObjectsAndDecay(currLevel,
 		this.masterTrigger);
 	if (this.number == GenericWallTrap.NUMBER_MASTER) {
-	    Fantastle5.getApplication().getMazeManager().getMaze().masterTrapTrigger(currLevel);
+	    Import1.getApplication().getMazeManager().getMaze().masterTrapTrigger(currLevel);
 	} else {
-	    Fantastle5.getApplication().getMazeManager().getMaze().findAllMatchingObjectsAndDecay(currLevel, this);
-	    Fantastle5.getApplication().getMazeManager().getMaze().findAllMatchingObjectsAndDecay(currLevel,
+	    Import1.getApplication().getMazeManager().getMaze().findAllMatchingObjectsAndDecay(currLevel, this);
+	    Import1.getApplication().getMazeManager().getMaze().findAllMatchingObjectsAndDecay(currLevel,
 		    this.trigger);
 	}
-	Fantastle5.getApplication().getGameManager().redrawMaze();
-	if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
+	Import1.getApplication().getGameManager().redrawMaze();
+	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
 	    MazeObject.playWallTrapSound();
 	}
     }

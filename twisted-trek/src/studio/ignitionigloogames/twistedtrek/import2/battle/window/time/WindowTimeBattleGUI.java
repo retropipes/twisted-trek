@@ -18,7 +18,7 @@ import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
 
 import studio.ignitionigloogames.images.BufferedImageIcon;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.ai.window.AbstractWindowAIRoutine;
 import studio.ignitionigloogames.twistedtrek.import2.battle.AbstractBattle;
 import studio.ignitionigloogames.twistedtrek.import2.battle.BattleResults;
@@ -239,7 +239,7 @@ public class WindowTimeBattleGUI {
 		boolean success = true;
 		final String cmd = e.getActionCommand();
 		final WindowTimeBattleGUI wbg = WindowTimeBattleGUI.this;
-		final AbstractBattle b = TallerTower.getApplication().getBattle();
+		final AbstractBattle b = Import2.getApplication().getBattle();
 		// Clear Message Area
 		wbg.clearMessageArea();
 		// Display Beginning Stats
@@ -309,7 +309,7 @@ public class WindowTimeBattleGUI {
 		    return;
 		}
 	    } catch (final Throwable t) {
-		TallerTower.getErrorLogger().logError(t);
+		Import2.getErrorLogger().logError(t);
 	    }
 	}
     }

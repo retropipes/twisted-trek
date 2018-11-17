@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ Any questions should be directed to the author via email at: fantastle@worldwiza
  */
 package studio.ignitionigloogames.twistedtrek.import1.generic;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 
 public abstract class GenericBow extends GenericUsableObject {
@@ -32,8 +32,8 @@ public abstract class GenericBow extends GenericUsableObject {
 
     @Override
     public void useAction(final MazeObject mo, final int x, final int y, final int z, final int w) {
-	Fantastle5.getApplication().getGameManager().setArrowType(ArrowTypeConstants.ARROW_TYPE_ICE);
-	Fantastle5.getApplication().getGameManager().keepNextMessage();
+	Import1.getApplication().getGameManager().setArrowType(ArrowTypeConstants.ARROW_TYPE_ICE);
+	Import1.getApplication().getGameManager().keepNextMessage();
 	Messager.showMessage(this.getName() + " activated.");
     }
 

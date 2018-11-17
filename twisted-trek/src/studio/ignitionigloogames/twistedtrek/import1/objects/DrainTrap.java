@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@ Any questions should be directed to the author via email at: fantastle@worldwiza
 package studio.ignitionigloogames.twistedtrek.import1.objects;
 
 import studio.ignitionigloogames.randomrange.RandomRange;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.PCManager;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
@@ -57,10 +57,10 @@ public class DrainTrap extends GenericTrap {
 	this.maxDrain = PCManager.getPlayer().getMaximumMP() / 10;
 	this.amountDrained = new RandomRange(this.maxDrain, DrainTrap.MIN_DRAIN);
 	PCManager.getPlayer().regenerate(this.amountDrained.generate());
-	if (Fantastle5.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
+	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_GAME)) {
 	    SoundManager.play("barrier");
 	}
-	Fantastle5.getApplication().getGameManager().decay();
+	Import1.getApplication().getGameManager().decay();
     }
 
     @Override

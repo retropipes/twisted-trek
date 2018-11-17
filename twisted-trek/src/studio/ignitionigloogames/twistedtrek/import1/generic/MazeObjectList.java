@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
 import studio.ignitionigloogames.images.BufferedImageIcon;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.maze.FormatConstants;
 import studio.ignitionigloogames.twistedtrek.import1.maze.Maze;
 import studio.ignitionigloogames.twistedtrek.import1.objects.*;
@@ -611,17 +611,17 @@ public class MazeObjectList {
 			return o;
 		    }
 		} catch (final InstantiationException e) {
-		    Fantastle5.debug(e);
+		    Import1.debug(e);
 		} catch (final IllegalAccessException e) {
-		    Fantastle5.debug(e);
+		    Import1.debug(e);
 		} catch (final IllegalArgumentException e) {
-		    Fantastle5.debug(e);
+		    Import1.debug(e);
 		} catch (final InvocationTargetException e) {
-		    Fantastle5.debug(e);
+		    Import1.debug(e);
 		} catch (final NoSuchMethodException e) {
-		    Fantastle5.debug(e);
+		    Import1.debug(e);
 		} catch (final SecurityException e) {
-		    Fantastle5.debug(e);
+		    Import1.debug(e);
 		}
 	    } else {
 		if (formatVersion == FormatConstants.MAZE_FORMAT_3) {

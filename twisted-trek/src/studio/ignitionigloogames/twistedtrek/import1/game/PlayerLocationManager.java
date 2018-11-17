@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ Any questions should be directed to the author via email at: fantastle@worldwiza
  */
 package studio.ignitionigloogames.twistedtrek.import1.game;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.maze.Maze;
 
 public class PlayerLocationManager {
@@ -125,7 +125,7 @@ public class PlayerLocationManager {
     }
 
     private void fixLocationZ() {
-	final Maze m = Fantastle5.getApplication().getMazeManager().getMaze();
+	final Maze m = Import1.getApplication().getMazeManager().getMaze();
 	if (m.is3rdDimensionWraparoundEnabled(this.locW)) {
 	    if (this.locZ < 0) {
 		this.locZ = m.getFloors(this.locW) - 1;

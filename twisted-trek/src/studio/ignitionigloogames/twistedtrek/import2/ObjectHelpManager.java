@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
@@ -39,13 +39,13 @@ public class ObjectHelpManager {
     private void initHelp() {
 	if (!this.inited) {
 	    final ButtonHandler buttonHandler = new ButtonHandler();
-	    final MazeObjectList objectList = TallerTower.getApplication().getObjects();
+	    final MazeObjectList objectList = Import2.getApplication().getObjects();
 	    final String[] objectNames = objectList.getAllDescriptions();
 	    final BufferedImageIcon[] objectAppearances = objectList.getAllEditorAppearances();
 	    this.hv = new GraphicalHelpViewer(objectAppearances, objectNames);
 	    final JButton export = new JButton("Export");
 	    export.addActionListener(buttonHandler);
-	    this.helpFrame = new JFrame("TallerTower Object Help");
+	    this.helpFrame = new JFrame("Import2 Object Help");
 	    final Image iconlogo = Application.getIconLogo();
 	    this.helpFrame.setIconImage(iconlogo);
 	    this.helpFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);

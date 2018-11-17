@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -41,7 +41,7 @@ public class Maze4Filter extends FileFilter {
 
     @Override
     public String getDescription() {
-	return "Fantastle 4 Mazes (" + Extension.getMaze4ExtensionWithPeriod() + ")";
+	return "Import1 4 Mazes (" + Extension.getMaze4ExtensionWithPeriod() + ")";
     }
 
     private static String getExtension(final File f) {

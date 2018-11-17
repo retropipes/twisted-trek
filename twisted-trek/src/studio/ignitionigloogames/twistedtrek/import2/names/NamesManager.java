@@ -1,11 +1,11 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2011-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
  */
 package studio.ignitionigloogames.twistedtrek.import2.names;
 
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.datamanagers.NamesDataManager;
 
 public class NamesManager {
@@ -17,11 +17,11 @@ public class NamesManager {
 	try {
 	    NamesManager.createCache();
 	} catch (final Exception e) {
-	    TallerTower.getErrorLogger().logError(e);
+	    Import2.getErrorLogger().logError(e);
 	}
 	final String key = section + ":" + type;
 	if (!NamesManager.containsKey(key)) {
-	    TallerTower.getErrorLogger().logError(new IllegalArgumentException("No such key " + key));
+	    Import2.getErrorLogger().logError(new IllegalArgumentException("No such key " + key));
 	}
 	return NamesManager.getValue(key);
     }

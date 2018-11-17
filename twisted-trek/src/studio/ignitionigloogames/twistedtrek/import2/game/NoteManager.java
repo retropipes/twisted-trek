@@ -1,7 +1,7 @@
 package studio.ignitionigloogames.twistedtrek.import2.game;
 
 import studio.ignitionigloogames.commondialogs.CommonDialogs;
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Maze;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeNote;
 
@@ -11,7 +11,7 @@ public class NoteManager {
     }
 
     public static void editNote() {
-	final Maze m = TallerTower.getApplication().getMazeManager().getMaze();
+	final Maze m = Import2.getApplication().getMazeManager().getMaze();
 	final int x = m.getPlayerLocationX();
 	final int y = m.getPlayerLocationY();
 	final int z = m.getPlayerLocationZ();

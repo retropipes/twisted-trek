@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -35,34 +35,34 @@ import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.GraphicsMa
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.ImageCache;
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.MonsterImageCache;
 
-public class Fantastle5 {
+public class Import1 {
     // Constants
     private static Application application;
-    private static final String PROGRAM_NAME = "Fantastle";
-    private static final ErrorLogger debug = new ErrorLogger(Fantastle5.PROGRAM_NAME);
+    private static final String PROGRAM_NAME = "Import1";
+    private static final ErrorLogger debug = new ErrorLogger(Import1.PROGRAM_NAME);
     private static boolean IN_FANTASTLE_5 = true;
 
     // Methods
     public static Application getApplication() {
-	return Fantastle5.application;
+	return Import1.application;
     }
 
     public static void debug(final Throwable t) {
-	Fantastle5.debug.logError(t);
+	Import1.debug.logError(t);
     }
 
-    public static boolean inFantastle5() {
-	return Fantastle5.IN_FANTASTLE_5;
+    public static boolean inImport1() {
+	return Import1.IN_FANTASTLE_5;
     }
 
-    public static void leaveFantastle5() {
-	Fantastle5.IN_FANTASTLE_5 = false;
+    public static void leaveImport1() {
+	Import1.IN_FANTASTLE_5 = false;
     }
 
     public static void main_disabled(final String[] args) {
 	if (System.getProperty("os.name").startsWith("Mac OS X")) {
 	    // Mac OS X-specific stuff
-	    System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Fantastle");
+	    System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Import1");
 	    System.setProperty("apple.laf.useScreenMenuBar", "true");
 	} else {
 	    try {
@@ -73,15 +73,15 @@ public class Fantastle5 {
 	    }
 	}
 	try {
-	    Fantastle5.application = new Application();
-	    Fantastle5.application.postConstruct();
+	    Import1.application = new Application();
+	    Import1.application.postConstruct();
 	    // Load stuff
-	    Fantastle5.showLoadingScreen();
+	    Import1.showLoadingScreen();
 	    // Done loading
-	    Fantastle5.application.playLogoSound();
-	    Fantastle5.application.getGUIManager().showGUI();
+	    Import1.application.playLogoSound();
+	    Import1.application.getGUIManager().showGUI();
 	} catch (final Throwable t) {
-	    Fantastle5.debug(t);
+	    Import1.debug(t);
 	}
     }
 
@@ -110,7 +110,7 @@ public class Fantastle5 {
 	// Do the loading
 	waitFrame.setVisible(true);
 	// Create logo cache
-	Fantastle5.getApplication().getGUIManager().updateLogo();
+	Import1.getApplication().getGUIManager().updateLogo();
 	waitProgress.setValue(20);
 	// Create image cache
 	ImageCache.recreateCache();
@@ -121,7 +121,7 @@ public class Fantastle5 {
 	// Create sound cache
 	waitProgress.setValue(80);
 	// Create stat image cache
-	Fantastle5.getApplication().getGameManager().getStatGUI().updateGUI();
+	Import1.getApplication().getGameManager().getStatGUI().updateGUI();
 	waitProgress.setValue(100);
 	waitFrame.setVisible(false);
     }

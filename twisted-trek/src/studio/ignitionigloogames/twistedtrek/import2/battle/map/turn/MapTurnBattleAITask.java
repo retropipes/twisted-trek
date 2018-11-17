@@ -1,11 +1,11 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2011-2012 Eric Ahnell
 
 Any questions should be directed to the author via email at: products@puttysoftware.com
  */
 package studio.ignitionigloogames.twistedtrek.import2.battle.map.turn;
 
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.battle.AbstractBattle;
 import studio.ignitionigloogames.twistedtrek.import2.prefs.PreferencesManager;
 
@@ -36,7 +36,7 @@ public class MapTurnBattleAITask extends Thread {
 		}
 	    }
 	} catch (final Throwable t) {
-	    TallerTower.getErrorLogger().logError(t);
+	    Import2.getErrorLogger().logError(t);
 	}
     }
 

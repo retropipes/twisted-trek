@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -281,7 +281,7 @@ public class MenuManager {
     }
 
     public void checkFlags() {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	if (app.getMazeManager().getDirty()) {
 	    this.setMenusDirtyOn();
 	} else {
@@ -317,7 +317,7 @@ public class MenuManager {
     }
 
     private void setMenusLoadedOn() {
-	final Application app = Fantastle5.getApplication();
+	final Application app = Import1.getApplication();
 	if (app.getMode() == Application.STATUS_GUI) {
 	    this.fileClose.setEnabled(false);
 	    this.fileSaveAs.setEnabled(false);
@@ -446,9 +446,9 @@ public class MenuManager {
 	this.debugViewImageCache = new JMenuItem("View Image Cache");
 	this.debugViewMonsterCache = new JMenuItem("View Monster Cache");
 	this.debugResetPreferences = new JMenuItem("Reset Preferences");
-	this.helpAbout = new JMenuItem("About Fantastle...");
-	this.helpGeneralHelp = new JMenuItem("Fantastle Help");
-	this.helpObjectHelp = new JMenuItem("Fantastle Object Help");
+	this.helpAbout = new JMenuItem("About Import1...");
+	this.helpGeneralHelp = new JMenuItem("Import1 Help");
+	this.helpObjectHelp = new JMenuItem("Import1 Object Help");
 	this.fileNew.addActionListener(this.handler);
 	this.fileOpen.addActionListener(this.handler);
 	this.fileClose.addActionListener(this.handler);
@@ -589,7 +589,7 @@ public class MenuManager {
 	@Override
 	public void actionPerformed(final ActionEvent e) {
 	    try {
-		final Application app = Fantastle5.getApplication();
+		final Application app = Import1.getApplication();
 		final MazeEditor me = app.getEditor();
 		boolean loaded = false;
 		final String cmd = e.getActionCommand();
@@ -728,7 +728,7 @@ public class MenuManager {
 		} else if (cmd.equals("Reset Current Level")) {
 		    if (!app.getGameManager().usingAnItem()) {
 			final int result = Messager
-				.showConfirmDialog("Are you sure you want to reset the current level?", "Fantastle");
+				.showConfirmDialog("Are you sure you want to reset the current level?", "Import1");
 			if (result == JOptionPane.YES_OPTION) {
 			    app.getGameManager().resetCurrentLevel();
 			}
@@ -744,16 +744,16 @@ public class MenuManager {
 		} else if (cmd.equals("Reset Preferences")) {
 		    app.resetPreferences();
 		    Messager.showDialog("Preferences reset to defaults.");
-		} else if (cmd.equals("About Fantastle...")) {
+		} else if (cmd.equals("About Import1...")) {
 		    app.getAboutDialog().showAboutDialog();
-		} else if (cmd.equals("Fantastle Help")) {
+		} else if (cmd.equals("Import1 Help")) {
 		    app.getGeneralHelpManager().showHelp();
-		} else if (cmd.equals("Fantastle Object Help")) {
+		} else if (cmd.equals("Import1 Object Help")) {
 		    app.getObjectHelpManager().showHelp();
 		}
 		MenuManager.this.checkFlags();
 	    } catch (final Exception ex) {
-		Fantastle5.debug(ex);
+		Import1.debug(ex);
 	    }
 	}
     }

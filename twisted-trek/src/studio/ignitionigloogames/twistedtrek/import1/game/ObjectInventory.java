@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@ package studio.ignitionigloogames.twistedtrek.import1.game;
 
 import java.io.IOException;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.generic.GenericBoots;
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObject;
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObjectList;
@@ -40,7 +40,7 @@ public class ObjectInventory implements Cloneable {
 
     // Constructors
     public ObjectInventory() {
-	final MazeObjectList list = Fantastle5.getApplication().getObjects();
+	final MazeObjectList list = Import1.getApplication().getObjects();
 	this.nameList = list.getAllInventoryableNamesMinusBoots();
 	this.contents = new int[this.nameList.length];
 	this.uses = new int[this.nameList.length][this.MAX_QUANTITY];
@@ -144,7 +144,7 @@ public class ObjectInventory implements Cloneable {
     }
 
     public String[] generateUseStringArray() {
-	final MazeObjectList list = Fantastle5.getApplication().getObjects();
+	final MazeObjectList list = Import1.getApplication().getObjects();
 	final String[] names = list.getAllUsableNames();
 	final int len = names.length;
 	final StringBuilder[] sb = new StringBuilder[len];
@@ -279,7 +279,7 @@ public class ObjectInventory implements Cloneable {
     }
 
     public static ObjectInventory readInventory(final XDataReader reader, final int formatVersion) throws IOException {
-	final MazeObjectList objects = Fantastle5.getApplication().getObjects();
+	final MazeObjectList objects = Import1.getApplication().getObjects();
 	final ObjectInventory i = new ObjectInventory();
 	i.boots = (GenericBoots) objects.readMazeObject(reader, formatVersion);
 	if (i.boots == null) {

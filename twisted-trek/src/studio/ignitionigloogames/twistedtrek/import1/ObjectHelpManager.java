@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -38,15 +38,15 @@ public class ObjectHelpManager {
 
     // Constructors
     public ObjectHelpManager() {
-	this.objectList = Fantastle5.getApplication().getObjects();
+	this.objectList = Import1.getApplication().getObjects();
 	this.objectNames = this.objectList.getAllDescriptions();
 	this.objectAppearances = this.objectList.getAllEditorAppearances();
 	this.hv = new GraphicalHelpViewer(this.objectAppearances, this.objectNames);
-	this.helpFrame = new JFrame("Fantastle Object Help");
+	this.helpFrame = new JFrame("Import1 Object Help");
 	this.helpFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
 	this.helpFrame.setLayout(new FlowLayout());
 	this.helpFrame.add(this.hv.getHelp());
-	if (Fantastle5.getApplication().getPrefsManager().isMobileModeEnabled()) {
+	if (Import1.getApplication().getPrefsManager().isMobileModeEnabled()) {
 	    this.hv.setHelpSize(GraphicsManager.MAX_MOBILE_WINDOW_SIZE, GraphicsManager.MAX_MOBILE_WINDOW_SIZE);
 	} else {
 	    this.hv.setHelpSize(GraphicsManager.MAX_DESKTOP_WINDOW_SIZE, GraphicsManager.MAX_DESKTOP_WINDOW_SIZE);
@@ -61,7 +61,7 @@ public class ObjectHelpManager {
     }
 
     public void updateHelpSize() {
-	if (Fantastle5.getApplication().getPrefsManager().isMobileModeEnabled()) {
+	if (Import1.getApplication().getPrefsManager().isMobileModeEnabled()) {
 	    this.hv.setHelpSize(GraphicsManager.MAX_MOBILE_WINDOW_SIZE, GraphicsManager.MAX_MOBILE_WINDOW_SIZE);
 	} else {
 	    this.hv.setHelpSize(GraphicsManager.MAX_DESKTOP_WINDOW_SIZE, GraphicsManager.MAX_DESKTOP_WINDOW_SIZE);

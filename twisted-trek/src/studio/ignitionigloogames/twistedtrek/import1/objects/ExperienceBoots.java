@@ -1,4 +1,4 @@
-/*  Fantastle: A Maze-Solving Game
+/*  Import1: A Maze-Solving Game
 Copyright (C) 2008-2010 Eric Ahnell
 
 This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ Any questions should be directed to the author via email at: fantastle@worldwiza
  */
 package studio.ignitionigloogames.twistedtrek.import1.objects;
 
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.PCManager;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.PlayerCharacter;
@@ -57,11 +57,11 @@ public class ExperienceBoots extends GenericBoots {
     public void stepAction() {
 	final PlayerCharacter playerCharacter = PCManager.getPlayer();
 	playerCharacter.offsetExperience(ExperienceBoots.EXP_AMOUNT);
-	Fantastle5.getApplication().getGameManager().getScoreTracker().incrementScore();
+	Import1.getApplication().getGameManager().getScoreTracker().incrementScore();
 	// Level Up Check
 	if (playerCharacter.checkLevelUp()) {
 	    playerCharacter.levelUp();
-	    Fantastle5.getApplication().getGameManager().keepNextMessage();
+	    Import1.getApplication().getGameManager().keepNextMessage();
 	    Messager.showMessage("You reached level " + playerCharacter.getLevel() + ".");
 	}
     }

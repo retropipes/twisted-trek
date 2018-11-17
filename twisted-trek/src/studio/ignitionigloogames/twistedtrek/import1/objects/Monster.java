@@ -3,7 +3,7 @@ package studio.ignitionigloogames.twistedtrek.import1.objects;
 import java.io.IOException;
 
 import studio.ignitionigloogames.randomrange.RandomRange;
-import studio.ignitionigloogames.twistedtrek.import1.Fantastle5;
+import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.battle.Battle;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
 import studio.ignitionigloogames.twistedtrek.import1.generic.ArrowTypeConstants;
@@ -40,8 +40,8 @@ public class Monster extends GenericDungeonObject {
     @Override
     public void postMoveAction(final boolean ie, final int dirX, final int dirY, final ObjectInventory inv) {
 	if (!Battle.isInBattle()) {
-	    Fantastle5.getApplication().getBattle().doBattle();
-	    Fantastle5.getApplication().getMazeManager().getMaze().postBattle(this, dirX, dirY, true);
+	    Import1.getApplication().getBattle().doBattle();
+	    Import1.getApplication().getMazeManager().getMaze().postBattle(this, dirX, dirY, true);
 	}
     }
 
@@ -50,9 +50,9 @@ public class Monster extends GenericDungeonObject {
 	    final int dirY, final int arrowType, final ObjectInventory inv) {
 	if (arrowType == ArrowTypeConstants.ARROW_TYPE_ICE) {
 	    // Transform into iced monster, if hit by an ice arrow
-	    final int pz = Fantastle5.getApplication().getGameManager().getPlayerManager().getPlayerLocationZ();
-	    final int pw = Fantastle5.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
-	    Fantastle5.getApplication().getGameManager().morph(new IcedMonster(this.savedObject), locX, locY, pz, pw);
+	    final int pz = Import1.getApplication().getGameManager().getPlayerManager().getPlayerLocationZ();
+	    final int pw = Import1.getApplication().getGameManager().getPlayerManager().getPlayerLocationW();
+	    Import1.getApplication().getGameManager().morph(new IcedMonster(this.savedObject), locX, locY, pz, pw);
 	    return false;
 	} else {
 	    return true;
@@ -77,7 +77,7 @@ public class Monster extends GenericDungeonObject {
 	// Move the monster
 	final RandomRange r = new RandomRange(0, 7);
 	final int move = r.generate();
-	Fantastle5.getApplication().getMazeManager().getMaze().updateMonsterPosition(move, dirX, dirY, this);
+	Import1.getApplication().getMazeManager().getMaze().updateMonsterPosition(move, dirX, dirY, this);
 	this.activateTimer(1);
     }
 
@@ -113,7 +113,7 @@ public class Monster extends GenericDungeonObject {
 
     @Override
     protected MazeObject readMazeObjectHook(final XDataReader reader, final int formatVersion) throws IOException {
-	final MazeObjectList objectList = Fantastle5.getApplication().getObjects();
+	final MazeObjectList objectList = Import1.getApplication().getObjects();
 	this.savedObject = objectList.readMazeObject(reader, formatVersion);
 	return this;
     }

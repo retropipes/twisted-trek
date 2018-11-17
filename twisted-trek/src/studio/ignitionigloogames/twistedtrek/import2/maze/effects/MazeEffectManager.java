@@ -1,4 +1,4 @@
-/*  TallerTower: An RPG
+/*  Import2: An RPG
 Copyright (C) 2008-2010 Eric Ahnell
 
 Any questions should be directed to the author via email at: mazer5d@worldwizard.net
@@ -10,7 +10,7 @@ import java.awt.GridLayout;
 
 import javax.swing.JLabel;
 
-import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.utilities.DirectionResolver;
 import studio.ignitionigloogames.twistedtrek.import2.prefs.PreferencesManager;
 
@@ -65,11 +65,11 @@ public class MazeEffectManager {
 		// Update effect grid
 		this.updateGridEntry(x);
 		if (!this.activeEffects[x].isActive()) {
-		    TallerTower.getApplication().showMessage("You feel normal again.");
+		    Import2.getApplication().showMessage("You feel normal again.");
 		    // Clear effect grid
 		    this.clearGridEntry(x);
 		    // Pack
-		    TallerTower.getApplication().getGameManager().getOutputFrame().pack();
+		    Import2.getApplication().getGameManager().getOutputFrame().pack();
 		}
 	    }
 	}
@@ -91,7 +91,7 @@ public class MazeEffectManager {
 	    this.addGridEntry(effectID);
 	}
 	// Keep effect message
-	TallerTower.getApplication().getGameManager().keepNextMessage();
+	Import2.getApplication().getGameManager().keepNextMessage();
     }
 
     public void deactivateEffect(final int effectID) {
