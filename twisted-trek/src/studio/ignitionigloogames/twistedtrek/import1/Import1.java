@@ -40,7 +40,7 @@ public class Import1 {
     private static Application application;
     private static final String PROGRAM_NAME = "Import1";
     private static final ErrorLogger debug = new ErrorLogger(Import1.PROGRAM_NAME);
-    private static boolean IN_FANTASTLE_5 = true;
+    private static boolean IN_IMPORT1 = true;
 
     // Methods
     public static Application getApplication() {
@@ -52,11 +52,11 @@ public class Import1 {
     }
 
     public static boolean inImport1() {
-	return Import1.IN_FANTASTLE_5;
+	return Import1.IN_IMPORT1;
     }
 
     public static void leaveImport1() {
-	Import1.IN_FANTASTLE_5 = false;
+	Import1.IN_IMPORT1 = false;
     }
 
     public static void main_disabled(final String[] args) {
