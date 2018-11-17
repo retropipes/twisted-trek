@@ -33,8 +33,7 @@ public class MessagePanel extends JPanel {
     /**
      * Write a string to the message panel, appending to what's already there.
      *
-     * @param character
-     *            the character to write
+     * @param character the character to write
      * @return this for convenient chaining of method calls
      */
     public MessagePanel write(final String string) {

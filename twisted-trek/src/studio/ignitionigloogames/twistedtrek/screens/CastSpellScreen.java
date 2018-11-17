@@ -6,7 +6,8 @@ import studio.ignitionigloogames.twistedtrek.Spell;
 public class CastSpellScreen extends TargetBasedScreen {
     private final Spell spell;
 
-    public CastSpellScreen(final Creature newPlayer, final String newCaption, final int sx, final int sy, final Spell newSpell) {
+    public CastSpellScreen(final Creature newPlayer, final String newCaption, final int sx, final int sy,
+	    final Spell newSpell) {
 	super(newPlayer, newCaption, sx, sy);
 	this.spell = newSpell;
     }

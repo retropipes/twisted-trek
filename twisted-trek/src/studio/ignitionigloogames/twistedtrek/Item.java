@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import studio.ignitionigloogames.twistedtrek.fileio.XMLFileReader;
-import studio.ignitionigloogames.twistedtrek.fileio.XMLFileWriter;
 import studio.ignitionigloogames.twistedtrek.world.Tile;
+import studio.ignitionigloogames.xio.XDataReader;
+import studio.ignitionigloogames.xio.XDataWriter;
 
 public class Item {
     private Tile tile;
@@ -130,7 +130,7 @@ public class Item {
 	return details;
     }
 
-    public void loadItem(final XMLFileReader reader) throws IOException {
+    public void loadItem(final XDataReader reader) throws IOException {
 	reader.readOpeningGroup("item");
 	this.tile = Tile.getFromSymbol(reader.readCustomString("tile").charAt(0));
 	this.name = reader.readCustomString("name");
@@ -140,16 +140,16 @@ public class Item {
 	this.defenseValue = reader.readCustomInt("defense");
 	this.thrownAttackValue = reader.readCustomInt("thrown");
 	this.rangedAttackValue = reader.readCustomInt("ranged");
-	boolean effectExists = reader.readCustomBoolean("effectExists");
+	final boolean effectExists = reader.readCustomBoolean("effectExists");
 	if (effectExists) {
-	    Effect ef = new Effect(this);
+	    final Effect ef = new Effect(this);
 	    ef.loadEffect(reader);
 	    this.quaffEffect = ef;
 	}
 	reader.readOpeningGroup("spells");
-	int sSize = reader.readCustomInt("count");
+	final int sSize = reader.readCustomInt("count");
 	for (int s = 0; s < sSize; s++) {
-	    Spell sp = new Spell();
+	    final Spell sp = new Spell();
 	    sp.loadSpell(reader);
 	    this.writtenSpells.add(sp);
 	}
@@ -157,7 +157,7 @@ public class Item {
 	reader.readClosingGroup("item");
     }
 
-    public void saveItem(final XMLFileWriter writer) throws IOException {
+    public void saveItem(final XDataWriter writer) throws IOException {
 	writer.writeOpeningGroup("item");
 	writer.writeCustomString(Character.toString(this.tile.getStateSymbol()), "tile");
 	writer.writeCustomString(this.name, "name");
@@ -167,16 +167,16 @@ public class Item {
 	writer.writeCustomInt(this.defenseValue, "defense");
 	writer.writeCustomInt(this.thrownAttackValue, "thrown");
 	writer.writeCustomInt(this.rangedAttackValue, "ranged");
-	boolean effectExists = (this.quaffEffect != null);
+	final boolean effectExists = this.quaffEffect != null;
 	writer.writeCustomBoolean(effectExists, "effectExists");
 	if (effectExists) {
 	    this.quaffEffect.saveEffect(writer);
 	}
 	writer.writeOpeningGroup("spells");
-	int sSize = this.writtenSpells.size();
+	final int sSize = this.writtenSpells.size();
 	writer.writeCustomInt(sSize, "count");
 	for (int s = 0; s < sSize; s++) {
-	    Spell sp = this.writtenSpells.get(s);
+	    final Spell sp = this.writtenSpells.get(s);
 	    sp.saveSpell(writer);
 	}
 	writer.writeClosingGroup("spells");

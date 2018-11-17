@@ -13,11 +13,10 @@ public class LowLevelDataIOException extends IOException {
     /**
      * Constructs an instance of <code>LowLevelDataIOException</code> with the
      * specified detail message.
-     * 
-     * @param msg
-     *            the detail message.
+     *
+     * @param msg the detail message.
      */
     public LowLevelDataIOException(final String msg) {
-        super(msg);
+	super(msg);
     }
 }

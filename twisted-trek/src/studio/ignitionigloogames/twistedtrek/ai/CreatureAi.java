@@ -80,7 +80,6 @@ public class CreatureAi {
 	new LevelUpController().autoLevelUp(this.creature);
     }
 
-    @SuppressWarnings("static-method")
     public Tile rememberedTile(final int wx, final int wy, final int wz) {
 	return Tile.UNKNOWN;
     }

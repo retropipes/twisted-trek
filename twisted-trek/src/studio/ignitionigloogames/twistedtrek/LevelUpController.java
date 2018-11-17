@@ -50,12 +50,10 @@ public class LevelUpController {
 	}
     } };
 
-    @SuppressWarnings("static-method")
     public void autoLevelUp(final Creature creature) {
 	LevelUpController.options[(int) (Math.random() * LevelUpController.options.length)].invoke(creature);
     }
 
-    @SuppressWarnings("static-method")
     public List<String> getLevelUpOptions() {
 	final List<String> names = new ArrayList<>();
 	for (final LevelUpOption option : LevelUpController.options) {
@@ -64,7 +62,6 @@ public class LevelUpController {
 	return names;
     }
 
-    @SuppressWarnings("static-method")
     public LevelUpOption getLevelUpOption(final String name) {
 	for (final LevelUpOption option : LevelUpController.options) {
 	    if (option.name().equals(name)) {

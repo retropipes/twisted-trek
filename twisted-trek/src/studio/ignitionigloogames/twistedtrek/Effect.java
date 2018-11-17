@@ -2,8 +2,8 @@ package studio.ignitionigloogames.twistedtrek;
 
 import java.io.IOException;
 
-import studio.ignitionigloogames.twistedtrek.fileio.XMLFileReader;
-import studio.ignitionigloogames.twistedtrek.fileio.XMLFileWriter;
+import studio.ignitionigloogames.xio.XDataReader;
+import studio.ignitionigloogames.xio.XDataWriter;
 
 public final class Effect {
     // Fields
@@ -31,11 +31,12 @@ public final class Effect {
 	this.item = newItem;
     }
 
-    public Effect(final int newDuration, final int newAttackModifier, final int newDefenseModifier, final int newHpModifierOngoing,
-	    final int newManaModifierOngoing, final String newHpModifierOngoingMessage, final Item newItem,
-	    final String newItemMessage, final int newVisionModifier, final int newXpModifierOngoing, final int newRegenHpModifier,
-	    final int newRegenManaModifier, final boolean newHpToMana, final boolean newBlink, final boolean newSummonBats,
-	    final boolean newDetect, final String newItemMessageEnd) {
+    public Effect(final int newDuration, final int newAttackModifier, final int newDefenseModifier,
+	    final int newHpModifierOngoing, final int newManaModifierOngoing, final String newHpModifierOngoingMessage,
+	    final Item newItem, final String newItemMessage, final int newVisionModifier,
+	    final int newXpModifierOngoing, final int newRegenHpModifier, final int newRegenManaModifier,
+	    final boolean newHpToMana, final boolean newBlink, final boolean newSummonBats, final boolean newDetect,
+	    final String newItemMessageEnd) {
 	this.duration = newDuration;
 	this.attackModifier = newAttackModifier;
 	this.defenseModifier = newDefenseModifier;
@@ -192,18 +193,18 @@ public final class Effect {
 	}
     }
 
-    public void loadEffect(final XMLFileReader reader) throws IOException {
+    public void loadEffect(final XDataReader reader) throws IOException {
 	reader.readOpeningGroup("effect");
 	this.duration = reader.readCustomInt("duration");
 	this.attackModifier = reader.readCustomInt("attackModifier");
 	this.defenseModifier = reader.readCustomInt("defenseModifier");
 	this.hpModifierOngoing = reader.readCustomInt("healthModifierOngoing");
 	this.manaModifierOngoing = reader.readCustomInt("manaModifierOngoing");
-	boolean hpModOMPresent = reader.readCustomBoolean("hpModOMPresent");
+	final boolean hpModOMPresent = reader.readCustomBoolean("hpModOMPresent");
 	if (hpModOMPresent) {
 	    this.hpModifierOngoingMessage = reader.readCustomString("healthModifierOngoingMessage");
 	}
-	boolean imPresent = reader.readCustomBoolean("imPresent");
+	final boolean imPresent = reader.readCustomBoolean("imPresent");
 	if (imPresent) {
 	    this.itemMessage = reader.readCustomString("itemMessage");
 	}
@@ -214,26 +215,26 @@ public final class Effect {
 	this.blink = reader.readCustomBoolean("blinkFlag");
 	this.summonBats = reader.readCustomBoolean("summonBatsFlag");
 	this.detect = reader.readCustomBoolean("detectFlag");
-	boolean imePresent = reader.readCustomBoolean("imePresent");
+	final boolean imePresent = reader.readCustomBoolean("imePresent");
 	if (imePresent) {
 	    this.itemMessageEnd = reader.readCustomString("itemMessageEnd");
 	}
 	reader.readClosingGroup("effect");
     }
 
-    public void saveEffect(final XMLFileWriter writer) throws IOException {
+    public void saveEffect(final XDataWriter writer) throws IOException {
 	writer.writeOpeningGroup("effect");
 	writer.writeCustomInt(this.duration, "duration");
 	writer.writeCustomInt(this.attackModifier, "attackModifier");
 	writer.writeCustomInt(this.defenseModifier, "defenseModifier");
 	writer.writeCustomInt(this.hpModifierOngoing, "healthModifierOngoing");
 	writer.writeCustomInt(this.manaModifierOngoing, "manaModifierOngoing");
-	boolean hpModOMPresent = (this.hpModifierOngoingMessage != null);
+	final boolean hpModOMPresent = this.hpModifierOngoingMessage != null;
 	writer.writeCustomBoolean(hpModOMPresent, "hpModOMPresent");
 	if (hpModOMPresent) {
 	    writer.writeCustomString(this.hpModifierOngoingMessage, "healthModifierOngoingMessage");
 	}
-	boolean imPresent = (this.itemMessage != null);
+	final boolean imPresent = this.itemMessage != null;
 	writer.writeCustomBoolean(imPresent, "imPresent");
 	if (imPresent) {
 	    writer.writeCustomString(this.itemMessage, "itemMessage");
@@ -245,7 +246,7 @@ public final class Effect {
 	writer.writeCustomBoolean(this.blink, "blinkFlag");
 	writer.writeCustomBoolean(this.summonBats, "summonBatsFlag");
 	writer.writeCustomBoolean(this.detect, "detectFlag");
-	boolean imePresent = (this.itemMessageEnd != null);
+	final boolean imePresent = this.itemMessageEnd != null;
 	writer.writeCustomBoolean(imPresent, "imePresent");
 	if (imePresent) {
 	    writer.writeCustomString(this.itemMessageEnd, "itemMessageEnd");

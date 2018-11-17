@@ -93,11 +93,10 @@ public class GuiPanel extends JPanel {
     }
 
     /**
-     * Sets the distance from the left new tiles will be written to. This should
-     * be equal to or greater than 0 and less than the the width in tiles.
+     * Sets the distance from the left new tiles will be written to. This should be
+     * equal to or greater than 0 and less than the the width in tiles.
      *
-     * @param cursorX
-     *            the distance from the left new tiles should be written to
+     * @param cursorX the distance from the left new tiles should be written to
      */
     public void setCursorX(final int cursorX) {
 	if (cursorX < 0 || cursorX >= this.widthInTiles) {
@@ -117,11 +116,10 @@ public class GuiPanel extends JPanel {
     }
 
     /**
-     * Sets the distance from the top new tiles will be written to. This should
-     * be equal to or greater than 0 and less than the the height in tiles.
+     * Sets the distance from the top new tiles will be written to. This should be
+     * equal to or greater than 0 and less than the the height in tiles.
      *
-     * @param cursorY
-     *            the distance from the top new tiles should be written to
+     * @param cursorY the distance from the top new tiles should be written to
      */
     public void setCursorY(final int cursorY) {
 	if (cursorY < 0 || cursorY >= this.heightInTiles) {
@@ -132,15 +130,13 @@ public class GuiPanel extends JPanel {
     }
 
     /**
-     * Sets the x and y position of where new tiles will be written to. The
-     * origin (0,0) is the upper left corner. The x should be equal to or
-     * greater than 0 and less than the the width in tiles. The y should be
-     * equal to or greater than 0 and less than the the height in tiles.
+     * Sets the x and y position of where new tiles will be written to. The origin
+     * (0,0) is the upper left corner. The x should be equal to or greater than 0
+     * and less than the the width in tiles. The y should be equal to or greater
+     * than 0 and less than the the height in tiles.
      *
-     * @param x
-     *            the distance from the left new tiles should be written to
-     * @param y
-     *            the distance from the top new tiles should be written to
+     * @param x the distance from the left new tiles should be written to
+     * @param y the distance from the top new tiles should be written to
      */
     public void setCursorPosition(final int x, final int y) {
 	this.setCursorX(x);
@@ -230,8 +226,7 @@ public class GuiPanel extends JPanel {
     /**
      * Clear the entire screen with the specified tile.
      *
-     * @param tile
-     *            the tile to write
+     * @param tile the tile to write
      * @return this for convenient chaining of method calls
      */
     public GuiPanel clear(final Tile tile, final int z) {
@@ -241,16 +236,11 @@ public class GuiPanel extends JPanel {
     /**
      * Clear the section of the screen with the specified tile.
      *
-     * @param tile
-     *            the tile to write
-     * @param x
-     *            the distance from the left to begin writing from
-     * @param y
-     *            the distance from the top to begin writing from
-     * @param width
-     *            the height of the section to clear
-     * @param height
-     *            the width of the section to clear
+     * @param tile   the tile to write
+     * @param x      the distance from the left to begin writing from
+     * @param y      the distance from the top to begin writing from
+     * @param width  the height of the section to clear
+     * @param height the width of the section to clear
      * @return this for convenient chaining of method calls
      */
     public GuiPanel clear(final Tile tile, final int x, final int y, final int z, final int width, final int height) {
@@ -283,11 +273,9 @@ public class GuiPanel extends JPanel {
     }
 
     /**
-     * Write a tile to the cursor's position. This updates the cursor's
-     * position.
+     * Write a tile to the cursor's position. This updates the cursor's position.
      *
-     * @param tile
-     *            the tile to write
+     * @param tile the tile to write
      * @return this for convenient chaining of method calls
      */
     public GuiPanel write(final Tile tile, final int z) {
@@ -295,15 +283,11 @@ public class GuiPanel extends JPanel {
     }
 
     /**
-     * Write a tile to the specified position. This updates the cursor's
-     * position.
+     * Write a tile to the specified position. This updates the cursor's position.
      *
-     * @param tile
-     *            the tile to write
-     * @param x
-     *            the distance from the left to begin writing from
-     * @param y
-     *            the distance from the top to begin writing from
+     * @param tile the tile to write
+     * @param x    the distance from the left to begin writing from
+     * @param y    the distance from the top to begin writing from
      * @return this for convenient chaining of method calls
      */
     public GuiPanel write(final Tile tile, final int x, final int y, final int z) {

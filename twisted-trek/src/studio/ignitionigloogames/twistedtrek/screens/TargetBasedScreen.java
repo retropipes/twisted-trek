@@ -105,7 +105,6 @@ public abstract class TargetBasedScreen implements Screen {
 	return this;
     }
 
-    @SuppressWarnings("static-method")
     public boolean isAcceptable(final int nx, final int ny) {
 	return true;
     }

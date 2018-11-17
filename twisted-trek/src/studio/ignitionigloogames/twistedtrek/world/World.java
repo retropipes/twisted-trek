@@ -7,8 +7,8 @@ import java.util.List;
 import studio.ignitionigloogames.twistedtrek.Creature;
 import studio.ignitionigloogames.twistedtrek.Item;
 import studio.ignitionigloogames.twistedtrek.Point;
-import studio.ignitionigloogames.twistedtrek.fileio.XMLFileReader;
-import studio.ignitionigloogames.twistedtrek.fileio.XMLFileWriter;
+import studio.ignitionigloogames.xio.XDataReader;
+import studio.ignitionigloogames.xio.XDataWriter;
 
 public class World {
     private Tile[][][] tiles;
@@ -156,7 +156,7 @@ public class World {
 	this.creatures.add(pet);
     }
 
-    public void loadWorld(final XMLFileReader reader) throws IOException {
+    public void loadWorld(final XDataReader reader) throws IOException {
 	reader.readOpeningGroup("world");
 	this.loadTiles(reader);
 	this.loadItems(reader);
@@ -164,7 +164,7 @@ public class World {
 	reader.readClosingGroup("world");
     }
 
-    public void saveWorld(final XMLFileWriter writer) throws IOException {
+    public void saveWorld(final XDataWriter writer) throws IOException {
 	writer.writeOpeningGroup("world");
 	this.saveTiles(writer);
 	this.saveItems(writer);
@@ -172,7 +172,7 @@ public class World {
 	writer.writeClosingGroup("world");
     }
 
-    private void loadTiles(final XMLFileReader reader) throws IOException {
+    private void loadTiles(final XDataReader reader) throws IOException {
 	reader.readOpeningGroup("tiles");
 	reader.readOpeningGroup("size");
 	this.width = reader.readCustomInt("width");
@@ -183,7 +183,7 @@ public class World {
 	this.tiles = new Tile[this.width][this.height][this.depth];
 	for (int z = 0; z < this.depth; z++) {
 	    for (int y = 0; y < this.height; y++) {
-		String row = reader.readCustomString("row");
+		final String row = reader.readCustomString("row");
 		for (int x = 0; x < this.width; x++) {
 		    this.tiles[x][y][z] = Tile.getFromSymbol(row.charAt(x));
 		}
@@ -193,7 +193,7 @@ public class World {
 	reader.readClosingGroup("tiles");
     }
 
-    private void saveTiles(final XMLFileWriter writer) throws IOException {
+    private void saveTiles(final XDataWriter writer) throws IOException {
 	writer.writeOpeningGroup("tiles");
 	writer.writeOpeningGroup("size");
 	writer.writeCustomInt(this.width, "width");
@@ -203,7 +203,7 @@ public class World {
 	writer.writeOpeningGroup("rows");
 	for (int z = 0; z < this.depth; z++) {
 	    for (int y = 0; y < this.height; y++) {
-		StringBuilder row = new StringBuilder();
+		final StringBuilder row = new StringBuilder();
 		for (int x = 0; x < this.width; x++) {
 		    if (this.tiles[x][y][z] == null) {
 			row.append("0");
@@ -218,15 +218,15 @@ public class World {
 	writer.writeClosingGroup("tiles");
     }
 
-    private void loadItems(final XMLFileReader reader) throws IOException {
+    private void loadItems(final XDataReader reader) throws IOException {
 	reader.readOpeningGroup("items");
 	this.items = new Item[this.width][this.height][this.depth];
 	for (int z = 0; z < this.depth; z++) {
 	    for (int y = 0; y < this.height; y++) {
 		for (int x = 0; x < this.width; x++) {
-		    boolean exists = reader.readCustomBoolean("exists");
+		    final boolean exists = reader.readCustomBoolean("exists");
 		    if (exists) {
-			Item i = new Item();
+			final Item i = new Item();
 			i.loadItem(reader);
 			this.items[x][y][z] = i;
 		    }
@@ -236,7 +236,7 @@ public class World {
 	reader.readClosingGroup("items");
     }
 
-    private void saveItems(final XMLFileWriter writer) throws IOException {
+    private void saveItems(final XDataWriter writer) throws IOException {
 	writer.writeOpeningGroup("items");
 	for (int z = 0; z < this.depth; z++) {
 	    for (int y = 0; y < this.height; y++) {
@@ -253,23 +253,23 @@ public class World {
 	writer.writeClosingGroup("items");
     }
 
-    private void loadCreatures(final XMLFileReader reader) throws IOException {
+    private void loadCreatures(final XDataReader reader) throws IOException {
 	reader.readOpeningGroup("creatures");
-	int cSize = reader.readCustomInt("size");
+	final int cSize = reader.readCustomInt("size");
 	for (int c = 0; c < cSize; c++) {
-	    Creature cr = new Creature(this);
+	    final Creature cr = new Creature(this);
 	    cr.loadCreature(reader);
 	    this.creatures.add(cr);
 	}
 	reader.readClosingGroup("creatures");
     }
 
-    private void saveCreatures(final XMLFileWriter writer) throws IOException {
+    private void saveCreatures(final XDataWriter writer) throws IOException {
 	writer.writeOpeningGroup("creatures");
-	int cSize = this.creatures.size();
+	final int cSize = this.creatures.size();
 	writer.writeCustomInt(cSize, "size");
 	for (int c = 0; c < cSize; c++) {
-	    Creature cr = this.creatures.get(c);
+	    final Creature cr = this.creatures.get(c);
 	    cr.saveCreature(writer);
 	}
 	writer.writeClosingGroup("rows");

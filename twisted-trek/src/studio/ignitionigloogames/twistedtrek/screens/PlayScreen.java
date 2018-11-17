@@ -270,7 +270,7 @@ public class PlayScreen implements Screen {
 //			if (FilenameChecker.isFilenameOK(
 //				PlayScreen.getNameWithoutExtension(PlayScreen.getFileNameOnly(filename)))) {
 //			    try {
-//				XMLFileWriter writer = new XMLFileWriter(filename, Constants.SAVE_FILE_DOC_TAG);
+//				XDataWriter writer = new XDataWriter(filename, Constants.SAVE_FILE_DOC_TAG);
 //				PlayScreen.this.world.saveWorld(writer);
 //			    } catch (IOException ioe) {
 //				// Failed

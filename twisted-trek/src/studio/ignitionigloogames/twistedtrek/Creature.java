@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import studio.ignitionigloogames.twistedtrek.ai.CreatureAi;
-import studio.ignitionigloogames.twistedtrek.fileio.XMLFileReader;
-import studio.ignitionigloogames.twistedtrek.fileio.XMLFileWriter;
 import studio.ignitionigloogames.twistedtrek.sound.Sound;
 import studio.ignitionigloogames.twistedtrek.world.Tile;
 import studio.ignitionigloogames.twistedtrek.world.World;
+import studio.ignitionigloogames.xio.XDataReader;
+import studio.ignitionigloogames.xio.XDataWriter;
 
 public class Creature {
     private final World world;
@@ -662,7 +662,7 @@ public class Creature {
 	this.ai.setName(item, item.name());
     }
 
-    public void loadCreature(final XMLFileReader reader) throws IOException {
+    public void loadCreature(final XDataReader reader) throws IOException {
 	reader.readOpeningGroup("creature");
 	this.tile = Tile.getFromSymbol(reader.readCustomString("tile").charAt(0));
 	this.name = reader.readCustomString("name");
@@ -708,7 +708,7 @@ public class Creature {
 	reader.readClosingGroup("creature");
     }
 
-    public void saveCreature(final XMLFileWriter writer) throws IOException {
+    public void saveCreature(final XDataWriter writer) throws IOException {
 	writer.writeOpeningGroup("creature");
 	writer.writeCustomString(Character.toString(this.tile.getStateSymbol()), "tile");
 	writer.writeCustomString(this.name, "name");

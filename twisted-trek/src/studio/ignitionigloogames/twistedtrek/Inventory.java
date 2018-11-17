@@ -2,8 +2,8 @@ package studio.ignitionigloogames.twistedtrek;
 
 import java.io.IOException;
 
-import studio.ignitionigloogames.twistedtrek.fileio.XMLFileReader;
-import studio.ignitionigloogames.twistedtrek.fileio.XMLFileWriter;
+import studio.ignitionigloogames.xio.XDataReader;
+import studio.ignitionigloogames.xio.XDataWriter;
 
 public class Inventory {
     private Item[] items;
@@ -61,14 +61,14 @@ public class Inventory {
 	return false;
     }
 
-    public void loadInventory(final XMLFileReader reader) throws IOException {
+    public void loadInventory(final XDataReader reader) throws IOException {
 	reader.readOpeningGroup("inventory");
-	int iSize = reader.readCustomInt("size");
+	final int iSize = reader.readCustomInt("size");
 	this.items = new Item[iSize];
 	for (int i = 0; i < iSize; i++) {
-	    boolean exists = reader.readCustomBoolean("exists");
+	    final boolean exists = reader.readCustomBoolean("exists");
 	    if (exists) {
-		Item it = new Item();
+		final Item it = new Item();
 		it.loadItem(reader);
 		this.items[i] = it;
 	    }
@@ -76,12 +76,12 @@ public class Inventory {
 	reader.readClosingGroup("inventory");
     }
 
-    public void saveInventory(final XMLFileWriter writer) throws IOException {
+    public void saveInventory(final XDataWriter writer) throws IOException {
 	writer.writeOpeningGroup("inventory");
-	int iSize = this.items.length;
+	final int iSize = this.items.length;
 	writer.writeCustomInt(iSize, "size");
 	for (int i = 0; i < iSize; i++) {
-	    boolean exists = (this.items[i] != null);
+	    final boolean exists = this.items[i] != null;
 	    writer.writeCustomBoolean(exists, "exists");
 	    if (exists) {
 		this.items[i].saveItem(writer);

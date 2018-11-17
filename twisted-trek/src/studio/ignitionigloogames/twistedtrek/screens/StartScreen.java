@@ -15,14 +15,14 @@ public class StartScreen implements Screen {
     public void displayOutput(final GuiPanel terminal, final MessagePanel messages) {
 	messages.clear();
 	messages.write("Twisted Trek");
-	//messages.write("-- press [l] to load a saved game --");
+	// messages.write("-- press [l] to load a saved game --");
 	messages.write("-- press [enter] to start --");
     }
 
     @Override
     public Screen respondToUserInput(final KeyEvent key, final MouseEvent mouse) {
 	if (key != null) {
-	    int keyCode = key.getKeyCode();
+	    final int keyCode = key.getKeyCode();
 	    if (keyCode == KeyEvent.VK_ENTER) {
 		return new PlayScreen(true, null);
 	    }
@@ -40,7 +40,7 @@ public class StartScreen implements Screen {
 //				StartScreen.getNameWithoutExtension(StartScreen.getFileNameOnly(filename)))) {
 //			    try {
 //				World w = new World();
-//				XMLFileReader reader = new XMLFileReader(filename, Constants.SAVE_FILE_DOC_TAG);
+//				XDataReader reader = new XDataReader(filename, Constants.SAVE_FILE_DOC_TAG);
 //				w.loadWorld(reader);
 //				return new PlayScreen(true, w);
 //			    } catch (IOException ioe) {
@@ -53,7 +53,6 @@ public class StartScreen implements Screen {
 	}
 	return this;
     }
-
 //    private static String getExtension(final String s) {
 //	String ext = null;
 //	final int i = s.lastIndexOf('.');

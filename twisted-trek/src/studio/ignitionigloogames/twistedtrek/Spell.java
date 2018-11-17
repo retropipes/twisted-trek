@@ -2,8 +2,8 @@ package studio.ignitionigloogames.twistedtrek;
 
 import java.io.IOException;
 
-import studio.ignitionigloogames.twistedtrek.fileio.XMLFileReader;
-import studio.ignitionigloogames.twistedtrek.fileio.XMLFileWriter;
+import studio.ignitionigloogames.xio.XDataReader;
+import studio.ignitionigloogames.xio.XDataWriter;
 
 public class Spell {
     private String name;
@@ -24,7 +24,6 @@ public class Spell {
 	return new Effect(this.effect);
     }
 
-    @SuppressWarnings("static-method")
     public boolean requiresTarget() {
 	return true;
     }
@@ -39,7 +38,7 @@ public class Spell {
 	this.effect = newEffect;
     }
 
-    public void loadSpell(final XMLFileReader reader) throws IOException {
+    public void loadSpell(final XDataReader reader) throws IOException {
 	reader.readOpeningGroup("spell");
 	this.name = reader.readCustomString("name");
 	this.manaCost = reader.readCustomInt("manaCost");
@@ -49,7 +48,7 @@ public class Spell {
 	reader.readClosingGroup("spell");
     }
 
-    public void saveSpell(final XMLFileWriter writer) throws IOException {
+    public void saveSpell(final XDataWriter writer) throws IOException {
 	writer.writeOpeningGroup("spell");
 	writer.writeCustomString(this.name, "name");
 	writer.writeCustomInt(this.manaCost, "manaCost");

@@ -1,0 +1,30 @@
+/*  TallerTower: An RPG
+Copyright (C) 2011-2012 Eric Ahnell
+
+
+Any questions should be directed to the author via email at: products@puttysoftware.com
+ */
+package studio.ignitionigloogames.twistedtrek.import2.descriptionmanagers;
+
+import java.io.IOException;
+
+import studio.ignitionigloogames.ioutils.ResourceStreamReader;
+import studio.ignitionigloogames.twistedtrek.import2.TallerTower;
+import studio.ignitionigloogames.twistedtrek.import2.creatures.personalities.PersonalityConstants;
+import studio.ignitionigloogames.twistedtrek.import2.maze.Extension;
+
+public class PersonalityDescriptionManager {
+    public static String getPersonalityDescription(final int p) {
+	final String name = PersonalityConstants.getPersonalityName(p).toLowerCase();
+	try (final ResourceStreamReader rsr = new ResourceStreamReader(PersonalityDescriptionManager.class
+		.getResourceAsStream("/com/puttysoftware/tallertower/resources/descriptions/personality/" + name
+			+ Extension.getInternalDataExtensionWithPeriod()))) {
+	    // Fetch description
+	    final String desc = rsr.readString();
+	    return desc;
+	} catch (final IOException e) {
+	    TallerTower.getErrorLogger().logError(e);
+	    return null;
+	}
+    }
+}
