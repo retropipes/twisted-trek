@@ -1,8 +1,4 @@
-/*  Import2: An RPG
-Copyright (C) 2008-2010 Eric Ahnell
-
-Any questions should be directed to the author via email at: mazer5d@worldwizard.net
- */
+/* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.maze.effects;
 
 import studio.ignitionigloogames.randomrange.RandomRange;

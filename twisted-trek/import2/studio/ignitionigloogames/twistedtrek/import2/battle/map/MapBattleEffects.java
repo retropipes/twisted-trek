@@ -1,9 +1,4 @@
-/*  Import2: An RPG
-Copyright (C) 2011-2012 Eric Ahnell
-
-
-Any questions should be directed to the author via email at: products@puttysoftware.com
- */
+/* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.battle.map;
 
 import java.awt.Container;

@@ -1,3 +1,4 @@
+/* Import1: A Maze-Solving Game */
 package studio.ignitionigloogames.twistedtrek.import1.spells;
 
 import studio.ignitionigloogames.twistedtrek.import1.Import1;
@@ -80,8 +81,7 @@ public class SpellBookManager {
 		// Play spell's associated sound effect, if it has one
 		final String snd = cast.getSound();
 		if (snd != null) {
-		    if (Import1.getApplication().getPrefsManager()
-			    .getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
+		    if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
 			SoundManager.play(snd);
 		    }
 		}

@@ -1,3 +1,4 @@
+/* Twisted Trek: A Dual-World Action RPG */
 package studio.ignitionigloogames.twistedtrek.panels;
 
 import java.awt.Dimension;
@@ -10,10 +11,6 @@ import javax.swing.JPanel;
 import studio.ignitionigloogames.twistedtrek.constants.Constants;
 import studio.ignitionigloogames.twistedtrek.world.Tile;
 
-/**
- *
- * @author Eric Ahnell
- */
 public class GuiPanel extends JPanel {
     private static final long serialVersionUID = 2L;
 

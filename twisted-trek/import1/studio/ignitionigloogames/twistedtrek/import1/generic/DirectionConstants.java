@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+/* Import1: A Maze-Solving Game */
 package studio.ignitionigloogames.twistedtrek.import1.generic;
 
 public interface DirectionConstants {

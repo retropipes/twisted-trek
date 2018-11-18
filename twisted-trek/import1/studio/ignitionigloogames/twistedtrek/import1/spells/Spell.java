@@ -1,3 +1,4 @@
+/* Import1: A Maze-Solving Game */
 package studio.ignitionigloogames.twistedtrek.import1.spells;
 
 import studio.ignitionigloogames.twistedtrek.import1.effects.Effect;

@@ -1,3 +1,4 @@
+/* Import1: A Maze-Solving Game */
 package studio.ignitionigloogames.twistedtrek.import1.battle;
 
 import java.awt.BorderLayout;
@@ -357,21 +358,18 @@ public class Battle implements BattleResults, MoveTypes {
 	    } else {
 		if (this.damage == 0 && this.riposteEnemyDamage == 0) {
 		    displayPlayerDamageString = "You try to hit the " + enemyName + ", but MISS!";
-		    if (Import1.getApplication().getPrefsManager()
-			    .getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
+		    if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
 			SoundManager.play("missed");
 		    }
 		} else if (this.damage == 0 && this.riposteEnemyDamage != 0) {
 		    displayPlayerDamageString = "You try to hit the " + enemyName + ", but are RIPOSTED for "
 			    + this.riposteEnemyDamage + " damage!";
-		    if (Import1.getApplication().getPrefsManager()
-			    .getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
+		    if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
 			SoundManager.play("counter");
 		    }
 		} else {
 		    displayPlayerDamageString = "You hit the " + enemyName + " for " + playerDamageString + " damage!";
-		    if (Import1.getApplication().getPrefsManager()
-			    .getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
+		    if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
 			SoundManager.play("hit");
 		    }
 		}
@@ -406,21 +404,18 @@ public class Battle implements BattleResults, MoveTypes {
 	    } else {
 		if (this.enemyDamage == 0 && this.riposteDamage == 0) {
 		    displayEnemyDamageString = "The " + enemyName + " tries to hit you, but MISSES!";
-		    if (Import1.getApplication().getPrefsManager()
-			    .getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
+		    if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
 			SoundManager.play("missed");
 		    }
 		} else if (this.enemyDamage == 0 && this.riposteDamage != 0) {
 		    displayEnemyDamageString = "The " + enemyName + " tries to hit you, but you RIPOSTE for "
 			    + this.riposteDamage + " damage!";
-		    if (Import1.getApplication().getPrefsManager()
-			    .getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
+		    if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
 			SoundManager.play("counter");
 		    }
 		} else {
 		    displayEnemyDamageString = "The " + enemyName + " hits you for " + enemyDamageString + " damage!";
-		    if (Import1.getApplication().getPrefsManager()
-			    .getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
+		    if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
 			SoundManager.play("hit");
 		    }
 		}

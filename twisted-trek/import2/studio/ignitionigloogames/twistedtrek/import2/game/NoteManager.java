@@ -1,3 +1,4 @@
+/* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.game;
 
 import studio.ignitionigloogames.commondialogs.CommonDialogs;

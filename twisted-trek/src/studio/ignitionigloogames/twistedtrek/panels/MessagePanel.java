@@ -1,13 +1,10 @@
+/* Twisted Trek: A Dual-World Action RPG */
 package studio.ignitionigloogames.twistedtrek.panels;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-/**
- *
- * @author Eric Ahnell
- */
 public class MessagePanel extends JPanel {
     private static final long serialVersionUID = 2L;
     private final JTextArea message = new JTextArea();

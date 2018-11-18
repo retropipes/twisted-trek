@@ -1,3 +1,4 @@
+/* Import1: A Maze-Solving Game */
 package studio.ignitionigloogames.twistedtrek.import1.battle;
 
 public interface BattleResults {

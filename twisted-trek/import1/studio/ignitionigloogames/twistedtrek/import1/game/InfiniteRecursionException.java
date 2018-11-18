@@ -1,13 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+/* Import1: A Maze-Solving Game */
 package studio.ignitionigloogames.twistedtrek.import1.game;
 
-/**
- *
- * @author wrldwzrd89
- */
 public class InfiniteRecursionException extends RuntimeException {
     private static final long serialVersionUID = 54364343055203034L;
 

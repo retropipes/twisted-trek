@@ -1,3 +1,4 @@
+/* Import1: A Maze-Solving Game */
 package studio.ignitionigloogames.twistedtrek.import1.items.combat;
 
 import studio.ignitionigloogames.twistedtrek.import1.Import1;

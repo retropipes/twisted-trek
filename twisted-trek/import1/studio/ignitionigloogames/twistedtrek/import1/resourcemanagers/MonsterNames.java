@@ -1,3 +1,4 @@
+/* Import1: A Maze-Solving Game */
 package studio.ignitionigloogames.twistedtrek.import1.resourcemanagers;
 
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.datamanagers.MonsterDataManager;
