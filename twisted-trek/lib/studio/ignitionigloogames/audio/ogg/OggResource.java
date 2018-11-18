@@ -5,12 +5,7 @@ All support is handled via the GitHub repository: https://github.com/wrldwzrd89/
  */
 package studio.ignitionigloogames.audio.ogg;
 
-import java.io.IOException;
 import java.net.URL;
-
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.UnsupportedAudioFileException;
 
 class OggResource extends OggFactory {
     private final URL soundURL;
@@ -23,12 +18,8 @@ class OggResource extends OggFactory {
 
     @Override
     public void run() {
-	try (AudioInputStream ais = AudioSystem.getAudioInputStream(this.soundURL)) {
-	    this.player = new OggPlayer(ais);
-	    this.player.playLoop();
-	} catch (final UnsupportedAudioFileException | IOException e1) {
-	    // Do nothing
-	}
+	this.player = new OggPlayer(this.soundURL);
+	this.player.playLoop();
     }
 
     @Override
