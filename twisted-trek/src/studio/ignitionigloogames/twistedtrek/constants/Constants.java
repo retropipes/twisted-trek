@@ -2,8 +2,8 @@
 package studio.ignitionigloogames.twistedtrek.constants;
 
 public class Constants {
-    public static final int SCREEN_WIDTH_IN_TILES = 30;
-    public static final int SCREEN_HEIGHT_IN_TILES = 18;
+    public static final int SCREEN_WIDTH_IN_TILES = 15;
+    public static final int SCREEN_HEIGHT_IN_TILES = 9;
     public static final int SCREEN_DEPTH_IN_TILES = 3;
     public static final int WORLD_WIDTH_IN_TILES = 90;
     public static final int WORLD_HEIGHT_IN_TILES = 32;
