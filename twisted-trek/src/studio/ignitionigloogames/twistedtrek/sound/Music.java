@@ -14,7 +14,7 @@ public class Music {
     }
 
     public static void play() {
-	new Music(Music.class.getResource("/assets/music/dungeon.ogg")).playLoop();
+	new Music(Music.class.getResource("/assets/music/dungeon-shallowest-overworld.ogg")).playLoop();
     }
 
     public void playLoop() {

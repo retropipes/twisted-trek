@@ -149,7 +149,7 @@ public class Creature {
 	this.notify("You %s %d xp.", amount < 0 ? "lose" : "gain", amount);
 	while (this.xp > (int) (Math.pow(this.level, 1.75) * 25)) {
 	    if (this.isPlayer()) {
-		Sound.play("level_up");
+		Sound.levelUp();
 	    }
 	    this.level++;
 	    this.doAction("advance to level %d", this.level);
@@ -202,12 +202,12 @@ public class Creature {
 	if (mz == -1) {
 	    if (localTile == Tile.STAIRS_DOWN) {
 		if (this.isPlayer()) {
-		    Sound.play("up");
+		    Sound.stairsUp();
 		}
 		this.doAction("walk up the stairs to level %d", this.z + mz + 1);
 	    } else {
 		if (this.isPlayer()) {
-		    Sound.play("failed");
+		    Sound.actionFailed();
 		}
 		this.doAction("try to go up but are stopped by the cave ceiling");
 		return;
@@ -215,19 +215,19 @@ public class Creature {
 	} else if (mz == 1) {
 	    if (localTile == Tile.STAIRS_UP) {
 		if (this.isPlayer()) {
-		    Sound.play("down");
+		    Sound.stairsDown();
 		}
 		this.doAction("walk down the stairs to level %d", this.z + mz + 1);
 	    } else {
 		if (this.isPlayer()) {
-		    Sound.play("failed");
+		    Sound.actionFailed();
 		}
 		this.doAction("try to go down but are stopped by the cave floor");
 		return;
 	    }
 	}
 	if (this.isPlayer()) {
-	    Sound.play("walk");
+	    Sound.walk();
 	}
 	final Creature other = this.world.creature(this.x + mx, this.y + my, this.z + mz);
 	this.modifyFood(-1);
@@ -240,16 +240,16 @@ public class Creature {
 
     public void meleeAttack(final Creature other) {
 	if (this.isPlayer()) {
-	    Sound.play("hit");
+	    Sound.playerBladedHit();
 	} else if (other.isPlayer()) {
-	    Sound.play("monsterhit");
+	    Sound.enemyBluntHit();
 	}
 	this.commonAttack(other, this.attackValue(), "attack the %s for %d damage", other.name);
     }
 
     private void throwAttack(final Item item, final Creature other) {
 	if (this.isPlayer()) {
-	    Sound.play("shoot");
+	    Sound.fireArrow();
 	}
 	this.commonAttack(other, this.attackValue / 2 + item.thrownAttackValue(), "throw a %s at the %s for %d damage",
 		this.nameOf(item), other.name);
@@ -258,7 +258,7 @@ public class Creature {
 
     public void rangedWeaponAttack(final Creature other) {
 	if (this.isPlayer()) {
-	    Sound.play("shoot");
+	    Sound.fireArrow();
 	}
 	this.commonAttack(other, this.attackValue / 2 + this.weapon.rangedAttackValue(),
 		"fire a %s at the %s for %d damage", this.nameOf(this.weapon), other.name);
@@ -294,7 +294,7 @@ public class Creature {
 	    this.hp = this.maxHp;
 	} else if (this.hp < 1) {
 	    if (!this.isPlayer()) {
-		Sound.play("death");
+		Sound.enemyDeath();
 	    }
 	    this.doAction("die");
 	    this.leaveCorpse();
@@ -315,7 +315,7 @@ public class Creature {
 
     public void dig(final int wx, final int wy, final int wz) {
 	if (this.isPlayer()) {
-	    Sound.play("dig");
+	    Sound.crack();
 	}
 	this.modifyFood(-10);
 	this.world.dig(wx, wy, wz);
@@ -453,12 +453,12 @@ public class Creature {
 	final Item item = this.world.item(this.x, this.y, this.z);
 	if (this.inventory.isFull() || item == null) {
 	    if (this.isPlayer()) {
-		Sound.play("failed");
+		Sound.actionFailed();
 	    }
 	    this.doAction("grab at the ground");
 	} else {
 	    if (this.isPlayer()) {
-		Sound.play("grab");
+		Sound.grabNonKey();
 	    }
 	    this.doAction("pickup a %s", this.nameOf(item));
 	    this.world.remove(this.x, this.y, this.z);
@@ -469,14 +469,14 @@ public class Creature {
     public void drop(final Item item) {
 	if (this.world.addAtEmptySpace(item, this.x, this.y, this.z)) {
 	    if (this.isPlayer()) {
-		Sound.play("drop");
+		Sound.fumble();
 	    }
 	    this.doAction("drop a " + this.nameOf(item));
 	    this.inventory.remove(item);
 	    this.unequip(item);
 	} else {
 	    if (this.isPlayer()) {
-		Sound.play("failed");
+		Sound.actionFailed();
 	    }
 	    this.notify("There's nowhere to drop the %s.", this.nameOf(item));
 	}
@@ -510,7 +510,7 @@ public class Creature {
 
     private void consume(final Item item) {
 	if (this.isPlayer()) {
-	    Sound.play("consume");
+	    Sound.buff1();
 	}
 	if (item.foodValue() < 0) {
 	    this.notify("Gross!");
@@ -570,7 +570,7 @@ public class Creature {
 	    return;
 	}
 	if (this.isPlayer()) {
-	    Sound.play("equip");
+	    Sound.equip();
 	}
 	if (item.attackValue() + item.rangedAttackValue() >= item.defenseValue()) {
 	    this.unequip(this.weapon);
@@ -593,7 +593,7 @@ public class Creature {
 
     public String details() {
 	if (this.isPlayer()) {
-	    Sound.play("identify");
+	    Sound.grabKey();
 	}
 	return String.format("  level:%d  attack:%d  defense:%d  hp:%d", this.level, this.attackValue(),
 		this.defenseValue(), this.hp);
@@ -636,19 +636,19 @@ public class Creature {
 	final Creature other = this.creature(x2, y2, this.z);
 	if (spell.manaCost() > this.mana) {
 	    if (this.isPlayer()) {
-		Sound.play("failed");
+		Sound.actionFailed();
 	    }
 	    this.doAction("point and mumble but nothing happens");
 	    return;
 	} else if (other == null) {
 	    if (this.isPlayer()) {
-		Sound.play("failed");
+		Sound.actionFailed();
 	    }
 	    this.doAction("point and mumble at nothing");
 	    return;
 	}
 	if (this.isPlayer()) {
-	    Sound.play("spell");
+	    Sound.castSpell();
 	}
 	other.addEffect(spell.effect());
 	this.modifyMana(-spell.manaCost());

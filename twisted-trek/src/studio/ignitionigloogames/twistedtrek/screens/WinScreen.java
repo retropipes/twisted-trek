@@ -11,7 +11,7 @@ import studio.ignitionigloogames.twistedtrek.sound.Sound;
 public class WinScreen implements Screen {
     @Override
     public void displayOutput(final GuiPanel terminal, final MessagePanel messages) {
-	Sound.play("win");
+	Sound.winGame();
 	messages.clear();
 	messages.write("You won.");
 	messages.write("-- press [enter] or click to restart --");

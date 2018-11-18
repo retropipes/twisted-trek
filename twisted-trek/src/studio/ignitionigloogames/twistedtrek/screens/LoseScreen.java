@@ -18,7 +18,7 @@ public class LoseScreen implements Screen {
 
     @Override
     public void displayOutput(final GuiPanel terminal, final MessagePanel messages) {
-	Sound.play("lose");
+	Sound.defeat();
 	messages.clear();
 	messages.write("R.I.P.");
 	messages.write(this.player.causeOfDeath());

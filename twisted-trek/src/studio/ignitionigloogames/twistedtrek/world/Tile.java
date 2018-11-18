@@ -10,40 +10,47 @@ import javax.imageio.ImageIO;
 import studio.ignitionigloogames.twistedtrek.constants.Constants;
 
 public class Tile extends BufferedImage {
-    public static final Tile FLOOR = new Tile("/assets/images/terrain/floor.png", "A dirt and rock cave floor.", 'F');
-    public static final Tile WALL = new Tile("/assets/images/terrain/wall.png", "A dirt and rock cave wall.", 'X');
-    public static final Tile BOUNDS = new Tile("/assets/images/terrain/bounds.png", "Beyond the edge of the world.",
-	    '\u25a9');
-    public static final Tile DARKNESS = new Tile("/assets/images/terrain/darkness.png", "Not visible right now.",
+    public static final Tile FLOOR = new Tile("/assets/images/objects/object-sand.png", "A dirt and rock cave floor.",
+	    'F');
+    public static final Tile WALL = new Tile("/assets/images/objects/object-wall.png", "A dirt and rock cave wall.",
+	    'X');
+    public static final Tile BOUNDS = new Tile("/assets/images/objects/object-bounds.png",
+	    "Beyond the edge of the world.", '\u25a9');
+    public static final Tile DARKNESS = new Tile("/assets/images/objects/object-darkness.png", "Not visible right now.",
 	    '\u2588');
-    public static final Tile STAIRS_DOWN = new Tile("/assets/images/terrain/down.png",
+    public static final Tile STAIRS_DOWN = new Tile("/assets/images/objects/object-down.png",
 	    "A stone staircase that goes down.", '\u2193');
-    public static final Tile STAIRS_UP = new Tile("/assets/images/terrain/up.png", "A stone staircase that goes up.",
-	    '\u2191');
-    public static final Tile FUNGUS = new Tile("/assets/images/monsters/fungus.png", "A fungus.", 'f');
-    public static final Tile BAT = new Tile("/assets/images/monsters/bat.png", "A bat.", 'b');
-    public static final Tile ZOMBIE = new Tile("/assets/images/monsters/zombie.png", "A zombie.", 'z');
-    public static final Tile GOBLIN = new Tile("/assets/images/monsters/goblin.png", "A goblin.", 'g');
+    public static final Tile STAIRS_UP = new Tile("/assets/images/objects/object-up.png",
+	    "A stone staircase that goes up.", '\u2191');
+    public static final Tile FUNGUS = new Tile("/assets/images/monsters/monster_092.png", "A fungus.", 'f');
+    public static final Tile BAT = new Tile("/assets/images/monsters/monster_010.png", "A bat.", 'b');
+    public static final Tile ZOMBIE = new Tile("/assets/images/monsters/monster_143.png", "A zombie.", 'z');
+    public static final Tile GOBLIN = new Tile("/assets/images/monsters/monster_072.png", "A goblin.", 'g');
     public static final Tile UNKNOWN = new Tile("(unknown)");
-    public static final Tile CORPSE = new Tile("/assets/images/items/corpse.png", "It's dead.", '\u24b8');
-    public static final Tile ROCK = new Tile("/assets/images/items/rock.png", "A rock.", '\u26ab');
-    public static final Tile VICTORY = new Tile("/assets/images/items/victory.png", "The long-lost amulet!", 'v');
-    public static final Tile DAGGER = new Tile("/assets/images/items/dagger.png", "A dagger of some sort!", 'w');
-    public static final Tile SWORD = new Tile("/assets/images/items/sword.png", "A sword of some sort!", 'W');
-    public static final Tile STAFF = new Tile("/assets/images/items/staff.png", "A staff of some sort!", 's');
-    public static final Tile BOW = new Tile("/assets/images/items/bow.png", "A bow of some sort!", 'B');
-    public static final Tile MAGIC_WEAPON = new Tile("/assets/images/items/staff.png",
+    public static final Tile CORPSE = new Tile("/assets/images/objects/object-stump.png", "It's dead.", '\u24b8');
+    public static final Tile ROCK = new Tile("/assets/images/objects/object-sun-stone.png", "A rock.", '\u26ab');
+    public static final Tile VICTORY = new Tile("/assets/images/armor/amulet/item-amulet-00.png",
+	    "The long-lost amulet!", 'v');
+    public static final Tile DAGGER = new Tile("/assets/images/weapon/weapon-00.png", "A dagger of some sort!", 'w');
+    public static final Tile SWORD = new Tile("/assets/images/weapon/weapon-01.png", "A sword of some sort!", 'W');
+    public static final Tile STAFF = new Tile("/assets/images/weapon/weapon-02.png", "A staff of some sort!", 's');
+    public static final Tile BOW = new Tile("/assets/images/objects/object-sun-bow.png", "A bow of some sort!", 'B');
+    public static final Tile MAGIC_WEAPON = new Tile("/assets/images/weapon/weapon-04.png",
 	    "An enchanted weapon of some sort!", 'e');
-    public static final Tile LIGHT_ARMOR = new Tile("/assets/images/items/lightarmor.png",
+    public static final Tile LIGHT_ARMOR = new Tile("/assets/images/armor/torso/item-torso-00.png",
 	    "Some light armor of some sort!", 'a');
-    public static final Tile ARMOR = new Tile("/assets/images/items/armor.png", "Some armor of some sort!", 'A');
-    public static final Tile HEAVY_ARMOR = new Tile("/assets/images/items/heavyarmor.png",
+    public static final Tile ARMOR = new Tile("/assets/images/armor/torso/item-torso-01.png",
+	    "Some armor of some sort!", 'A');
+    public static final Tile HEAVY_ARMOR = new Tile("/assets/images/armor/torso/item-torso-02.png",
 	    "Some heavy armor of some sort!", 'H');
-    public static final Tile SPELL = new Tile("/assets/images/items/spell.png", "A spell book of some sort!", 'S');
-    public static final Tile POTION = new Tile("/assets/images/items/potion.png", "A potion of some sort!", 'p');
-    public static final Tile APPLE = new Tile("/assets/images/items/apple.png", "An apple!", '1');
-    public static final Tile BREAD = new Tile("/assets/images/items/bread.png", "Some bread!", '2');
-    public static final Tile PLAYER = new Tile("/assets/images/characters/player.png", "This is you!", 'P');
+    public static final Tile SPELL = new Tile("/assets/images/objects/object-teleport.png",
+	    "A spell book of some sort!", 'S');
+    public static final Tile POTION = new Tile("/assets/images/objects/object-major-unknown-potion.png",
+	    "A potion of some sort!", 'p');
+    public static final Tile APPLE = new Tile("/assets/images/objects/object-major-heal-potion.png", "An apple!", '1');
+    public static final Tile BREAD = new Tile("/assets/images/objects/object-major-surge-potion.png", "Some bread!",
+	    '2');
+    public static final Tile PLAYER = new Tile("/assets/images/objects/object-player.png", "This is you!", 'P');
     private static Hashtable<Character, Tile> symbolMap;
     private final String description;
     private final char stateSymbol;
