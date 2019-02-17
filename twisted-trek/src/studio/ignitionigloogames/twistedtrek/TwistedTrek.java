@@ -15,7 +15,6 @@ import studio.ignitionigloogames.twistedtrek.panels.GuiPanel;
 import studio.ignitionigloogames.twistedtrek.panels.MessagePanel;
 import studio.ignitionigloogames.twistedtrek.screens.Screen;
 import studio.ignitionigloogames.twistedtrek.screens.StartScreen;
-import studio.ignitionigloogames.twistedtrek.sound.Music;
 
 public class TwistedTrek extends JFrame implements KeyListener, MouseListener {
     private static final long serialVersionUID = 1060623638149583738L;
@@ -36,7 +35,6 @@ public class TwistedTrek extends JFrame implements KeyListener, MouseListener {
 	this.addKeyListener(this);
 	this.terminal.addMouseListener(this);
 	this.repaint();
-	Music.play();
     }
 
     @Override

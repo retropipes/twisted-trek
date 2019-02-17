@@ -38,8 +38,6 @@ import studio.ignitionigloogames.twistedtrek.import2.maze.objects.EmptyVoid;
 import studio.ignitionigloogames.twistedtrek.import2.prefs.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.BattleImageManager;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.ImageTransformer;
-import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.MusicConstants;
-import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.MusicManager;
 
 class MapTimeBattleGUI {
     // Fields
@@ -121,18 +119,11 @@ class MapTimeBattleGUI {
     }
 
     void showBattle() {
-	if (PreferencesManager.getMusicEnabled(PreferencesManager.MUSIC_BATTLE)) {
-	    MusicManager.stopMusic();
-	    MusicManager.playMusic(MusicConstants.MUSIC_BATTLE);
-	}
 	this.battleFrame.setVisible(true);
 	this.battleFrame.setJMenuBar(Import2.getApplication().getMenuManager().getMainMenuBar());
     }
 
     void hideBattle() {
-	if (MusicManager.isMusicPlaying()) {
-	    MusicManager.stopMusic();
-	}
 	if (this.battleFrame != null) {
 	    this.battleFrame.setVisible(false);
 	}

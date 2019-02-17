@@ -23,8 +23,6 @@ import studio.ignitionigloogames.twistedtrek.import2.items.combat.CombatItemChuc
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractMazeObject;
 import studio.ignitionigloogames.twistedtrek.import2.maze.objects.BattleCharacter;
 import studio.ignitionigloogames.twistedtrek.import2.prefs.PreferencesManager;
-import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.MusicConstants;
-import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.MusicManager;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.SoundConstants;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.SoundManager;
 import studio.ignitionigloogames.twistedtrek.import2.spells.SpellCaster;
@@ -294,9 +292,6 @@ public class WindowTurnBattleLogic extends AbstractBattle {
 	    gm.stopMovement();
 	    this.enemy = MonsterFactory.getNewMonsterInstance();
 	    this.enemy.loadCreature();
-	    if (PreferencesManager.getMusicEnabled(PreferencesManager.MUSIC_BATTLE)) {
-		MusicManager.playMusic(MusicConstants.MUSIC_BATTLE);
-	    }
 	    this.enemyDidDamage = false;
 	    this.playerDidDamage = false;
 	    this.setResult(BattleResults.IN_PROGRESS);
@@ -524,9 +519,6 @@ public class WindowTurnBattleLogic extends AbstractBattle {
 
     @Override
     public void doResult() {
-	if (PreferencesManager.getMusicEnabled(PreferencesManager.MUSIC_BATTLE)) {
-	    MusicManager.stopMusic();
-	}
 	final PartyMember playerCharacter = PartyManager.getParty().getLeader();
 	final AbstractCreature m = this.enemy;
 	boolean rewardsFlag = false;

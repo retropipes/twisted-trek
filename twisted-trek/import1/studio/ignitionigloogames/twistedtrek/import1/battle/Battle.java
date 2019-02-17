@@ -30,7 +30,6 @@ import studio.ignitionigloogames.twistedtrek.import1.creatures.castes.Caste;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.castes.CasteConstants;
 import studio.ignitionigloogames.twistedtrek.import1.effects.Effect;
 import studio.ignitionigloogames.twistedtrek.import1.items.combat.CombatItemManager;
-import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.MusicManager;
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.SoundManager;
 import studio.ignitionigloogames.twistedtrek.import1.spells.SpellBookManager;
 
@@ -436,9 +435,6 @@ public class Battle implements BattleResults, MoveTypes {
     public void doBattle() {
 	Battle.IN_BATTLE = true;
 	Import1.getApplication().getGameManager().hideOutput();
-	if (Import1.getApplication().getPrefsManager().getMusicEnabled(PreferencesManager.MUSIC_BATTLE)) {
-	    MusicManager.playMusic("battle");
-	}
 	if (Import1.getApplication().getPrefsManager().getSoundEnabled(PreferencesManager.SOUNDS_BATTLE)) {
 	    SoundManager.play("battle");
 	}
@@ -698,9 +694,6 @@ public class Battle implements BattleResults, MoveTypes {
     }
 
     protected void doResult() {
-	if (Import1.getApplication().getPrefsManager().getMusicEnabled(PreferencesManager.MUSIC_BATTLE)) {
-	    MusicManager.stopMusic();
-	}
 	final PlayerCharacter playerCharacter = PCManager.getPlayer();
 	final Monster m = (Monster) this.enemy;
 	if (this.result == BattleResults.WON) {

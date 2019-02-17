@@ -45,7 +45,6 @@ import studio.ignitionigloogames.twistedtrek.import1.objects.Wall;
 import studio.ignitionigloogames.twistedtrek.import1.objects.WallBreakingWand;
 import studio.ignitionigloogames.twistedtrek.import1.objects.WallMakingWand;
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.GraphicsManager;
-import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.MusicManager;
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.SoundManager;
 import studio.ignitionigloogames.xio.XDataReader;
 import studio.ignitionigloogames.xio.XDataWriter;
@@ -298,8 +297,7 @@ public class GameManager implements EffectConstants {
 
     public void doRemoteAction(final int x, final int y, final int z, final int w) {
 	this.setRemoteAction(x, y, z, w);
-	final MazeObject acted = Import1.getApplication().getMazeManager().getMazeObject(x, y, z, w,
-		Maze.LAYER_OBJECT);
+	final MazeObject acted = Import1.getApplication().getMazeManager().getMazeObject(x, y, z, w, Maze.LAYER_OBJECT);
 	acted.postMoveAction(false, x, y, this.objectInv);
 	if (acted.doesChainReact()) {
 	    acted.chainReactionAction(x, y, z, w);
@@ -1142,8 +1140,8 @@ public class GameManager implements EffectConstants {
 
     public void decayTo(final MazeObject obj) {
 	if (this.actingRemotely) {
-	    Import1.getApplication().getMazeManager().getMaze().setCell(obj, this.remoteCoords[0],
-		    this.remoteCoords[1], this.remoteCoords[2], this.remoteCoords[3], Maze.LAYER_OBJECT);
+	    Import1.getApplication().getMazeManager().getMaze().setCell(obj, this.remoteCoords[0], this.remoteCoords[1],
+		    this.remoteCoords[2], this.remoteCoords[3], Maze.LAYER_OBJECT);
 	} else {
 	    this.savedMazeObject = obj;
 	}
@@ -1151,9 +1149,8 @@ public class GameManager implements EffectConstants {
 
     private void doDelayedDecay() {
 	if (this.actingRemotely) {
-	    Import1.getApplication().getMazeManager().getMaze().setCell(this.delayedDecayObject,
-		    this.remoteCoords[0], this.remoteCoords[1], this.remoteCoords[2], this.remoteCoords[3],
-		    Maze.LAYER_OBJECT);
+	    Import1.getApplication().getMazeManager().getMaze().setCell(this.delayedDecayObject, this.remoteCoords[0],
+		    this.remoteCoords[1], this.remoteCoords[2], this.remoteCoords[3], Maze.LAYER_OBJECT);
 	} else {
 	    this.savedMazeObject = this.delayedDecayObject;
 	}
@@ -1466,21 +1463,11 @@ public class GameManager implements EffectConstants {
     public void showOutput() {
 	final Application app = Import1.getApplication();
 	app.getMenuManager().setGameMenus();
-	if (app.getPrefsManager().getMusicEnabled(PreferencesManager.MUSIC_EXPLORING)) {
-	    if (!MusicManager.isMusicPlaying()) {
-		MusicManager.playMusic("polyphonizer");
-	    }
-	}
 	this.outputFrame.setVisible(true);
 	this.outputFrame.setJMenuBar(app.getMenuManager().getMainMenuBar());
     }
 
     public void hideOutput() {
-	if (Import1.getApplication().getPrefsManager().getMusicEnabled(PreferencesManager.MUSIC_EXPLORING)) {
-	    if (MusicManager.isMusicPlaying()) {
-		MusicManager.stopMusic();
-	    }
-	}
 	if (this.outputFrame != null) {
 	    this.outputFrame.setVisible(false);
 	}
