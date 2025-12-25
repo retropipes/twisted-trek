@@ -19,7 +19,7 @@ public class CloneableObjectStorage extends ObjectStorage implements Cloneable {
      * Main copy constructor.
      * 
      * @param source the @self to make a copy of
-     * @param shape simulated dimensions for the stored data
+     * @param shape  simulated dimensions for the stored data
      */
     protected CloneableObjectStorage(CloneableObject[] source, int... shape) {
 	super(source, shape);
