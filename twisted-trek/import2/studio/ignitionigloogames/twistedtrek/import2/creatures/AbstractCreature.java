@@ -3,9 +3,10 @@ package studio.ignitionigloogames.twistedtrek.import2.creatures;
 
 import java.util.Arrays;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
-import studio.ignitionigloogames.page.Page;
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+import org.retropipes.diane.polytable.PolyTable;
+import org.retropipes.diane.random.RandomRange;
+
 import studio.ignitionigloogames.twistedtrek.import2.ai.map.AbstractMapAIRoutine;
 import studio.ignitionigloogames.twistedtrek.import2.ai.window.AbstractWindowAIRoutine;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.faiths.Faith;
@@ -24,7 +25,7 @@ public abstract class AbstractCreature {
     private AbstractMapAIRoutine mapAI;
     private AbstractWindowAIRoutine windowAI;
     private ItemInventory items;
-    private Page toNextLevel;
+    private PolyTable toNextLevel;
     private final int teamID;
     private final int perfectBonusGold;
     private int xLoc, yLoc;
@@ -867,7 +868,7 @@ public abstract class AbstractCreature {
 	this.setStat(StatConstants.STAT_STRENGTH, value);
     }
 
-    public final void setToNextLevel(final Page nextLevelEquation) {
+    public final void setToNextLevel(final PolyTable nextLevelEquation) {
 	this.toNextLevel = nextLevelEquation;
     }
 

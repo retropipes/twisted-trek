@@ -1,7 +1,8 @@
 /* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.maze.effects;
 
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.random.RandomRange;
+
 import studio.ignitionigloogames.twistedtrek.import2.maze.utilities.DirectionConstants;
 
 public class Confused extends MazeEffect {

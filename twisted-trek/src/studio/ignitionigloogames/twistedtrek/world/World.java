@@ -5,11 +5,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+
 import studio.ignitionigloogames.twistedtrek.Creature;
 import studio.ignitionigloogames.twistedtrek.Item;
 import studio.ignitionigloogames.twistedtrek.Point;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class World {
     private Tile[][][] tiles;

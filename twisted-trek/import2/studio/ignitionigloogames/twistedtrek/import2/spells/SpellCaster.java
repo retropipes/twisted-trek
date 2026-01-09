@@ -1,7 +1,8 @@
 /* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.spells;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.battle.BattleTarget;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.AbstractCreature;

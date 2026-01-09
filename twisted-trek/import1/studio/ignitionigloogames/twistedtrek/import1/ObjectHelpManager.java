@@ -6,8 +6,9 @@ import java.awt.FlowLayout;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
-import studio.ignitionigloogames.help.GraphicalHelpViewer;
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+import org.retropipes.diane.help.GraphicalHelpViewer;
+
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObjectList;
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.GraphicsManager;
 

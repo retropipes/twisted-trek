@@ -3,7 +3,7 @@ package studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.datamanag
 
 import java.util.Vector;
 
-import studio.ignitionigloogames.ioutils.ResourceStreamReader;
+import org.retropipes.diane.fileio.utility.ResourceStreamReader;
 
 public class MonsterDataManager {
     public static String[] getMonsterData() {

@@ -18,6 +18,9 @@ import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+
 import studio.ignitionigloogames.twistedtrek.import1.Application;
 import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
@@ -46,8 +49,6 @@ import studio.ignitionigloogames.twistedtrek.import1.objects.WallBreakingWand;
 import studio.ignitionigloogames.twistedtrek.import1.objects.WallMakingWand;
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.GraphicsManager;
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.SoundManager;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class GameManager implements EffectConstants {
     // Fields

@@ -1,7 +1,8 @@
 /* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.game;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Maze;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeNote;

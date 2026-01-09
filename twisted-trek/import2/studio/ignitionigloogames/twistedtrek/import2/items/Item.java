@@ -3,8 +3,8 @@ package studio.ignitionigloogames.twistedtrek.import2.items;
 
 import java.io.IOException;
 
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
 
 public class Item {
     // Properties

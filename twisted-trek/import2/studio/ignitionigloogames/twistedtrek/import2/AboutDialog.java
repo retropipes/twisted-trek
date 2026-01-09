@@ -84,7 +84,7 @@ public class AboutDialog {
 		    ad.hideAboutDialog();
 		}
 	    } catch (final Exception ex) {
-		Import2.getErrorLogger().logError(ex);
+		Import2.logError(ex);
 	    }
 	}
     }

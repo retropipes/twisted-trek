@@ -3,14 +3,15 @@ package studio.ignitionigloogames.twistedtrek.import1.objects;
 
 import java.io.IOException;
 
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+
 import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
 import studio.ignitionigloogames.twistedtrek.import1.generic.GenericTrap;
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObject;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class RotationTrap extends GenericTrap {
     // Fields

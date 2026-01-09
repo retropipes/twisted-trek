@@ -3,9 +3,10 @@ package studio.ignitionigloogames.twistedtrek.import2.game;
 
 import java.io.IOException;
 
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyManager;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class FileHooks {
     private FileHooks() {

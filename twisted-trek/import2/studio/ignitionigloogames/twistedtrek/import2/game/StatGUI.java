@@ -7,7 +7,8 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.Party;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyManager;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyMember;

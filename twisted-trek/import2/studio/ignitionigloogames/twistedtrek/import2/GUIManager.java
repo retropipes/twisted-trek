@@ -15,8 +15,9 @@ import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
-import studio.ignitionigloogames.ioutils.DirectoryUtilities;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+import org.retropipes.diane.fileio.utility.DirectoryUtilities;
+
 import studio.ignitionigloogames.twistedtrek.import2.maze.Maze;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeManager;
 import studio.ignitionigloogames.twistedtrek.import2.prefs.PreferencesManager;

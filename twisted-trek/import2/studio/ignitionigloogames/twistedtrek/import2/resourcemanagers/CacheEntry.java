@@ -1,7 +1,7 @@
 /* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.resourcemanagers;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
 
 final class CacheEntry {
     // Fields

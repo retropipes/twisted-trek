@@ -7,7 +7,8 @@ import java.net.URL;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
-import studio.ignitionigloogames.help.HTMLHelpViewer;
+import org.retropipes.diane.help.HTMLHelpViewer;
+
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.GraphicsManager;
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.HelpManager;
 

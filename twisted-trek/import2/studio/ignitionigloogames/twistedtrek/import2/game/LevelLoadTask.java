@@ -49,7 +49,7 @@ public class LevelLoadTask extends Thread {
 	    app.getGameManager().enableEvents();
 	    app.getGameManager().redrawMaze();
 	} catch (final Exception ex) {
-	    Import2.getErrorLogger().logError(ex);
+	    Import2.logError(ex);
 	} finally {
 	    this.loadFrame.setVisible(false);
 	}

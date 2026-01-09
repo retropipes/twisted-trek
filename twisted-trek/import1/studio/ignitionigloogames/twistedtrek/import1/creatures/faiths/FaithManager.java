@@ -1,7 +1,8 @@
 /* Import1: A Maze-Solving Game */
 package studio.ignitionigloogames.twistedtrek.import1.creatures.faiths;
 
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.random.RandomRange;
+
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 
 public class FaithManager implements FaithConstants {

@@ -3,12 +3,14 @@ package studio.ignitionigloogames.twistedtrek.import1.maze;
 
 import java.io.IOException;
 
+import org.retropipes.diane.fileio.DataIOFactory;
+import org.retropipes.diane.fileio.XDataReader;
+
 import studio.ignitionigloogames.twistedtrek.import1.Application;
 import studio.ignitionigloogames.twistedtrek.import1.DataConstants;
 import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.PCManager;
-import studio.ignitionigloogames.xio.XDataReader;
 
 public class LoadTask5 extends Thread {
     // Fields
@@ -37,7 +39,7 @@ public class LoadTask5 extends Thread {
 	    app.getGameManager().setSavedGameFlag(false);
 	    sg = "Maze";
 	}
-	try (final XDataReader mazeFile = new XDataReader(this.filename, DataConstants.DATA_MODE_BINARY)) {
+	try (final XDataReader mazeFile = DataIOFactory.createTagReader(this.filename, DataConstants.DATA_MODE_BINARY)) {
 	    try {
 		final boolean supported = LoadTask5.checkFormatVersion(LoadTask5.readFormatVersion(mazeFile));
 		if (!supported) {

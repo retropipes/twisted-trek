@@ -3,7 +3,8 @@ package studio.ignitionigloogames.twistedtrek.import2.battle.window.turn;
 
 import javax.swing.JFrame;
 
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.random.RandomRange;
+
 import studio.ignitionigloogames.twistedtrek.import2.Application;
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.ai.window.AbstractWindowAIRoutine;
@@ -298,7 +299,7 @@ public class WindowTurnBattleLogic extends AbstractBattle {
 	    this.battleGUI.initBattle(this.enemy.getImage());
 	    this.firstUpdateMessageArea();
 	} catch (final Throwable t) {
-	    Import2.getErrorLogger().logError(t);
+	    Import2.logError(t);
 	}
     }
 

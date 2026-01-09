@@ -13,7 +13,8 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 
-import studio.ignitionigloogames.errorlogger.ErrorLogger;
+import org.retropipes.diane.Diane;
+
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.GraphicsManager;
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.ImageCache;
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.MonsterImageCache;
@@ -22,7 +23,6 @@ public class Import1 {
     // Constants
     private static Application application;
     private static final String PROGRAM_NAME = "Import1";
-    private static final ErrorLogger debug = new ErrorLogger(Import1.PROGRAM_NAME);
     private static boolean IN_IMPORT1 = true;
 
     // Methods
@@ -31,7 +31,7 @@ public class Import1 {
     }
 
     public static void debug(final Throwable t) {
-	Import1.debug.logError(t);
+	Diane.handleError(t);
     }
 
     public static boolean inImport1() {
@@ -43,6 +43,7 @@ public class Import1 {
     }
 
     public static void main_disabled(final String[] args) {
+	Diane.installDefaultErrorHandler(Import1.PROGRAM_NAME);
 	if (System.getProperty("os.name").startsWith("Mac OS X")) {
 	    // Mac OS X-specific stuff
 	    System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Import1");

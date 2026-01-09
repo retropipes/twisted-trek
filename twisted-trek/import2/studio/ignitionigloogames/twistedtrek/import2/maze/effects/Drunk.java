@@ -1,7 +1,7 @@
 /* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.maze.effects;
 
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.random.RandomRange;
 
 public class Drunk extends MazeEffect {
     // Constructor

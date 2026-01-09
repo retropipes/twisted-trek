@@ -4,7 +4,8 @@ package studio.ignitionigloogames.twistedtrek.import2.datamanagers;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import studio.ignitionigloogames.ioutils.ResourceStreamReader;
+import org.retropipes.diane.fileio.utility.ResourceStreamReader;
+
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 
 public class GraphicsDataManager {
@@ -22,7 +23,7 @@ public class GraphicsDataManager {
 	    }
 	    return rawData.toArray(new String[rawData.size()]);
 	} catch (final IOException e) {
-	    Import2.getErrorLogger().logError(e);
+	    Import2.logError(e);
 	    return null;
 	}
     }
@@ -41,7 +42,7 @@ public class GraphicsDataManager {
 	    }
 	    return rawData.toArray(new String[rawData.size()]);
 	} catch (final IOException e) {
-	    Import2.getErrorLogger().logError(e);
+	    Import2.logError(e);
 	    return null;
 	}
     }

@@ -3,7 +3,8 @@ package studio.ignitionigloogames.twistedtrek.import2.datamanagers;
 
 import java.io.IOException;
 
-import studio.ignitionigloogames.ioutils.ResourceStreamReader;
+import org.retropipes.diane.fileio.utility.ResourceStreamReader;
+
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.personalities.PersonalityConstants;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Extension;
@@ -30,7 +31,7 @@ public class PersonalityDataManager {
 	    }
 	    return finalData;
 	} catch (final IOException e) {
-	    Import2.getErrorLogger().logError(e);
+	    Import2.logError(e);
 	    return null;
 	}
     }

@@ -3,12 +3,13 @@ package studio.ignitionigloogames.twistedtrek.import1.maze;
 
 import java.io.IOException;
 
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+
 import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObject;
 import studio.ignitionigloogames.twistedtrek.import1.objects.Monster;
 import studio.ignitionigloogames.twistedtrek.import1.objects.MovingBlock;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class Maze5 implements Maze {
     // Properties

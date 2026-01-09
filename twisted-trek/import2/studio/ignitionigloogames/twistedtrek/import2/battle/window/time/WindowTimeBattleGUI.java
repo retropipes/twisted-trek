@@ -18,7 +18,8 @@ import javax.swing.JProgressBar;
 import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.ai.window.AbstractWindowAIRoutine;
 import studio.ignitionigloogames.twistedtrek.import2.battle.AbstractBattle;
@@ -310,7 +311,7 @@ public class WindowTimeBattleGUI {
 		    return;
 		}
 	    } catch (final Throwable t) {
-		Import2.getErrorLogger().logError(t);
+		Import2.logError(t);
 	    }
 	}
     }

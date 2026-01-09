@@ -3,7 +3,7 @@ package studio.ignitionigloogames.twistedtrek.import2.ai.map;
 
 import java.awt.Point;
 
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.random.RandomRange;
 
 class VeryHardMapAIRoutine extends AbstractMapAIRoutine {
     // Fields

@@ -3,12 +3,14 @@ package studio.ignitionigloogames.twistedtrek.import1.maze;
 
 import java.io.IOException;
 
+import org.retropipes.diane.fileio.DataIOFactory;
+import org.retropipes.diane.fileio.XDataWriter;
+
 import studio.ignitionigloogames.twistedtrek.import1.Application;
 import studio.ignitionigloogames.twistedtrek.import1.DataConstants;
 import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.PCManager;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class SaveTask extends Thread {
     // Fields
@@ -42,7 +44,7 @@ public class SaveTask extends Thread {
 		this.filename += Extension.getMaze5ExtensionWithPeriod();
 	    }
 	}
-	try (final XDataWriter mazeFile = new XDataWriter(this.filename, DataConstants.DATA_MODE_BINARY)) {
+	try (final XDataWriter mazeFile = DataIOFactory.createTagWriter(this.filename, DataConstants.DATA_MODE_BINARY)) {
 	    SaveTask.writeFormatVersion(mazeFile);
 	    app.getMazeManager().getMaze().writeMaze(mazeFile);
 	    if (this.isSavedGame) {

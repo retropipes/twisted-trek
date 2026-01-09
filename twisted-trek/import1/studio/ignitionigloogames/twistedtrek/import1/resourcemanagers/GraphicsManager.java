@@ -9,7 +9,8 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.UIManager;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+
 import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.Element;
 

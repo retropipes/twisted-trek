@@ -1,7 +1,8 @@
 /* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.game;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.Application;
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyManager;
@@ -50,7 +51,7 @@ final class MovementTask extends Thread {
 		}
 	    }
 	} catch (final Throwable t) {
-	    Import2.getErrorLogger().logError(t);
+	    Import2.logError(t);
 	}
     }
 

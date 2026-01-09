@@ -4,7 +4,8 @@ package studio.ignitionigloogames.twistedtrek.import2.creatures.personalities;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import studio.ignitionigloogames.ioutils.ResourceStreamReader;
+import org.retropipes.diane.fileio.utility.ResourceStreamReader;
+
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.datamanagers.PersonalityDataManager;
 
@@ -64,7 +65,7 @@ public class PersonalityConstants {
 		PersonalityConstants.PERSONALITIES_COUNT = PersonalityConstants.PERSONALITY_NAMES.length;
 		PersonalityConstants.INITED = true;
 	    } catch (final IOException ioe) {
-		Import2.getErrorLogger().logError(ioe);
+		Import2.logError(ioe);
 	    }
 	}
     }

@@ -1,8 +1,9 @@
 /* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.creatures.monsters;
 
-import studio.ignitionigloogames.randomrange.RandomLongRange;
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.random.RandomLongRange;
+import org.retropipes.diane.random.RandomRange;
+
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyManager;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyMember;
 import studio.ignitionigloogames.twistedtrek.import2.prefs.PreferencesManager;

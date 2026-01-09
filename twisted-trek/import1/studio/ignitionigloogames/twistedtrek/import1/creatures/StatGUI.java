@@ -7,7 +7,8 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.GraphicsManager;
 
 public class StatGUI {

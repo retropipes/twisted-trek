@@ -41,7 +41,7 @@ public class StartScreen implements Screen {
 //				StartScreen.getNameWithoutExtension(StartScreen.getFileNameOnly(filename)))) {
 //			    try {
 //				World w = new World();
-//				XDataReader reader = new XDataReader(filename, Constants.SAVE_FILE_DOC_TAG);
+//				XDataReader reader = DataIOFactory.createTagReader(filename, Constants.SAVE_FILE_DOC_TAG);
 //				w.loadWorld(reader);
 //				return new PlayScreen(true, w);
 //			    } catch (IOException ioe) {

@@ -3,7 +3,10 @@ package studio.ignitionigloogames.twistedtrek.import1.objects;
 
 import java.io.IOException;
 
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+import org.retropipes.diane.random.RandomRange;
+
 import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.battle.Battle;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
@@ -12,8 +15,6 @@ import studio.ignitionigloogames.twistedtrek.import1.generic.GenericDungeonObjec
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObject;
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObjectList;
 import studio.ignitionigloogames.twistedtrek.import1.generic.TypeConstants;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class Monster extends GenericDungeonObject {
     // Fields

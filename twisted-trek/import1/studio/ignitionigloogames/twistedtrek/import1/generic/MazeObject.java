@@ -5,14 +5,15 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.BitSet;
 
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+
 import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.game.ObjectInventory;
 import studio.ignitionigloogames.twistedtrek.import1.maze.FormatConstants;
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.SoundManager;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public abstract class MazeObject implements DirectionConstants, TypeConstants, ArrowTypeConstants, UniqueID5 {
     // Properties

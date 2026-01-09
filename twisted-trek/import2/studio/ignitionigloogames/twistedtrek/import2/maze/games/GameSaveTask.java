@@ -5,8 +5,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
-import studio.ignitionigloogames.ioutils.ZipUtilities;
+import org.retropipes.diane.fileio.utility.ZipUtilities;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.Application;
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Extension;
@@ -55,7 +56,7 @@ public class GameSaveTask extends Thread {
 		    + " failed, probably due to illegal characters in the file name.");
 	    success = false;
 	} catch (final Exception ex) {
-	    Import2.getErrorLogger().logError(ex);
+	    Import2.logError(ex);
 	}
 	Import2.getApplication().getMazeManager().handleDeferredSuccess(success, false, null);
     }

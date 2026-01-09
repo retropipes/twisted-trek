@@ -22,6 +22,13 @@ public abstract class AbstractTeleport extends AbstractMazeObject {
 	this.destFloor = destinationFloor;
     }
 
+    protected AbstractTeleport(final AbstractTeleport source) {
+	super(source);
+	this.destRow = source.destRow;
+	this.destCol = source.destCol;
+	this.destFloor = source.destFloor;
+    }
+
     @Override
     public boolean equals(final Object obj) {
 	if (obj == null) {
@@ -49,15 +56,6 @@ public abstract class AbstractTeleport extends AbstractMazeObject {
 	hash = 67 * hash + this.destRow;
 	hash = 67 * hash + this.destCol;
 	return 67 * hash + this.destFloor;
-    }
-
-    @Override
-    public AbstractTeleport clone() {
-	final AbstractTeleport copy = (AbstractTeleport) super.clone();
-	copy.destCol = this.destCol;
-	copy.destFloor = this.destFloor;
-	copy.destRow = this.destRow;
-	return copy;
     }
 
     // Accessor methods

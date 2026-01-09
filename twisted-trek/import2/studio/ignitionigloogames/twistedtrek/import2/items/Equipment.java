@@ -4,9 +4,10 @@ package studio.ignitionigloogames.twistedtrek.import2.items;
 import java.io.IOException;
 import java.util.Arrays;
 
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+
 import studio.ignitionigloogames.twistedtrek.import2.creatures.faiths.FaithConstants;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class Equipment extends Item {
     // Properties

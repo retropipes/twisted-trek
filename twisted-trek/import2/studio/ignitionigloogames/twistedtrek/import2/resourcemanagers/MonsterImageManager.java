@@ -7,7 +7,8 @@ import java.net.URL;
 
 import javax.imageio.ImageIO;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+
 import studio.ignitionigloogames.twistedtrek.import2.creatures.monsters.Element;
 
 public class MonsterImageManager {

@@ -271,7 +271,7 @@ public class PlayScreen implements Screen {
 //			if (FilenameChecker.isFilenameOK(
 //				PlayScreen.getNameWithoutExtension(PlayScreen.getFileNameOnly(filename)))) {
 //			    try {
-//				XDataWriter writer = new XDataWriter(filename, Constants.SAVE_FILE_DOC_TAG);
+//				XDataWriter writer = DataIOFactory.createTagWriter(filename, Constants.SAVE_FILE_DOC_TAG);
 //				PlayScreen.this.world.saveWorld(writer);
 //			    } catch (IOException ioe) {
 //				// Failed

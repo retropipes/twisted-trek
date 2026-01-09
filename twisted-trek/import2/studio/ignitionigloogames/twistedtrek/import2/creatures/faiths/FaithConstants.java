@@ -5,7 +5,8 @@ import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import studio.ignitionigloogames.ioutils.ResourceStreamReader;
+import org.retropipes.diane.fileio.utility.ResourceStreamReader;
+
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.datamanagers.FaithDataManager;
 import studio.ignitionigloogames.twistedtrek.import2.names.NamesConstants;
@@ -115,7 +116,7 @@ public class FaithConstants {
 		}
 		FaithConstants.INITED = true;
 	    } catch (final IOException ioe) {
-		Import2.getErrorLogger().logError(ioe);
+		Import2.logError(ioe);
 	    }
 	}
     }

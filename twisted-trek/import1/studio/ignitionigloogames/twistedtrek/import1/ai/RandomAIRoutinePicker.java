@@ -1,7 +1,7 @@
 /* Import1: A Maze-Solving Game */
 package studio.ignitionigloogames.twistedtrek.import1.ai;
 
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.random.RandomRange;
 
 public final class RandomAIRoutinePicker {
     // Constants

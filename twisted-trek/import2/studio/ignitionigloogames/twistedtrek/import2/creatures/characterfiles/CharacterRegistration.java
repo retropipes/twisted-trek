@@ -8,8 +8,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
-import studio.ignitionigloogames.ioutils.ResourceStreamReader;
+import org.retropipes.diane.fileio.utility.ResourceStreamReader;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.maze.Extension;
 
 public class CharacterRegistration {

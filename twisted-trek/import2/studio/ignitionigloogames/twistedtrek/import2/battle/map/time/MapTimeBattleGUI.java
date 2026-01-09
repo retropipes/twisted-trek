@@ -20,9 +20,10 @@ import javax.swing.JProgressBar;
 import javax.swing.KeyStroke;
 import javax.swing.WindowConstants;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
-import studio.ignitionigloogames.images.BufferedImageIcon;
-import studio.ignitionigloogames.twistedtrek.import2.DrawGrid;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+import org.retropipes.diane.drawgrid.DrawGrid;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.ai.map.AbstractMapAIRoutine;
 import studio.ignitionigloogames.twistedtrek.import2.battle.AbstractBattle;
@@ -316,7 +317,7 @@ class MapTimeBattleGUI {
 		    b.doPlayerActions(AbstractMapAIRoutine.ACTION_USE_ITEM);
 		}
 	    } catch (final Throwable t) {
-		Import2.getErrorLogger().logError(t);
+		Import2.logError(t);
 	    }
 	}
 
@@ -414,7 +415,7 @@ class MapTimeBattleGUI {
 		    bg.resetPlayerActionBar();
 		}
 	    } catch (final Exception ex) {
-		Import2.getErrorLogger().logError(ex);
+		Import2.logError(ex);
 	    }
 	}
 
@@ -485,7 +486,7 @@ class MapTimeBattleGUI {
 		    bg.resetPlayerActionBar();
 		}
 	    } catch (final Exception ex) {
-		Import2.getErrorLogger().logError(ex);
+		Import2.logError(ex);
 	    }
 	}
     }

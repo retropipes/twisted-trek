@@ -9,8 +9,9 @@ import javax.swing.JFrame;
 import javax.swing.JProgressBar;
 import javax.swing.WindowConstants;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
-import studio.ignitionigloogames.ioutils.ZipUtilities;
+import org.retropipes.diane.fileio.utility.ZipUtilities;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.Application;
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.VersionException;
@@ -98,7 +99,7 @@ public class GameLoadTask extends Thread {
 		    .showDialog("Loading the " + sg.toLowerCase() + " failed, due to some other type of I/O error.");
 	    Import2.getApplication().getMazeManager().handleDeferredSuccess(false, false, null);
 	} catch (final Exception ex) {
-	    Import2.getErrorLogger().logError(ex);
+	    Import2.logError(ex);
 	} finally {
 	    this.loadFrame.setVisible(false);
 	}

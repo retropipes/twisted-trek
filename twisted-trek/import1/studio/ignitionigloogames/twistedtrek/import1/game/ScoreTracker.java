@@ -3,8 +3,9 @@ package studio.ignitionigloogames.twistedtrek.import1.game;
 
 import java.io.File;
 
-import studio.ignitionigloogames.scoremanager.SavedScoreManager;
-import studio.ignitionigloogames.scoremanager.ScoreManager;
+import org.retropipes.diane.scoring.SavedScoreManager;
+import org.retropipes.diane.scoring.ScoreManager;
+
 import studio.ignitionigloogames.twistedtrek.import1.Messager;
 import studio.ignitionigloogames.twistedtrek.import1.maze.Extension;
 

@@ -1,7 +1,8 @@
 /* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.maze.abc;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+
 import studio.ignitionigloogames.twistedtrek.import2.creatures.AbstractCreature;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.StatConstants;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeConstants;

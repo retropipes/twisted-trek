@@ -1,7 +1,7 @@
 /* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.creatures.genders;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
 
 public class GenderManager {
     private static boolean CACHE_CREATED = false;

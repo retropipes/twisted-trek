@@ -12,7 +12,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.creatures.characterfiles.CharacterRegistration;
 import studio.ignitionigloogames.twistedtrek.import2.game.InventoryViewer;
 import studio.ignitionigloogames.twistedtrek.import2.game.NoteManager;
@@ -312,7 +313,7 @@ public class MenuManager {
 		}
 		MenuManager.this.checkFlags();
 	    } catch (final Throwable t) {
-		Import2.getErrorLogger().logError(t);
+		Import2.logError(t);
 	    }
 	}
     }

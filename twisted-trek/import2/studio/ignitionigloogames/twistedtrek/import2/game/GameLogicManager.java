@@ -3,7 +3,8 @@ package studio.ignitionigloogames.twistedtrek.import2.game;
 
 import javax.swing.JFrame;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.Application;
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyManager;

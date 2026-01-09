@@ -1,7 +1,7 @@
 /* Twisted Trek: A Dual-World Action RPG */
 package studio.ignitionigloogames.twistedtrek.sound;
 
-import studio.ignitionigloogames.audio.wav.WavFactory;
+import org.retropipes.diane.asset.sound.DianeSoundPlayer;
 
 public final class Sound {
     public static void play(final String soundName) {
@@ -9,7 +9,7 @@ public final class Sound {
     }
 
     private static void playSound(final String soundName) {
-	WavFactory.loadResource(Sound.class.getResource("/assets/sounds/" + soundName + ".wav")).start();
+	DianeSoundPlayer.playSource(Sound.class.getResource("/assets/sounds/" + soundName + ".wav"));
     }
 
     public static void actionFailed() {

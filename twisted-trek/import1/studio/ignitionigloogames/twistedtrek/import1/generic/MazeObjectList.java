@@ -4,13 +4,14 @@ package studio.ignitionigloogames.twistedtrek.import1.generic;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+import org.retropipes.diane.fileio.XDataReader;
+
 import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.maze.FormatConstants;
 import studio.ignitionigloogames.twistedtrek.import1.maze.Maze;
 import studio.ignitionigloogames.twistedtrek.import1.objects.*;
 import studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.GraphicsManager;
-import studio.ignitionigloogames.xio.XDataReader;
 
 public class MazeObjectList {
     // Fields

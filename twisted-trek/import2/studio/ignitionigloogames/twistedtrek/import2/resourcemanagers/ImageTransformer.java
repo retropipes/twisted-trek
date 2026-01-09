@@ -3,7 +3,8 @@ package studio.ignitionigloogames.twistedtrek.import2.resourcemanagers;
 
 import java.awt.Color;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+
 import studio.ignitionigloogames.twistedtrek.import2.maze.utilities.ImageColorConstants;
 
 public class ImageTransformer {

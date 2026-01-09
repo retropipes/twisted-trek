@@ -6,8 +6,8 @@ import java.awt.FlowLayout;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
-import studio.ignitionigloogames.help.GraphicalHelpViewer;
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+import org.retropipes.diane.help.GraphicalHelpViewer;
 
 public class MonsterImageCache {
     // Fields

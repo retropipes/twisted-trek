@@ -3,14 +3,15 @@ package studio.ignitionigloogames.twistedtrek.import1.game;
 
 import java.io.IOException;
 
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+
 import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.generic.GenericBoots;
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObject;
 import studio.ignitionigloogames.twistedtrek.import1.generic.MazeObjectList;
 import studio.ignitionigloogames.twistedtrek.import1.generic.TypeConstants;
 import studio.ignitionigloogames.twistedtrek.import1.objects.RegularBoots;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class ObjectInventory implements Cloneable {
     // Properties

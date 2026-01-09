@@ -11,7 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.creatures.StatConstants;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyManager;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyMember;

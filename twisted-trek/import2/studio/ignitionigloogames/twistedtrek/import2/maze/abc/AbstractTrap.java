@@ -1,7 +1,8 @@
 /* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.maze.abc;
 
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.random.RandomRange;
+
 import studio.ignitionigloogames.twistedtrek.import2.maze.Maze;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeConstants;
 import studio.ignitionigloogames.twistedtrek.import2.maze.utilities.TypeConstants;

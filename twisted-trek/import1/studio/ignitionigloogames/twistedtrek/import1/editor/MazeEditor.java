@@ -21,8 +21,9 @@ import javax.swing.JScrollBar;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
-import studio.ignitionigloogames.picturepicker.PicturePicker;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+import org.retropipes.diane.gui.picker.PicturePicker;
+
 import studio.ignitionigloogames.twistedtrek.import1.Application;
 import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.Messager;

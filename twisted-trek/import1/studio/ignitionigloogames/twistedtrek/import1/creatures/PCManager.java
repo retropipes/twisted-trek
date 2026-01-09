@@ -3,6 +3,9 @@ package studio.ignitionigloogames.twistedtrek.import1.creatures;
 
 import java.io.IOException;
 
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+
 import studio.ignitionigloogames.twistedtrek.import1.creatures.castes.Caste;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.castes.CasteManager;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.faiths.Faith;
@@ -14,8 +17,6 @@ import studio.ignitionigloogames.twistedtrek.import1.creatures.personalities.Per
 import studio.ignitionigloogames.twistedtrek.import1.creatures.races.Race;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.races.RaceManager;
 import studio.ignitionigloogames.twistedtrek.import1.items.ItemInventory;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class PCManager {
     // Fields

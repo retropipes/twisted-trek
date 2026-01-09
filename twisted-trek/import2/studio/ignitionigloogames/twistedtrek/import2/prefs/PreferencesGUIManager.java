@@ -25,7 +25,8 @@ import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
 import javax.swing.WindowConstants;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.Application;
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.LogoManager;
@@ -237,7 +238,7 @@ class PreferencesGUIManager {
 		    pm.hidePrefs();
 		}
 	    } catch (final Exception ex) {
-		Import2.getErrorLogger().logError(ex);
+		Import2.logError(ex);
 	    }
 	}
 
@@ -261,7 +262,7 @@ class PreferencesGUIManager {
 		    }
 		}
 	    } catch (final Exception ex) {
-		Import2.getErrorLogger().logError(ex);
+		Import2.logError(ex);
 	    }
 	}
 

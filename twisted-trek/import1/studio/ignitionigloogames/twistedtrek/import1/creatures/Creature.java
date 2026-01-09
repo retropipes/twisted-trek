@@ -1,7 +1,8 @@
 /* Import1: A Maze-Solving Game */
 package studio.ignitionigloogames.twistedtrek.import1.creatures;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+
 import studio.ignitionigloogames.twistedtrek.import1.ai.AIRoutine;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.faiths.Faith;
 import studio.ignitionigloogames.twistedtrek.import1.effects.Effect;

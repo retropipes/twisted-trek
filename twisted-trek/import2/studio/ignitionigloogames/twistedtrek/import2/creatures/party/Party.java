@@ -3,13 +3,14 @@ package studio.ignitionigloogames.twistedtrek.import2.creatures.party;
 
 import java.io.IOException;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.maze.Maze;
 import studio.ignitionigloogames.twistedtrek.import2.maze.objects.BattleCharacter;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.SoundConstants;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.SoundManager;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class Party {
     // Fields

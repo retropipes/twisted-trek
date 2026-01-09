@@ -1,7 +1,8 @@
 /* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.creatures.monsters;
 
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.random.RandomRange;
+
 import studio.ignitionigloogames.twistedtrek.import2.ai.map.AbstractMapAIRoutine;
 import studio.ignitionigloogames.twistedtrek.import2.ai.map.MapAIRoutinePicker;
 import studio.ignitionigloogames.twistedtrek.import2.ai.window.AbstractWindowAIRoutine;

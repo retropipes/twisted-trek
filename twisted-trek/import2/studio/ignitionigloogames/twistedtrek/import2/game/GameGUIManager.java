@@ -16,9 +16,10 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+import org.retropipes.diane.drawgrid.DrawGrid;
+
 import studio.ignitionigloogames.twistedtrek.import2.Application;
-import studio.ignitionigloogames.twistedtrek.import2.DrawGrid;
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Maze;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeConstants;
@@ -331,7 +332,7 @@ class GameGUIManager {
 		    break;
 		}
 	    } catch (final Exception ex) {
-		Import2.getErrorLogger().logError(ex);
+		Import2.logError(ex);
 	    }
 	}
 
@@ -368,7 +369,7 @@ class GameGUIManager {
 		    app.getGameManager().exitGame();
 		}
 	    } catch (final Exception ex) {
-		Import2.getErrorLogger().logError(ex);
+		Import2.logError(ex);
 	    }
 	}
 
@@ -413,7 +414,7 @@ class GameGUIManager {
 		    gm.identifyObject(x, y);
 		}
 	    } catch (final Exception ex) {
-		Import2.getErrorLogger().logError(ex);
+		Import2.logError(ex);
 	    }
 	}
 

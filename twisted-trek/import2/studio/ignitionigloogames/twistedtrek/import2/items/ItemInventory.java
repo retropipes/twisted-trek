@@ -5,14 +5,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+
 import studio.ignitionigloogames.twistedtrek.import2.creatures.AbstractCreature;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.StatConstants;
 import studio.ignitionigloogames.twistedtrek.import2.items.combat.CombatItemList;
 import studio.ignitionigloogames.twistedtrek.import2.maze.FormatConstants;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.SoundConstants;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.SoundManager;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class ItemInventory {
     // Properties

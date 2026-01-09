@@ -4,8 +4,9 @@ package studio.ignitionigloogames.twistedtrek.import2.battle.map.turn;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+import org.retropipes.diane.random.RandomRange;
+
 import studio.ignitionigloogames.twistedtrek.import2.Application;
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.ai.map.AbstractMapAIRoutine;

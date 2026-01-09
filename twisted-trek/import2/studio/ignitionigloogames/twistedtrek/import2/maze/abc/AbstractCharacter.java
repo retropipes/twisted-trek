@@ -3,12 +3,13 @@ package studio.ignitionigloogames.twistedtrek.import2.maze.abc;
 
 import java.io.IOException;
 
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.MazeConstants;
 import studio.ignitionigloogames.twistedtrek.import2.maze.objects.Empty;
 import studio.ignitionigloogames.twistedtrek.import2.maze.utilities.TypeConstants;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public abstract class AbstractCharacter extends AbstractMazeObject {
     // Fields

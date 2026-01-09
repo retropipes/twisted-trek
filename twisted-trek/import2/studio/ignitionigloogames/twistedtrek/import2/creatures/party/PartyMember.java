@@ -3,8 +3,11 @@ package studio.ignitionigloogames.twistedtrek.import2.creatures.party;
 
 import java.io.IOException;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
-import studio.ignitionigloogames.page.Page;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+import org.retropipes.diane.polytable.PolyTable;
+
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.VersionException;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.AbstractCreature;
@@ -24,8 +27,6 @@ import studio.ignitionigloogames.twistedtrek.import2.maze.objects.Player;
 import studio.ignitionigloogames.twistedtrek.import2.prefs.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.BattleImageManager;
 import studio.ignitionigloogames.twistedtrek.import2.spells.SpellBook;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class PartyMember extends AbstractCreature {
     // Fields
@@ -74,7 +75,7 @@ public class PartyMember extends AbstractCreature {
 	this.healAndRegenerateFully();
 	this.setGold(PartyMember.START_GOLD);
 	this.setExperience(0L);
-	final Page nextLevelEquation = new Page(3, 1, 0, true);
+	final PolyTable nextLevelEquation = new PolyTable(3, 1, 0, true);
 	final double value = PartyMember.BASE_COEFF
 		* this.personality.getAttribute(PersonalityConstants.PERSONALITY_ATTRIBUTE_LEVEL_UP_SPEED);
 	nextLevelEquation.setCoefficient(1, value);
@@ -220,7 +221,7 @@ public class PartyMember extends AbstractCreature {
 	this.setExperience(0L);
 	this.getItems().resetInventory();
 	Import2.getApplication().getGameManager().deactivateAllEffects();
-	final Page nextLevelEquation = new Page(3, 1, 0, true);
+	final PolyTable nextLevelEquation = new PolyTable(3, 1, 0, true);
 	final double value = PartyMember.BASE_COEFF
 		* this.personality.getAttribute(PersonalityConstants.PERSONALITY_ATTRIBUTE_LEVEL_UP_SPEED);
 	nextLevelEquation.setCoefficient(1, value);

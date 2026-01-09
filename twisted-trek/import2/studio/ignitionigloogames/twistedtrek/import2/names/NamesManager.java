@@ -13,11 +13,11 @@ public class NamesManager {
 	try {
 	    NamesManager.createCache();
 	} catch (final Exception e) {
-	    Import2.getErrorLogger().logError(e);
+	    Import2.logError(e);
 	}
 	final String key = section + ":" + type;
 	if (!NamesManager.containsKey(key)) {
-	    Import2.getErrorLogger().logError(new IllegalArgumentException("No such key " + key));
+	    Import2.logError(new IllegalArgumentException("No such key " + key));
 	}
 	return NamesManager.getValue(key);
     }

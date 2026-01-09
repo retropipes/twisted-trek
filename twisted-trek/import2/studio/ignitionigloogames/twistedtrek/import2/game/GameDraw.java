@@ -6,7 +6,8 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
-import studio.ignitionigloogames.twistedtrek.import2.DrawGrid;
+import org.retropipes.diane.drawgrid.DrawGrid;
+
 import studio.ignitionigloogames.twistedtrek.import2.prefs.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.ImageTransformer;
 

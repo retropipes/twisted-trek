@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+import org.retropipes.diane.fileio.XDataReader;
+
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.FormatConstants;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractMazeObject;
@@ -49,7 +51,6 @@ import studio.ignitionigloogames.twistedtrek.import2.maze.objects.WarpTrap;
 import studio.ignitionigloogames.twistedtrek.import2.maze.objects.WeaponsShop;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.ImageTransformer;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.ObjectImageManager;
-import studio.ignitionigloogames.xio.XDataReader;
 
 public class MazeObjectList {
     // Fields
@@ -182,7 +183,7 @@ public class MazeObjectList {
 		}
 	    } catch (InstantiationException | IllegalAccessException | IllegalArgumentException
 		    | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
-		Import2.getErrorLogger().logError(ex);
+		Import2.logError(ex);
 	    }
 	}
 	return null;
@@ -204,7 +205,7 @@ public class MazeObjectList {
 		}
 	    } catch (InstantiationException | IllegalAccessException | IllegalArgumentException
 		    | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
-		Import2.getErrorLogger().logError(ex);
+		Import2.logError(ex);
 	    }
 	}
 	return null;

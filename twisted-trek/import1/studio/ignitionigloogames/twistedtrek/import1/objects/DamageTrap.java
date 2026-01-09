@@ -1,7 +1,8 @@
 /* Import1: A Maze-Solving Game */
 package studio.ignitionigloogames.twistedtrek.import1.objects;
 
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.random.RandomRange;
+
 import studio.ignitionigloogames.twistedtrek.import1.Import1;
 import studio.ignitionigloogames.twistedtrek.import1.PreferencesManager;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.PCManager;

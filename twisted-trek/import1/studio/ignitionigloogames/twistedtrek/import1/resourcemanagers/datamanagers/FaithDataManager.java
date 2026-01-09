@@ -3,7 +3,8 @@
  */
 package studio.ignitionigloogames.twistedtrek.import1.resourcemanagers.datamanagers;
 
-import studio.ignitionigloogames.ioutils.ResourceStreamReader;
+import org.retropipes.diane.fileio.utility.ResourceStreamReader;
+
 import studio.ignitionigloogames.twistedtrek.import1.creatures.faiths.FaithConstants;
 
 public class FaithDataManager {

@@ -4,16 +4,18 @@ package studio.ignitionigloogames.twistedtrek.import2.maze;
 import java.io.File;
 import java.io.IOException;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
-import studio.ignitionigloogames.randomrange.RandomLongRange;
+import org.retropipes.diane.fileio.DataIOFactory;
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+import org.retropipes.diane.random.RandomLongRange;
+
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.VersionException;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractMazeObject;
 import studio.ignitionigloogames.twistedtrek.import2.maze.objects.Empty;
 import studio.ignitionigloogames.twistedtrek.import2.maze.objects.Monster;
 import studio.ignitionigloogames.twistedtrek.import2.maze.objects.Tile;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class Maze {
     // Properties
@@ -301,7 +303,7 @@ public class Maze {
 	m.basePath = this.basePath;
 	int version = 0;
 	// Create metafile reader
-	try (XDataReader metaReader = new XDataReader(m.basePath + File.separator + "metafile.xml", "maze")) {
+	try (XDataReader metaReader = DataIOFactory.createTagReader(m.basePath + File.separator + "metafile.xml", "maze")) {
 	    // Read metafile
 	    version = m.readMazeMetafile(metaReader);
 	} catch (final IOException ioe) {
@@ -318,7 +320,7 @@ public class Maze {
     }
 
     private XDataReader getLevelReader() throws IOException {
-	return new XDataReader(this.basePath + File.separator + "level" + this.activeLevel + ".xml", "level");
+	return DataIOFactory.createTagReader(this.basePath + File.separator + "level" + this.activeLevel + ".xml", "level");
     }
 
     private int readMazeMetafile(final XDataReader reader) throws IOException {
@@ -356,7 +358,7 @@ public class Maze {
     public void writeMaze() throws IOException {
 	try {
 	    // Create metafile writer
-	    try (XDataWriter metaWriter = new XDataWriter(this.basePath + File.separator + "metafile.xml", "maze")) {
+	    try (XDataWriter metaWriter = DataIOFactory.createTagWriter(this.basePath + File.separator + "metafile.xml", "maze")) {
 		// Write metafile
 		this.writeMazeMetafile(metaWriter);
 	    }
@@ -371,7 +373,7 @@ public class Maze {
     }
 
     private XDataWriter getLevelWriter() throws IOException {
-	return new XDataWriter(this.basePath + File.separator + "level" + this.activeLevel + ".xml", "level");
+	return DataIOFactory.createTagWriter(this.basePath + File.separator + "level" + this.activeLevel + ".xml", "level");
     }
 
     private void writeMazeMetafile(final XDataWriter writer) throws IOException {

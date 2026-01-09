@@ -7,7 +7,7 @@ import java.net.URL;
 
 import javax.imageio.ImageIO;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
 
 public class ObjectImageManager {
     private static final String DEFAULT_LOAD_PATH = "/com/puttysoftware/tallertower/resources/graphics/objects/";

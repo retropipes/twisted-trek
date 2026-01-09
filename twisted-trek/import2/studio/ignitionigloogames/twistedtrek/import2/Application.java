@@ -2,11 +2,15 @@
 package studio.ignitionigloogames.twistedtrek.import2;
 
 import java.awt.Image;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 
 import javax.swing.JFrame;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+import org.retropipes.diane.update.ProductData;
+
 import studio.ignitionigloogames.twistedtrek.import2.battle.AbstractBattle;
 import studio.ignitionigloogames.twistedtrek.import2.battle.map.time.MapTimeBattleLogic;
 import studio.ignitionigloogames.twistedtrek.import2.battle.map.turn.MapTurnBattleLogic;
@@ -21,7 +25,6 @@ import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.SoundConst
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.SoundManager;
 import studio.ignitionigloogames.twistedtrek.import2.shops.Shop;
 import studio.ignitionigloogames.twistedtrek.import2.shops.ShopTypes;
-import studio.ignitionigloogames.updater.ProductData;
 
 public final class Application {
     // Fields
@@ -41,13 +44,7 @@ public final class Application {
     private int formerMode;
     private static final String UPDATE_SITE = "http://update.puttysoftware.com/tallertower/";
     private static final String NEW_VERSION_SITE = "http://www.puttysoftware.com/tallertower/";
-    private static final String PRODUCT_NAME = "Import2";
-    private static final String COMPANY_NAME = "Putty Software";
-    private static final String RDNS_COMPANY_NAME = "com.puttysoftware.tallertower";
-    private static final ProductData pd = new ProductData(Application.UPDATE_SITE, Application.UPDATE_SITE,
-	    Application.NEW_VERSION_SITE, Application.RDNS_COMPANY_NAME, Application.COMPANY_NAME,
-	    Application.PRODUCT_NAME, Application.VERSION_MAJOR, Application.VERSION_MINOR, Application.VERSION_BUGFIX,
-	    Application.VERSION_CODE, Application.VERSION_PRERELEASE);
+    private static ProductData pd;
     private static final int VERSION_MAJOR = 5;
     private static final int VERSION_MINOR = 1;
     private static final int VERSION_BUGFIX = 0;
@@ -61,6 +58,13 @@ public final class Application {
 
     // Constructors
     public Application() {
+	try {
+	    Application.pd = new ProductData(Application.UPDATE_SITE, Application.NEW_VERSION_SITE,
+		    Application.VERSION_MAJOR, Application.VERSION_MINOR, Application.VERSION_BUGFIX,
+		    Application.VERSION_CODE, Application.VERSION_PRERELEASE);
+	} catch (MalformedURLException | URISyntaxException e) {
+	    Import2.logError(e);
+	}
 	this.objects = new MazeObjectList();
 	this.currentMode = Application.STATUS_NULL;
 	this.formerMode = Application.STATUS_NULL;

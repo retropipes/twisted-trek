@@ -3,7 +3,8 @@ package studio.ignitionigloogames.twistedtrek.import2.shops;
 
 import javax.swing.JOptionPane;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyManager;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyMember;
 import studio.ignitionigloogames.twistedtrek.import2.items.ArmorConstants;

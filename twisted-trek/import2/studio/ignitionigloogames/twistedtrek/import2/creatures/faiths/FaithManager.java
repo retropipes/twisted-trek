@@ -3,7 +3,8 @@ package studio.ignitionigloogames.twistedtrek.import2.creatures.faiths;
 
 import javax.swing.JFrame;
 
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.random.RandomRange;
+
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyManager;
 
 public class FaithManager {

@@ -5,7 +5,10 @@ import java.io.IOException;
 
 import javax.swing.JFrame;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.creatures.castes.Caste;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.castes.CasteManager;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.characterfiles.CharacterLoader;
@@ -18,8 +21,6 @@ import studio.ignitionigloogames.twistedtrek.import2.creatures.personalities.Per
 import studio.ignitionigloogames.twistedtrek.import2.creatures.personalities.PersonalityManager;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.races.Race;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.races.RaceManager;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class PartyManager {
     // Fields
@@ -48,7 +49,7 @@ public class PartyManager {
 		    CharacterLoader.saveCharacter(pc);
 		}
 	    } else {
-		final int response = CommonDialogs.showCustomDialog("Pick, Create, or Done?", "Create Party",
+		final int response = CommonDialogs.showCustomDialogWithDefault("Pick, Create, or Done?", "Create Party",
 			PartyManager.buttonNames, PartyManager.buttonNames[2]);
 		if (response == 2) {
 		    pc = PartyManager.pickOnePartyMemberCreate(pickMembers);
@@ -184,9 +185,9 @@ public class PartyManager {
 	final String response = CommonDialogs.showInputDialog("Pick 1 Party Member", "Create Party", pickNames,
 		pickNames[0]);
 	if (response != null) {
-	    for (int x = 0; x < members.length; x++) {
-		if (members[x].getName().equals(response)) {
-		    return members[x];
+	    for (final PartyMember member : members) {
+		if (member.getName().equals(response)) {
+		    return member;
 		}
 	    }
 	    return null;

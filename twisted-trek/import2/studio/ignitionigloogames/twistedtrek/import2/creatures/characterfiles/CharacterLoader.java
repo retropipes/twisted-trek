@@ -4,26 +4,28 @@ package studio.ignitionigloogames.twistedtrek.import2.creatures.characterfiles;
 import java.io.File;
 import java.io.IOException;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
+import org.retropipes.diane.fileio.DataIOFactory;
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+import org.retropipes.diane.fileio.legacy.UnexpectedTagException;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.VersionException;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.party.PartyMember;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Extension;
-import studio.ignitionigloogames.xio.UnexpectedTagException;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class CharacterLoader {
     private static PartyMember loadCharacter(final String name) {
 	final String basePath = CharacterRegistration.getBasePath();
 	final String loadPath = basePath + File.separator + name + Extension.getCharacterExtensionWithPeriod();
-	try (XDataReader loader = new XDataReader(loadPath, "character")) {
+	try (XDataReader loader = DataIOFactory.createTagReader(loadPath, "character")) {
 	    return PartyMember.read(loader);
 	} catch (VersionException | UnexpectedTagException e) {
 	    CharacterRegistration.autoremoveCharacter(name);
 	    return null;
 	} catch (final IOException e) {
-	    Import2.getErrorLogger().logError(e);
+	    Import2.logError(e);
 	    return null;
 	}
     }
@@ -52,10 +54,10 @@ public class CharacterLoader {
 	final String basePath = CharacterRegistration.getBasePath();
 	final String name = character.getName();
 	final String characterFile = basePath + File.separator + name + Extension.getCharacterExtensionWithPeriod();
-	try (XDataWriter saver = new XDataWriter(characterFile, "character")) {
+	try (XDataWriter saver = DataIOFactory.createTagWriter(characterFile, "character")) {
 	    character.write(saver);
 	} catch (final IOException e) {
-	    Import2.getErrorLogger().logError(e);
+	    Import2.logError(e);
 	}
     }
 

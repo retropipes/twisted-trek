@@ -100,7 +100,7 @@ public class MapBattleArrowTask extends Thread {
 	    SoundManager.playSound(SoundConstants.SOUND_ARROW_DIE);
 	    app.getBattle().arrowDone(hit);
 	} catch (final Throwable t) {
-	    Import2.getErrorLogger().logError(t);
+	    Import2.logError(t);
 	}
     }
 

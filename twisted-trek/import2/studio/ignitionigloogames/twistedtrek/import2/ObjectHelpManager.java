@@ -10,8 +10,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
-import studio.ignitionigloogames.help.GraphicalHelpViewer;
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+import org.retropipes.diane.help.GraphicalHelpViewer;
+
 import studio.ignitionigloogames.twistedtrek.import2.maze.utilities.MazeObjectList;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.ImageTransformer;
 

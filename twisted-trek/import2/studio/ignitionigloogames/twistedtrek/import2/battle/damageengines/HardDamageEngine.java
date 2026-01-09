@@ -1,7 +1,8 @@
 /* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.battle.damageengines;
 
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.random.RandomRange;
+
 import studio.ignitionigloogames.twistedtrek.import2.creatures.AbstractCreature;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.StatConstants;
 import studio.ignitionigloogames.twistedtrek.import2.creatures.faiths.FaithConstants;

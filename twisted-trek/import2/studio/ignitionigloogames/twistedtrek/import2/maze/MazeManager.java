@@ -7,8 +7,9 @@ import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
-import studio.ignitionigloogames.ioutils.FilenameChecker;
+import org.retropipes.diane.fileio.utility.FilenameChecker;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.Application;
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractMazeObject;
@@ -193,7 +194,7 @@ public final class MazeManager {
 		    if (!file.getParentFile().exists()) {
 			final boolean okay = file.getParentFile().mkdirs();
 			if (!okay) {
-			    Import2.getErrorLogger().logError(new IOException("Cannot create game folder!"));
+			    Import2.logError(new IOException("Cannot create game folder!"));
 			}
 		    }
 		    MazeManager.saveFile(filename);

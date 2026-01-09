@@ -1,7 +1,7 @@
 /* Import1: A Maze-Solving Game */
 package studio.ignitionigloogames.twistedtrek.import1.battle;
 
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.random.RandomRange;
 
 public class MultiplierValues {
     private static final double tolerance = 0.001;

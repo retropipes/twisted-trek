@@ -3,7 +3,8 @@ package studio.ignitionigloogames.twistedtrek.import1;
 
 import javax.swing.JFrame;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+
 import studio.ignitionigloogames.twistedtrek.import1.battle.Battle;
 import studio.ignitionigloogames.twistedtrek.import1.battle.BossBattle;
 import studio.ignitionigloogames.twistedtrek.import1.creatures.Boss;

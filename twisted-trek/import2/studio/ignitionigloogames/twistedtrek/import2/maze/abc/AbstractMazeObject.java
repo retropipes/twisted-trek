@@ -2,12 +2,13 @@
 package studio.ignitionigloogames.twistedtrek.import2.maze.abc;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.BitSet;
 
-import studio.ignitionigloogames.images.BufferedImageIcon;
-import studio.ignitionigloogames.llds.CloneableObject;
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.asset.image.BufferedImageIcon;
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+import org.retropipes.diane.random.RandomRange;
+
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.FormatConstants;
 import studio.ignitionigloogames.twistedtrek.import2.maze.Maze;
@@ -19,13 +20,11 @@ import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.BattleImag
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.ObjectImageConstants;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.SoundConstants;
 import studio.ignitionigloogames.twistedtrek.import2.resourcemanagers.SoundManager;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
-public abstract class AbstractMazeObject extends CloneableObject implements RandomGenerationRule {
+public abstract class AbstractMazeObject implements RandomGenerationRule {
     // Properties
-    private boolean solid;
-    private boolean friction;
+    private final boolean solid;
+    private final boolean friction;
     private final boolean blocksLOS;
     private static int templateColor = ImageColorConstants.COLOR_NONE;
     private int timerValue;
@@ -70,26 +69,19 @@ public abstract class AbstractMazeObject extends CloneableObject implements Rand
 	this.setTypes();
     }
 
-    // Methods
-    @Override
-    public AbstractMazeObject clone() {
-	try {
-	    final AbstractMazeObject copy = this.getClass().getConstructor().newInstance();
-	    copy.solid = this.solid;
-	    copy.friction = this.friction;
-	    copy.type = (BitSet) this.type.clone();
-	    copy.timerValue = this.timerValue;
-	    copy.initialTimerValue = this.initialTimerValue;
-	    copy.timerActive = this.timerActive;
-	    copy.type = (BitSet) this.type.clone();
-	    return copy;
-	} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
-		| NoSuchMethodException | SecurityException e) {
-	    Import2.getErrorLogger().logError(e);
-	    return null;
-	}
+    // Copy constructor
+    protected AbstractMazeObject(final AbstractMazeObject source) {
+	this.solid = source.solid;
+	this.friction = source.friction;
+	this.blocksLOS = source.blocksLOS;
+	this.type = BitSet.valueOf(source.type.toByteArray());
+	this.timerValue = source.timerValue;
+	this.timerActive = source.timerActive;
+	this.initialTimerValue = source.initialTimerValue;
+	this.saved = source.saved;
     }
 
+    // Methods
     @Override
     public int hashCode() {
 	final int prime = 31;

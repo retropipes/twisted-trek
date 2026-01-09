@@ -1,8 +1,9 @@
 /* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2;
 
-import studio.ignitionigloogames.commondialogs.CommonDialogs;
-import studio.ignitionigloogames.errorlogger.ErrorLogger;
+import org.retropipes.diane.Diane;
+import org.retropipes.diane.gui.dialog.CommonDialogs;
+
 import studio.ignitionigloogames.twistedtrek.import2.creatures.AbstractCreature;
 
 public class Import2 {
@@ -13,7 +14,6 @@ public class Import2 {
 	    + "Include the error log with your bug report.\n" + "Email bug reports to: products@puttysoftware.com\n"
 	    + "Subject: Import2 Bug Report";
     private static final String ERROR_TITLE = "Import2 Error";
-    private static final ErrorLogger elog = new ErrorLogger(Import2.PROGRAM_NAME);
     private static final int BATTLE_MAZE_SIZE = 16;
 
     // Methods
@@ -25,13 +25,14 @@ public class Import2 {
 	return Import2.BATTLE_MAZE_SIZE;
     }
 
-    public static ErrorLogger getErrorLogger() {
+    public static void logError(final Throwable t) {
 	// Display error message
 	CommonDialogs.showErrorDialog(Import2.ERROR_MESSAGE, Import2.ERROR_TITLE);
-	return Import2.elog;
+	Diane.handleError(t);
     }
 
     public static void preInit() {
+	Diane.installDefaultErrorHandler(Import2.PROGRAM_NAME);
 	// Compute action cap
 	AbstractCreature.computeActionCap(Import2.BATTLE_MAZE_SIZE, Import2.BATTLE_MAZE_SIZE);
     }
@@ -58,7 +59,7 @@ public class Import2 {
 	    CommonDialogs.setDefaultTitle(Import2.PROGRAM_NAME);
 	    CommonDialogs.setIcon(Application.getMicroLogo());
 	} catch (final Throwable t) {
-	    Import2.getErrorLogger().logError(t);
+	    Import2.logError(t);
 	}
     }
 }

@@ -1,26 +1,15 @@
 /* Import2: An RPG */
 package studio.ignitionigloogames.twistedtrek.import2.resourcemanagers;
 
-import java.net.URL;
+import org.retropipes.diane.asset.sound.DianeSoundPlayer;
+import org.retropipes.diane.random.RandomRange;
 
-import studio.ignitionigloogames.audio.wav.WavFactory;
-import studio.ignitionigloogames.randomrange.RandomRange;
 import studio.ignitionigloogames.twistedtrek.import2.prefs.PreferencesManager;
 
 public class SoundManager {
     private static final String DEFAULT_LOAD_PATH = "/com/puttysoftware/tallertower/resources/sounds/";
     private static String LOAD_PATH = SoundManager.DEFAULT_LOAD_PATH;
     private static Class<?> LOAD_CLASS = SoundManager.class;
-
-    private static WavFactory getSound(final String filename) {
-	try {
-	    final URL url = SoundManager.LOAD_CLASS
-		    .getResource(SoundManager.LOAD_PATH + filename.toLowerCase() + ".wav");
-	    return WavFactory.loadResource(url);
-	} catch (final NullPointerException np) {
-	    return null;
-	}
-    }
 
     public static void playSound(final int soundID) {
 	try {
@@ -31,8 +20,8 @@ public class SoundManager {
 		    offset = rSound.generate();
 		}
 		final String soundName = SoundConstants.getSoundName(soundID + offset);
-		final WavFactory snd = SoundManager.getSound(soundName);
-		snd.start();
+		DianeSoundPlayer.playSource(
+			SoundManager.LOAD_CLASS.getResource(SoundManager.LOAD_PATH + soundName.toLowerCase() + ".wav"));
 	    }
 	} catch (final ArrayIndexOutOfBoundsException aioob) {
 	    // Do nothing

@@ -5,12 +5,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+
 import studio.ignitionigloogames.twistedtrek.ai.CreatureAi;
 import studio.ignitionigloogames.twistedtrek.sound.Sound;
 import studio.ignitionigloogames.twistedtrek.world.Tile;
 import studio.ignitionigloogames.twistedtrek.world.World;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 public class Creature {
     private final World world;

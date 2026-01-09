@@ -4,8 +4,11 @@ package studio.ignitionigloogames.twistedtrek.import2.maze;
 import java.io.IOException;
 import java.util.Arrays;
 
-import studio.ignitionigloogames.llds.LowLevelFlagDataStore;
-import studio.ignitionigloogames.randomrange.RandomRange;
+import org.retropipes.diane.fileio.XDataReader;
+import org.retropipes.diane.fileio.XDataWriter;
+import org.retropipes.diane.random.RandomRange;
+import org.retropipes.diane.storage.FlagStorage;
+
 import studio.ignitionigloogames.twistedtrek.import2.Application;
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.maze.abc.AbstractMazeObject;
@@ -17,14 +20,12 @@ import studio.ignitionigloogames.twistedtrek.import2.maze.objects.WallOn;
 import studio.ignitionigloogames.twistedtrek.import2.maze.utilities.DirectionResolver;
 import studio.ignitionigloogames.twistedtrek.import2.maze.utilities.MazeObjectList;
 import studio.ignitionigloogames.twistedtrek.import2.maze.utilities.RandomGenerationRule;
-import studio.ignitionigloogames.xio.XDataReader;
-import studio.ignitionigloogames.xio.XDataWriter;
 
 final class LayeredTower implements Cloneable {
     // Properties
     private LowLevelAMODataStore data;
     private LowLevelAMODataStore savedTowerState;
-    private LowLevelFlagDataStore visionData;
+    private FlagStorage visionData;
     private final LowLevelNoteDataStore noteData;
     private final int[] playerStartData;
     private final int[] playerLocationData;
@@ -46,7 +47,7 @@ final class LayeredTower implements Cloneable {
     public LayeredTower(final int rows, final int cols, final int floors) {
 	this.data = new LowLevelAMODataStore(cols, rows, floors, MazeConstants.LAYER_COUNT);
 	this.savedTowerState = new LowLevelAMODataStore(cols, rows, floors, MazeConstants.LAYER_COUNT);
-	this.visionData = new LowLevelFlagDataStore(cols, rows, floors);
+	this.visionData = new FlagStorage(cols, rows, floors);
 	this.noteData = new LowLevelNoteDataStore(cols, rows, floors);
 	this.playerStartData = new int[3];
 	Arrays.fill(this.playerStartData, -1);
@@ -81,9 +82,9 @@ final class LayeredTower implements Cloneable {
     @Override
     public LayeredTower clone() {
 	final LayeredTower copy = new LayeredTower(this.getRows(), this.getColumns(), this.getFloors());
-	copy.data = this.data.clone();
-	copy.visionData = (LowLevelFlagDataStore) this.visionData.clone();
-	copy.savedTowerState = this.savedTowerState.clone();
+	copy.data = new LowLevelAMODataStore(this.data);
+	copy.visionData = new FlagStorage(this.visionData);
+	copy.savedTowerState = new LowLevelAMODataStore(this.savedTowerState);
 	System.arraycopy(this.playerStartData, 0, copy.playerStartData, 0, this.playerStartData.length);
 	System.arraycopy(this.findResult, 0, copy.findResult, 0, this.findResult.length);
 	copy.horizontalWraparoundEnabled = this.horizontalWraparoundEnabled;

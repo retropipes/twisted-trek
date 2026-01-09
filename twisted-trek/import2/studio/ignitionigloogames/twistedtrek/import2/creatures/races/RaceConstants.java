@@ -4,7 +4,8 @@ package studio.ignitionigloogames.twistedtrek.import2.creatures.races;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import studio.ignitionigloogames.ioutils.ResourceStreamReader;
+import org.retropipes.diane.fileio.utility.ResourceStreamReader;
+
 import studio.ignitionigloogames.twistedtrek.import2.Import2;
 import studio.ignitionigloogames.twistedtrek.import2.datamanagers.RaceDataManager;
 
@@ -53,7 +54,7 @@ public class RaceConstants {
 		RaceConstants.RACES_COUNT = RaceConstants.RACE_NAMES.length;
 		RaceConstants.INITED = true;
 	    } catch (final IOException ioe) {
-		Import2.getErrorLogger().logError(ioe);
+		Import2.logError(ioe);
 	    }
 	}
     }
